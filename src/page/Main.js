@@ -5,7 +5,7 @@ const main = () => {
     return (
         <div className='main-box'>
             <div className='event-box'>
-                메인
+                메인화면
             </div>
 
             <div className='recommend'>
