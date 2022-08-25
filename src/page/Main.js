@@ -5,7 +5,7 @@ const main = () => {
     return (
         <div className='main-box'>
             <div className='event-box'>
-                메인화면
+                <img src='https://cdn.pixabay.com/photo/2016/11/29/15/05/drink-1870139_960_720.jpg' className='event-img'/>
             </div>
 
             <div className='recommend'>

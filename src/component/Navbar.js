@@ -5,6 +5,42 @@ import { FaBars } from 'react-icons/fa';
 import { links, social, search } from '../data/data';
 import logo from '../color-logo.png';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { generateMedia } from 'styled-media-query';
+
+export const customMedia = generateMedia({
+  desktop: '2000px',
+  tablet: '60em',
+  mobile: '992px'
+})
+
+const Navcenter = styled.div`
+${customMedia.lessThan('mobile')`
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1;
+width: 100%;
+height: 80px;
+transition: 0.4s ease;
+background-color: #fff;
+&.hide {
+  transform: translateY(-137.2px);
+}
+	`}
+`;
+
+const throttle = function (callback, waitTime) {
+  let timerId = null;
+  return (e) => {
+    if (timerId) return;
+    timerId = setTimeout(() => {
+      callback.call(this, e);
+      timerId = null;
+    }, waitTime);
+  };
+};
+
 
 const Navbar = () => {
   // 메뉴버튼 
@@ -24,6 +60,26 @@ const Navbar = () => {
     }
   }, [showLinks]);
 
+  // scroll event
+  const [hide, setHide] = useState(false);
+  const [pageY, setPageY] = useState(0);
+  const documentRef = useRef(document);
+
+  const handleScroll = () => {
+    const { pageYOffset } = window;
+    const deltaY = pageYOffset - pageY;
+    const hide = pageYOffset !== 0 && deltaY >= 0;
+    setHide(hide);
+    setPageY(pageYOffset);
+  };
+
+  const throttleScroll = throttle(handleScroll, 50);
+
+  useEffect(() => {
+    documentRef.current.addEventListener('scroll', throttleScroll);
+    return () => documentRef.current.removeEventListener('scroll', throttleScroll);
+  }, [pageY]);
+
   const navigate = useNavigate();
 
   const goToHome = () => {
@@ -32,47 +88,61 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <img src={logo} className='logo' alt='logo' onClick={goToHome}/>
-          <button className='nav-toggle' onClick={toggleLinks}>
-            <FaBars />
-          </button>
-        </div>
+      
+      <Navcenter className={hide && 'hide'}>
+        <div className='nav-center'>
+      
+          <div className='nav-header'>
+            <img src={logo} className='logo1' alt='logo' onClick={goToHome} />
+            <button className='nav-toggle' onClick={toggleLinks}>
+              <FaBars />
+            </button>
+          </div>
+          
+          {/* 메뉴버튼 클릭시 목록 보이도록 */}
+          <div className='links-container' ref={linksContainerRef}> 
+          
+            <ul className='links' ref={linksRef}>
+            <li><img src={logo} className='logo' alt='logo' onClick={goToHome} /></li>
+              {/* data에서 Nav목록 가져오기 */}
+              {links.map((link) => {
+                const { id, url, text } = link;
+                return (
+                  <li key={id}>
+                    <a href={url}>{text}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
-        {/* 메뉴버튼 클릭시 목록 보이도록 */}
-        <div className='links-container' ref={linksContainerRef}>
-          <ul className='links' ref={linksRef}>
-            {/* data에서 Nav목록 가져오기 */}
-            {links.map((link) => {
-              const { id, url, text } = link;
-              return (
-                <li key={id}>
-                  <a href={url}>{text}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+          {/* search 기능 */}
+          <div className='search-box'>
+            <div className='search-wrap'>
+              <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
+              <input className='search' type='text' />
+            </div>
 
-        {/* search 기능 */}
-        <div className='search-box'>
-          <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
-          <input className='search' type='text' />
-        </div>
+          </div>
 
-        {/* mypage 아이콘 가져오기 */}
-        <ul className='social-icons'>
-          {social.map((socialIcon) => {
-            const { id, url, icon } = socialIcon;
-            return (
-              <li key={id}>
-                <a href={url}>{icon}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+
+          {/* mypage 아이콘 가져오기 */}
+          <div className='social-icons'>
+            <ul>
+              {social.map((socialIcon) => {
+                const { id, url, icon } = socialIcon;
+                return (
+                  <li key={id}>
+                    <a href={url}>{icon}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+
+        </div>
+      </Navcenter>
     </nav>
   );
 };

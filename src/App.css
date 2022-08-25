@@ -16,6 +16,50 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+  font-family: 'Cafe24Ohsquare';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Eoe_Zno_EB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Eoe_Zno_EB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Recipekorea';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+ }
+ @font-face {
+  font-family: 'BinggraeMelona-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(238, 26%, 23%);
@@ -70,13 +114,13 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: NanumSquareRound;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  padding-top: 133.2px;
+  padding-top: 137.2px;
+  background-color: white;
 }
 ul {
   list-style-type: none;
@@ -120,7 +164,7 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 992px) {
   h1 {
     font-size: 4rem;
   }
@@ -135,7 +179,8 @@ p {
   }
   body {
     font-size: 1rem;
-    padding-top: 82px;
+    padding-top: 5rem;
+    background-color: white;
   }
   input {
     width: 20rem;
@@ -144,7 +189,6 @@ p {
     border: 0;
     border-radius: 15px;
     outline: none;
-    margin-top: 10rem;
     margin-left: 10px;
     padding-left: 10px;
     background-color: var(--clr-primary-9);
@@ -189,15 +233,18 @@ Navbar
 ===============
 */
 nav {
+  font-family: GangwonEduPowerExtraBoldA;
   background: var(--clr-white);
-  box-shadow: var(--light-shadow);
+  /* box-shadow: var(--light-shadow); */
   position: fixed;
+  width: 100%;
   top: 0;
-  /* width: 100%; */
   left: 0;
   right: 0;
+  transition: top 0.2s ease-in-out;
 }
 .nav-header {
+  background-color: var(--clr-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -216,8 +263,8 @@ nav {
   color: var(--clr-primary-5);
   /* transform: rotate(90deg); */
 }
-.logo {
-  height: 50px;
+.links {
+  background-color: var(--clr-white);
 }
 .links a {
   color: var(--clr-grey-3);
@@ -237,12 +284,6 @@ nav {
 .social-icons {
   display: none;
 }
-.search-icon {
-  height: 20px;
-  margin: 0 0.5rem;
-  color: var(--clr-primary-5);
-  transition: var(--transition);
-}
 .links-container {
   height: 0;
   overflow: hidden;
@@ -252,12 +293,40 @@ nav {
   height: 10rem;
 }
 .search-box {
-  padding-bottom: 1rem;
+  /* background-color: red; */
   text-align: center;
 }
-@media screen and (min-width: 800px) {
+.search-wrap{
+  background-color: var(--clr-white);
+}
+.search-icon {
+  height: 20px;
+  display: inline-block;
+  color: var(--clr-primary-5);
+  transition: var(--transition);
+  }
+
+  .logo1 {
+    height: 50px;
+  }
+@media screen and (max-width: 992px) {
+  .logo {
+    display: none;
+   }
+}
+@media screen and (min-width: 992px) {
+  nav {
+    background: var(--clr-white);
+    /* box-shadow: var(--light-shadow); */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   .nav-center {
-    max-width: 1170px;
+    max-width: 90%;
+    /* height: 80px; */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -265,30 +334,49 @@ nav {
     padding: 1rem;
   }
   .nav-header {
-    padding: 0;
+    display: none;
   }
   .nav-toggle {
     display: none;
   }
-
+  .search-box {
+    display: none;
+  }
+  .logo {
+    height: 50px;
+  }
   /* 사이즈 변경위해 꼭 필요 */
   .links-container {
+    /* background-color: red; */
     height: auto !important;
+    /* margin: 0 auto; */
   }
-
   .links {
-    display: flex;
+    display: inline;
+  }
+  .links li {
+    /* background-color: black; */
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
   }
   .links a {
     padding: 0;
     margin: 0 0.8rem;
+    /* letter-spacing: 0.4rem; */
+    /* font-size: 1px; */
   }
   .links a:hover {
     padding: 0;
     background: transparent;
   }
   .social-icons {
-    display: flex;
+    display: inline;
+    padding-top: 1px;
+  }
+  .social-icons ul li {
+    display: inline-block;
+    float: left;
   }
   .social-icons a {
     margin: 0 0.5rem;
@@ -298,11 +386,11 @@ nav {
   .social-icons a:hover {
     color: var(--clr-primary-6);
   }
-  .search-icon {
+  /* .search-icon {
     margin: 0 0.5rem;
     color: var(--clr-primary-5);
     transition: var(--transition);
-  }
+  } */
 }
 
 /*
@@ -313,7 +401,11 @@ Main-event
 
 .event-box {
   background-color: var(--clr-primary-5);
-  height: 30rem;
+  width: 100%;
+  /* height: 30rem; */
+}
+.event-img {
+  width: 100%;
 }
 
 /*
@@ -343,11 +435,12 @@ Recommend
   /* background-color: red; */
 }
 .recommend-box {
-  font-family: GmarketSansMedium;
+  /* background-color: red; */
+  /* font-family: GmarketSansMedium; */
   padding: 0.7rem;
 }
 .recommend-title {
-  font-family: GmarketSansBold;
+  /* font-family: GmarketSansBold; */
 }
 
 /*
@@ -358,10 +451,31 @@ Product Detail
 
 .Detail-box {
   font-family: GmarketSansMedium;
-  margin: 2rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
 }
 .Detail-img {
   width: 100%;
+}
+
+/*
+=============== 
+Login
+===============
+*/
+#panel {
+  /* background-color: red; */
+  padding: 10rem;
+  display: flex;
+  justify-content: center;
+}
+.login-input {
+  width: 40rem;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  background-color: var(--clr-primary-9);
 }

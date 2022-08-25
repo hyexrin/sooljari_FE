@@ -10,7 +10,7 @@ const Recommend = () => {
             <Container className='recommend-box-container'>
 
                 <Row>
-                    <Col><h4 className='recommend-title'>취향저격! AI 추천 술</h4> </Col>
+                    <Col><h3 className='recommend-title'><b>취향저격! AI 추천 술</b></h3> </Col>
                 </Row>
 
                 <Row>
