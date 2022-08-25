@@ -4,55 +4,64 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'GmarketSansBold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-    font-family: 'GmarketSansLight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'GmarketSansLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
 @font-face {
   font-family: 'Cafe24Ohsquare';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Eoe_Zno_EB';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Eoe_Zno_EB.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Recipekorea';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'NanumBarunGothic';
   font-style: normal;
   font-weight: 400;
   src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
   src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
- }
- @font-face {
+}
+
+@font-face {
   font-family: 'BinggraeMelona-Bold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BinggraeMelona-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'GangwonEduPowerExtraBoldA';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'NanumSquareRound';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
@@ -100,6 +109,7 @@
   --max-width: 1170px;
   --fixed-width: 620px;
 }
+
 /*
 =============== 
 Global Styles
@@ -113,32 +123,35 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: NanumSquareRound;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  padding-top: 137.2px;
+  padding-top: 72px;
+  padding-bottom: 56px;
   background-color: white;
 }
-ul {
+
+ul li {
   list-style-type: none;
 }
-a {
-  text-decoration: none;
-}
+
 input {
-  width: 88%;
+  width: 95%;
+  font-family: NanumSquareRound;
   height: 2.2rem;
   font-size: 15px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   outline: none;
-  margin: 10px;
-  padding-left: 10px;
+  /* margin: 10px; */
+  padding-left: 2rem;
   background-color: var(--clr-primary-9);
 }
+
 h1,
 h2,
 h3,
@@ -148,42 +161,54 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
+
 h1 {
   font-size: 3rem;
 }
+
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.25rem;
 }
+
 h4 {
   font-size: 0.875rem;
 }
+
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+
 @media screen and (min-width: 992px) {
   h1 {
     font-size: 4rem;
   }
+
   h2 {
     font-size: 2.5rem;
   }
+
   h3 {
     font-size: 1.75rem;
   }
+
   h4 {
     font-size: 1rem;
   }
+
   body {
     font-size: 1rem;
     padding-top: 5rem;
     background-color: white;
   }
+
   input {
     width: 20rem;
+    font-family: NanumSquareRound;
     height: 32px;
     font-size: 15px;
     border: 0;
@@ -193,6 +218,7 @@ p {
     padding-left: 10px;
     background-color: var(--clr-primary-9);
   }
+
   h1,
   h2,
   h3,
@@ -200,6 +226,7 @@ p {
     line-height: 1;
   }
 }
+
 /*  global classes */
 
 /* section */
@@ -213,6 +240,7 @@ p {
   .search-box {
     display: none;
   }
+
   .recommend {
     margin: 0.5rem 5%;
   }
@@ -222,6 +250,7 @@ p {
   .section {
     width: 95vw;
   }
+
   .recommend {
     margin: 0.5rem 10%;
   }
@@ -243,13 +272,16 @@ nav {
   right: 0;
   transition: top 0.2s ease-in-out;
 }
+
 .nav-header {
-  background-color: var(--clr-white);
+  /* background-color: var(--clr-white); */
+  /* background-color: red; */
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   padding: 1rem;
 }
+
 .nav-toggle {
   font-size: 1.5rem;
   color: var(--clr-primary-5);
@@ -259,13 +291,16 @@ nav {
   transform: rotate(0);
   cursor: pointer;
 }
+
 .nav-toggle:hover {
   color: var(--clr-primary-5);
   /* transform: rotate(90deg); */
 }
+
 .links {
   background-color: var(--clr-white);
 }
+
 .links a {
   color: var(--clr-grey-3);
   font-size: 1rem;
@@ -276,44 +311,59 @@ nav {
   padding: 0.5rem 1rem;
   transition: var(--transition);
 }
+
 .links a:hover {
   background: var(--clr-primary-8);
   color: var(--clr-primary-6);
   padding-left: 1.2rem;
 }
+
 .social-icons {
   display: none;
 }
+
 .links-container {
   height: 0;
   overflow: hidden;
   transition: var(--transition);
 }
+
 .show-container {
   height: 10rem;
 }
+
 .search-box {
-  /* background-color: red; */
-  text-align: center;
+  /* text-align: center; */
 }
-.search-wrap{
+
+.search-wrap {
   background-color: var(--clr-white);
+  /* background-color: red; */
+  width: 100%;
 }
+
 .search-icon {
-  height: 20px;
+  left: 24px;
+  height: 15px;
   display: inline-block;
   color: var(--clr-primary-5);
   transition: var(--transition);
-  }
+  background-color: transparent;
+  position: absolute;
+  top: 47%;
+  transform: translatey(-50%);
+}
 
-  .logo1 {
-    height: 50px;
-  }
+.logo1 {
+  height: 50px;
+}
+
 @media screen and (max-width: 992px) {
   .logo {
     display: none;
-   }
+  }
 }
+
 @media screen and (min-width: 992px) {
   nav {
     background: var(--clr-white);
@@ -324,6 +374,7 @@ nav {
     left: 0;
     right: 0;
   }
+
   .nav-center {
     max-width: 90%;
     /* height: 80px; */
@@ -333,64 +384,119 @@ nav {
     justify-content: space-between;
     padding: 1rem;
   }
+
   .nav-header {
     display: none;
   }
+
   .nav-toggle {
     display: none;
   }
+
   .search-box {
     display: none;
   }
+
   .logo {
     height: 50px;
   }
+
   /* 사이즈 변경위해 꼭 필요 */
   .links-container {
     /* background-color: red; */
     height: auto !important;
     /* margin: 0 auto; */
   }
+
   .links {
     display: inline;
   }
+
   .links li {
     /* background-color: black; */
     display: inline-block;
     flex-direction: row;
     align-items: center;
   }
+
   .links a {
     padding: 0;
     margin: 0 0.8rem;
     /* letter-spacing: 0.4rem; */
     /* font-size: 1px; */
   }
+
   .links a:hover {
     padding: 0;
     background: transparent;
   }
+
   .social-icons {
     display: inline;
     padding-top: 1px;
   }
+
   .social-icons ul li {
     display: inline-block;
     float: left;
   }
+
   .social-icons a {
     margin: 0 0.5rem;
     color: var(--clr-primary-5);
     transition: var(--transition);
   }
+
   .social-icons a:hover {
     color: var(--clr-primary-6);
   }
+
   /* .search-icon {
     margin: 0 0.5rem;
     color: var(--clr-primary-5);
     transition: var(--transition);
   } */
+}
+
+/*
+=============== 
+Bottom Nav
+===============
+*/
+
+@media screen and (min-width: 992px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background-color: var(--clr-white);
+    /* background-color: red; */
+    text-align: center;
+    border-top: thin solid rgb(247, 247, 247);
+  }
+  
+
+  /*
+=============== 
+Bottom Nav Icon
+===============
+*/
+
+.icon-box {
+  margin: 7px 0;
+  font-size: xx-small;
+  color: rgb(194, 194, 194);
+}
+
+.botnav-icon {
+  height: 18px;
+  margin-bottom: 6px;
 }
 
 /*
@@ -404,9 +510,12 @@ Main-event
   width: 100%;
   /* height: 30rem; */
 }
+
 .event-img {
   width: 100%;
 }
+
+
 
 /*
 =============== 
@@ -419,6 +528,7 @@ Product-All (main)
   transition: all 0.2s linear;
   margin-bottom: 14px;
 }
+
 .productImg {
   width: 100%;
 }
@@ -434,11 +544,13 @@ Recommend
   justify-content: center;
   /* background-color: red; */
 }
+
 .recommend-box {
   /* background-color: red; */
   /* font-family: GmarketSansMedium; */
   padding: 0.7rem;
 }
+
 .recommend-title {
   /* font-family: GmarketSansBold; */
 }
@@ -455,6 +567,7 @@ Product Detail
   display: flex;
   justify-content: center;
 }
+
 .Detail-img {
   width: 100%;
 }
@@ -465,17 +578,185 @@ Login
 ===============
 */
 #panel {
-  /* background-color: red; */
-  padding: 10rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
 }
+
+.login-title {
+  font-family: GangwonEduPowerExtraBoldA;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+  /* background-color: red; */
+}
+
 .login-input {
-  width: 40rem;
+  width: 20rem;
   height: 32px;
   font-size: 15px;
   border: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   outline: none;
   background-color: var(--clr-primary-9);
+}
+
+.login-btn-box {
+  /* background-color: red; */
+  text-align: center;
+}
+
+.login-btn {
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: var(--clr-primary-5);
+}
+
+.login-etc {
+  /* background-color: red; */
+  height: 3rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.login-etc ul {
+  /* background-color: yellow; */
+  -webkit-padding-start: 0px;
+}
+
+.login-etc ul li {
+  /* background-color: pink; */
+  color: rgb(88, 88, 88);
+  /* background-color: red; */
+  display: inline;
+  margin: 5px;
+}
+
+@media screen and (min-width: 992px) {
+  #panel {
+    padding: 6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-title {
+    font-family: GangwonEduPowerExtraBoldA;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    text-align: center;
+    /* background-color: red; */
+  }
+
+  .login-input {
+    width: 30rem;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--clr-primary-9);
+  }
+
+  .login-btn-box {
+    /* background-color: red; */
+    text-align: center;
+  }
+
+  .login-btn {
+    width: 30rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: var(--clr-primary-5);
+  }
+
+  .login-etc {
+    /* background-color: red; */
+    height: 3rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .login-etc ul {
+    /* background-color: yellow; */
+    -webkit-padding-start: 0px;
+  }
+
+  .login-etc ul li {
+    /* background-color: pink; */
+    color: rgb(88, 88, 88);
+    /* background-color: red; */
+    display: inline;
+    margin: 1rem;
+  }
+}
+
+/*
+=============== 
+Join
+===============
+*/
+
+.join-title {
+  text-align: center;
+  font-family: GangwonEduPowerExtraBoldA;
+  /* margin-bottom: 2rem; */
+  font-weight: bold;
+  /* background-color: red; */
+}
+
+.join-input {
+  width: 20rem;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  background-color: var(--clr-primary-9);
+}
+
+.join-btn-box {
+  /* background-color: red; */
+  text-align: center;
+}
+
+.join-btn {
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: var(--clr-primary-5);
+}
+
+@media screen and (min-width: 992px) {
+  .join-title {
+    text-align: center;
+    font-family: GangwonEduPowerExtraBoldA;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    /* background-color: red; */
+  }
+  
+  .join-input {
+    width: 100%;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--clr-primary-9);
+    margin-left: 0;
+  }
+  
+  .join-btn-box {
+    /* background-color: red; */
+    text-align: center;
+  }
+  
+  .join-btn {
+    width: 30rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: var(--clr-primary-5);
+  }
+  
 }

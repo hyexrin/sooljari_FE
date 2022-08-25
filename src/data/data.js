@@ -1,7 +1,7 @@
 import React from 'react'
-import { faUser, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import { faUser, faMagnifyingGlass, faHouse } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
+
 export const links = [
   {
     id: 1,
@@ -33,7 +33,7 @@ export const social = [
   },
   {
     id: 2,
-    url: '/login',
+    url: '/mypage',
     icon: <FontAwesomeIcon icon={faUser} size='2x'/>
   }
 ]
@@ -43,4 +43,35 @@ export const search = [
         id: 1,
         icon: <FontAwesomeIcon icon={faMagnifyingGlass} />
     }
+]
+
+export const botNav = [
+  {
+    id: 1,
+    title: '홈',
+    url: '/',
+    icon: <FontAwesomeIcon icon={faHouse} className='botnav-icon'/>,
+    choice_img: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png'
+  },
+  {
+    id: 2,
+    title: '홈',
+    url: '/',
+    icon: <FontAwesomeIcon icon={faUser} className='botnav-icon'/>,
+    choice_img: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png'
+  },
+  {
+    id: 3,
+    title: '홈',
+    url: '/',
+    icon: <FontAwesomeIcon icon={faUser} className='botnav-icon'/>,
+    choice_img: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png'
+  },
+  {
+    id: 4,
+    title: '마이페이지',
+    url: '/mypage',
+    icon: <FontAwesomeIcon icon={faUser} className='botnav-icon'/>,
+    choice_img: 'https://cdn-icons-png.flaticon.com/512/456/456212.png'
+  }
 ]

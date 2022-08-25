@@ -21,7 +21,7 @@ top: 0;
 left: 0;
 z-index: 1;
 width: 100%;
-height: 80px;
+height: 72px;
 transition: 0.4s ease;
 background-color: #fff;
 &.hide {
@@ -88,22 +88,32 @@ const Navbar = () => {
 
   return (
     <nav>
-      
+
       <Navcenter className={hide && 'hide'}>
         <div className='nav-center'>
-      
+
           <div className='nav-header'>
-            <img src={logo} className='logo1' alt='logo' onClick={goToHome} />
+            
+            {/* search 기능 */}
+            <div className='search-wrap'>
+              <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
+              <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' />
+            </div>
+
+            {/* <img src={logo} className='logo1' alt='logo' onClick={goToHome} /> */}
             <button className='nav-toggle' onClick={toggleLinks}>
               <FaBars />
             </button>
+
           </div>
-          
+
+
+
           {/* 메뉴버튼 클릭시 목록 보이도록 */}
-          <div className='links-container' ref={linksContainerRef}> 
-          
+          <div className='links-container' ref={linksContainerRef}>
+
             <ul className='links' ref={linksRef}>
-            <li><img src={logo} className='logo' alt='logo' onClick={goToHome} /></li>
+              <li><img src={logo} className='logo' alt='logo' onClick={goToHome} /></li>
               {/* data에서 Nav목록 가져오기 */}
               {links.map((link) => {
                 const { id, url, text } = link;
@@ -115,16 +125,6 @@ const Navbar = () => {
               })}
             </ul>
           </div>
-
-          {/* search 기능 */}
-          <div className='search-box'>
-            <div className='search-wrap'>
-              <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
-              <input className='search' type='text' />
-            </div>
-
-          </div>
-
 
           {/* mypage 아이콘 가져오기 */}
           <div className='social-icons'>
