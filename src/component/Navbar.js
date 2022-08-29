@@ -7,6 +7,7 @@ import logo from '../color-logo.png';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { generateMedia } from 'styled-media-query';
+import NavLi from './NavLi';
 
 export const customMedia = generateMedia({
   desktop: '2000px',
@@ -93,21 +94,15 @@ const Navbar = () => {
         <div className='nav-center'>
 
           <div className='nav-header'>
-            
             {/* search 기능 */}
             <div className='search-wrap'>
               <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
               <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' />
             </div>
-
-            {/* <img src={logo} className='logo1' alt='logo' onClick={goToHome} /> */}
             <button className='nav-toggle' onClick={toggleLinks}>
               <FaBars />
             </button>
-
           </div>
-
-
 
           {/* 메뉴버튼 클릭시 목록 보이도록 */}
           <div className='links-container' ref={linksContainerRef}>
@@ -115,28 +110,18 @@ const Navbar = () => {
             <ul className='links' ref={linksRef}>
               <li><img src={logo} className='logo' alt='logo' onClick={goToHome} /></li>
               {/* data에서 Nav목록 가져오기 */}
-              {links.map((link) => {
-                const { id, url, text } = link;
-                return (
-                  <li key={id}>
-                    <a href={url}>{text}</a>
-                  </li>
-                );
-              })}
+              {links.map((link) => (
+                <NavLi icon={link} />
+              ))}
             </ul>
           </div>
 
           {/* mypage 아이콘 가져오기 */}
           <div className='social-icons'>
             <ul>
-              {social.map((socialIcon) => {
-                const { id, url, icon } = socialIcon;
-                return (
-                  <li key={id}>
-                    <a href={url}>{icon}</a>
-                  </li>
-                );
-              })}
+              {social.map((socialIcon) => (
+                <NavLi icon={socialIcon} />
+            ))}
             </ul>
           </div>
 

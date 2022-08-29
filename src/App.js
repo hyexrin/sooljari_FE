@@ -28,6 +28,14 @@ function App() {
   }, [])
   console.log(message);
 
+  const [test, setTest] = useState("");
+  useEffect(()=>{
+    fetch("/loginTest")
+      .then(res => res.text())
+      .then(m => setTest(m))
+  }, [test])
+  console.log(test);
+
   return (
     <div>
       <Navbar />
