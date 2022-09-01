@@ -72,7 +72,6 @@ const Navbar = () => {
   }, [showLinks]);
 
   const test = () => {
-    const linksHeight = linksRef.current.getBoundingClientRect().height;
     // if (showLinks) {
     //   linksContainerRef.current.style.height = `${linksHeight}px`;
     //   setShowLinks(!showLinks);
@@ -97,6 +96,8 @@ const Navbar = () => {
     const hide = pageYOffset !== 0 && deltaY >= 0;
     setHide(hide);
     setPageY(pageYOffset);
+    console.log("scroll 감지");
+    linksContainerRef.current.style.height = '0px';
   };
 
   const throttleScroll = throttle(handleScroll, 50);
