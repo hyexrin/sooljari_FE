@@ -411,6 +411,7 @@ nav {
 
   .links {
     display: inline;
+    background-color: transparent;
   }
 
   .links li {
@@ -478,7 +479,7 @@ Bottom Nav
   .bottom-nav {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    /* width: 100%; */
     height: 56px;
     background-color: var(--clr-white);
     /* background-color: red; */

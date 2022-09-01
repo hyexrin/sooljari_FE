@@ -36,8 +36,8 @@ export const sool = [
     {   
         id: 5,
         img: 'http://www.sisajournal-e.com/news/photo/201904/198836_60528_2924.jpg',
-        name: '주류004',
-        price: '12,000',
+        name: '주류005',
+        price: '17,000',
         area: '울산',
         proof: '32%'
     }

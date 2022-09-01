@@ -29,6 +29,17 @@ background-color: #fff;
   transform: translateY(-137.2px);
 }
 	`}
+  ${customMedia.lessThan('desktop')`
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1;
+width: 100%;
+transition: 0.3s ease;
+&.hide {
+  background-color: hsla(0, 0%, 100%, 0.596);
+}
+	`}
 `;
 
 const throttle = function (callback, waitTime) {
@@ -41,7 +52,6 @@ const throttle = function (callback, waitTime) {
     }, waitTime);
   };
 };
-
 
 const Navbar = () => {
   // 메뉴버튼 
@@ -60,6 +70,21 @@ const Navbar = () => {
       linksContainerRef.current.style.height = '0px';
     }
   }, [showLinks]);
+
+  const test = () => {
+    const linksHeight = linksRef.current.getBoundingClientRect().height;
+    // if (showLinks) {
+    //   linksContainerRef.current.style.height = `${linksHeight}px`;
+    //   setShowLinks(!showLinks);
+    // } else {
+    //   linksContainerRef.current.style.height = '0px';
+    // }
+    // console.log(showLinks);
+    if (showLinks) {
+      setShowLinks(!showLinks);
+    }
+    linksContainerRef.current.style.height = '0px';
+  }
 
   // scroll event
   const [hide, setHide] = useState(false);
@@ -81,6 +106,7 @@ const Navbar = () => {
     return () => documentRef.current.removeEventListener('scroll', throttleScroll);
   }, [pageY]);
 
+  // useNavigate
   const navigate = useNavigate();
 
   const goToHome = () => {
@@ -99,8 +125,8 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
               <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' />
             </div>
-            <button className='nav-toggle' onClick={toggleLinks}>
-              <FaBars />
+            <button className='nav-toggle' onClick={toggleLinks} onBlur={test}>
+              <FaBars onClick={test}/>
             </button>
           </div>
 
@@ -124,7 +150,6 @@ const Navbar = () => {
             ))}
             </ul>
           </div>
-
 
         </div>
       </Navcenter>
