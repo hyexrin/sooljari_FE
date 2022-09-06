@@ -265,7 +265,7 @@ nav {
   font-family: GangwonEduPowerExtraBoldA;
   background: var(--clr-white);
   /* box-shadow: var(--light-shadow); */
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
@@ -369,6 +369,7 @@ nav {
   nav {
     background: var(--clr-white);
     /* box-shadow: var(--light-shadow); */
+    z-index: 100;
     position: fixed;
     width: 100%;
     top: 0;
@@ -416,6 +417,7 @@ nav {
 
   .links li {
     /* background-color: black; */
+    color: rgb(66, 66, 66);
     display: inline-block;
     flex-direction: row;
     align-items: center;
@@ -438,30 +440,24 @@ nav {
     float: left;
   }
 
-  .social-icons a {
-    margin: 0 0.5rem;
-    color: var(--clr-primary-5);
-    transition: var(--transition);
-  }
-
-  .social-icons a:hover {
-    color: var(--clr-primary-6);
-  }
-
   .li-box {
     display: inline;
   }
 
   .li-li {
     margin-left: 1rem;
-    color: var(--clr-primary-5);
+    /* color: rgb(194, 194, 194); */
   }
 
-  /* .search-icon {
-    margin: 0 0.5rem;
+  .social-icon {
+    height: 1.5rem;
+    color: rgb(66, 66, 66);
+  }
+
+  .social-icon:hover {
     color: var(--clr-primary-5);
-    transition: var(--transition);
-  } */
+  }
+  
 }
 
 /*
@@ -514,14 +510,13 @@ Main-event
 .event-box {
   background-color: var(--clr-primary-5);
   width: 100%;
+  text-align: center;
   /* height: 30rem; */
 }
 
 .event-img {
   width: 100%;
 }
-
-
 
 /*
 =============== 
@@ -530,13 +525,34 @@ Product-All (main)
 */
 
 .ProductCard {
-  background-color: white;
   transition: all 0.2s linear;
   margin-bottom: 14px;
+  z-index: 10;
+}
+
+.productCard-img-box {
+  border-radius: 5%;
+  overflow: hidden;
 }
 
 .productImg {
   width: 100%;
+  border-radius: 5%;
+  z-index: 1;
+}
+
+.productImg:hover { 
+  transform: scale(1.05);
+  transition: 0.4s ease;  
+}
+
+.wrapper {
+  margin: 1.5rem 0;
+}
+
+.productCard-title, .productCard-price {
+  font-size: large;
+  font-weight: bold;
 }
 
 /*
@@ -555,10 +571,6 @@ Recommend
   /* background-color: red; */
   /* font-family: GmarketSansMedium; */
   padding: 0.7rem;
-}
-
-.recommend-title {
-  /* font-family: GmarketSansBold; */
 }
 
 /*

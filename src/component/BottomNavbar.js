@@ -1,7 +1,5 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { botNav } from '../data/data';
 import GoToCard from './GoToCard';
 

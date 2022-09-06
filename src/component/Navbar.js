@@ -36,8 +36,9 @@ left: 0;
 z-index: 1;
 width: 100%;
 transition: 0.3s ease;
+background-color: #fff;
 &.hide {
-  background-color: hsla(0, 0%, 100%, 0.596);
+  background-color: hsla(0, 0%, 100%, 0.8);
 }
 	`}
 `;
@@ -72,13 +73,6 @@ const Navbar = () => {
   }, [showLinks]);
 
   const test = () => {
-    // if (showLinks) {
-    //   linksContainerRef.current.style.height = `${linksHeight}px`;
-    //   setShowLinks(!showLinks);
-    // } else {
-    //   linksContainerRef.current.style.height = '0px';
-    // }
-    // console.log(showLinks);
     if (showLinks) {
       setShowLinks(!showLinks);
     }

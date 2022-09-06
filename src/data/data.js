@@ -1,5 +1,5 @@
 import React from 'react'
-import { faUser, faMagnifyingGlass, faHouse } from "@fortawesome/free-solid-svg-icons"
+import { faUser, faMagnifyingGlass, faHouse, faCommentDots } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const links = [
@@ -29,12 +29,12 @@ export const social = [
   {
     id: 1,
     url: '/search',
-    icon: <FontAwesomeIcon icon={faMagnifyingGlass} size='2x'/>
+    icon: <FontAwesomeIcon icon={faMagnifyingGlass} className="social-icon"/>
   },
   {
     id: 2,
     url: '/mypage',
-    icon: <FontAwesomeIcon icon={faUser} size='2x'/>
+    icon: <FontAwesomeIcon icon={faUser} className="social-icon"/>
   }
 ]
 
@@ -55,9 +55,9 @@ export const botNav = [
   },
   {
     id: 2,
-    title: '홈',
-    url: '/',
-    icon: <FontAwesomeIcon icon={faUser} className='botnav-icon'/>,
+    title: '커뮤니티',
+    url: '/community',
+    icon: <FontAwesomeIcon icon={faCommentDots} className='botnav-icon'/>,
     choice_img: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png'
   },
   {

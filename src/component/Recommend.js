@@ -3,7 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { sool } from '../data/sool-data';
 import ProductCard from './ProductCard';
 
-const Recommend = () => {
+const Recommend = ({product}) => {
+
     return (
         <div className='recommend-box'>
 
@@ -14,8 +15,8 @@ const Recommend = () => {
                 </Row>
 
                 <Row>
-                    {sool.map((product) => (
-                        <Col lg={3} md={4} xs={6}><ProductCard product={product} /></Col>                        
+                    {product?.map((product) => (
+                        <Col key={product?.id} lg={3} md={4} xs={6}><ProductCard product={product} /></Col>                        
                     ))}
                 </Row>
 
