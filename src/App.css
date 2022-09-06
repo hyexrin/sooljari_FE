@@ -582,13 +582,28 @@ Product Detail
 .Detail-box {
   font-family: GmarketSansMedium;
   padding: 2rem;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
+}
+
+.Detail-img-box {
+  /* background-color: red; */
+  width: 500px;
 }
 
 .Detail-img {
   width: 100%;
 }
+
+.imgTest {
+  width: 100%;
+  height: 600px;
+}
+
+/* .Detail-name-box {
+  background-color: blue;
+} */
+
 
 /*
 =============== 

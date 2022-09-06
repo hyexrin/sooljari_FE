@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 
@@ -6,17 +6,38 @@ const ProductDetail = () => {
     let { id } = useParams();
     console.log("id? ", id);
 
+    const [product, setProduct] = useState(null);
+
+    const getProductDetail = () => {
+        fetch(`/api/products/${id}`)
+            .then(res => res.json())
+            .then(m => setProduct(m))
+    }
+
+    useEffect(() => {
+        getProductDetail();
+        console.log(product);
+    }, [])
+
     return (
         <div className='Detail-div'>
             <Container className='Detail-box'>
                 <Row>
-                    <Col lg={6} xs={12}><img className='Detail-img' src='https://tohomeimage.thehyundai.com/PD/PDImages/O/1/0/6/O02101008601_01.jpg?RS=720x864' /></Col>
+                    <Col lg={6} xs={12}>
+                        <div className='Detail-img-box'>
+                            <img className='Detail-img' src={product?.image} />
+                            {/* <div className='imgTest'>hello</div> */}
+                        </div>
+                    </Col>
+
                     <Col lg={6}>
-                        <div>상품ID : 00{id}</div> <hr/>
-                        <h1>주류 001</h1>
-                        <h2>\13,000</h2>
-                        <h3>12도</h3> <hr/>
-                        <div>이 술은 ~</div>
+                        <div className='Detail-name-box'>
+                            <div>상품ID : 00{id}</div> <hr />
+                            <h2>{product?.name}</h2>
+                            <h3>{product?.price}원</h3>
+                            <h3>도수: {product?.proof}%</h3> <hr />
+                            <div>{product?.description}</div>
+                        </div>
                     </Col>
                 </Row>
             </Container>
