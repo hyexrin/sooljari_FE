@@ -4,7 +4,7 @@ import Navbar from './component/Navbar';
 import Main from './page/Main'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Test from './Test';
-import ProductDetail from './page/Porudct/ProductDetail';
+import ProductDetail from './page/Proudct/ProductDetail';
 import { useState, useEffect } from 'react';
 import Login from './page/Login';
 import Search from './page/Search';
@@ -15,7 +15,9 @@ import Product from './page/admin/product/Product';
 import Member from './page/admin/member/Member';
 import Admin from './page/admin/Admin';
 import ProductInsert from './page/admin/product/ProductInsert';
+import TestCreate from './page/admin/product/TestCreate';
 import Community from './page/community/Community';
+import TestComponent from './page/TestComponent';
 
 function App() {
 
@@ -78,6 +80,7 @@ function App() {
 
         {/* Test 페이지 */}
         <Route path='/test' element={<Test />} />
+        <Route path='/testComponent' element={<TestComponent/>}/>
 
       </Routes>
       <BottomNavbar />

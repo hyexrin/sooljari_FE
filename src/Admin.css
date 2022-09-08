@@ -7,6 +7,7 @@
     flex-grow: 1;
     padding: 3rem;
 }
+
 .admin-main-title {
     font-family: GangwonEduPowerExtraBoldA;
 }
@@ -22,6 +23,55 @@
     margin: 1rem;
 }
 
+
+/*
+=============== 
+Admin Product
+===============
+*/
+
+.admin-product-box {
+    margin-top: 1rem;
+}
+
+.admin-product-title {
+    font-family: GangwonEduPowerExtraBoldA;
+}
+
+.admin-product-plus-box, .admin-product-minus-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(152, 152, 152);
+    color: white;
+    height: 2rem;
+    border-radius: 10px;
+    margin: 0.2rem;
+}
+
+.admin-product-list-row {
+    margin: 1rem 0;
+}
+
+/*
+=============== 
+Admin ProductList
+===============
+*/
+
 .admin-product-img {
-    width: 100%;
+    width: 60%;
+}
+
+.admin-productList-box {
+    /* margin: 1rem; */
+    /* background-color: pink; */
+    line-height: auto;
+    border-bottom: 1px solid rgb(203, 203, 203);
+}
+
+.admin-productList-col {
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
 }
