@@ -1,133 +1,132 @@
-import React, { Component } from 'react'
-import { Button, Form } from 'react-bootstrap'
-import { Container, Row, Col } from 'react-bootstrap'
+import React, { useState } from 'react';
 import ProductService from './admin/service/ProductService';
+import { Button, Form } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-export default class TestComponent extends Component {
-    constructor(props) {
-    super(props);
+function TestComponent(props) {
+  const [name, setName] = useState('');
+  const [image, setImage] = useState('');
+  const [price, setPrice] = useState('');
+  const [proof, setProof] = useState('');
+  const [area, setArea] = useState('');
+  const [description, setDescription] = useState('');
 
-    this.state = {
-        name: '',
-        image: '',
-        price: '',
-        proof: '',
-        area: '',
-        description: ''
-    }
 
-    this.changeNameHandler = this.changeNameHandler.bind(this);
-    this.changeImageHandler = this.changeImageHandler.bind(this);
-    this.changePriceHandler = this.changePriceHandler.bind(this);
-    this.changeProofHandler = this.changeProofHandler.bind(this);
-    this.changeAreaHandler = this.changeAreaHandler.bind(this);
-    this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
-    this.createProduct = this.createProduct.bind(this);
+  const changeNameHandler = (event) => {
+    setName(event.target.value);
   }
 
-  changeNameHandler = (event) => {
-    this.setState({name: event.target.value});
+  const changeImageHandler = (event) => {
+    setImage(event.target.value);
   }
 
-  changeImageHandler = (event) => {
-    this.setState({image: event.target.value});
+  const changePriceHandler = (event) => {
+    setPrice(event.target.value);
   }
 
-  changePriceHandler = (event) => {
-    this.setState({price: event.target.value});
+  const  changeProofHandler = (event) => {
+    setProof(event.target.value);
   }
 
-  changeProofHandler = (event) => {
-    this.setState({proof: event.target.value});
+  const changeAreaHandler = (event) => {
+    setArea(event.target.value);
   }
 
-  changeAreaHandler = (event) => {
-    this.setState({area: event.target.value});
+  const changeDescriptionHandler = (event) => {
+    setDescription(event.target.value);
   }
 
-  changeDescriptionHandler = (event) => {
-    this.setState({description: event.target.value});
-  }
-
-  createProduct = (event) => {
+  const createProduct = (event) => {
+    console.log("createProduct")
     event.preventDefault();
+
     let product = {
-        name: this.state.name,
-        image: this.state.image,
-        price: this.state.price,
-        proof: this.state.proof,
-        area: this.state.area,
-        description: this.state.description
-    };
-    console.log("product => " + JSON.stringify(product));
-    ProductService.createProduct(product).then(res => {
-        this.props.history.push('/api/products');
-    });
+      name: name,
+      image: image,
+      price: price,
+      proof: proof,
+      area: area,
+      description: description
   }
-  
-  cancel() {
-    this.props.history.push('/api/products');
-  }
-  render() {
-    return (
-      <Container>
-      <Form>
-          <div><h1>상품 등록</h1></div>
-  
-          <Form.Group as={Row}>
-              <Col>
-                  <Form.Label>이름</Form.Label>
-                  <Form.Control type='text' placeholder='상품 이름' value={this.state.name} onChange={this.changeNameHandler}/>
-              </Col>
-          </Form.Group>
-  
-          <Form.Group as={Row}>
-              <Col>
-                  <Form.Label>이미지 URL</Form.Label>
-                  <Form.Control type='text' placeholder='상품 이미지' value={this.state.image} onChange={this.changeImageHandler}/>
-              </Col>
-          </Form.Group>
-
-          <Form.Group as={Row}>
-              <Col>
-                  <Form.Label>가격</Form.Label>
-                  <Form.Control type='text' placeholder='상품 가격' value={this.state.price} onChange={this.changePriceHandler}/>
-              </Col>
-          </Form.Group>
-  
-          <Form.Group as={Row}>
-              <Col>
-                  <Form.Label>도수</Form.Label>
-                  <Form.Control type='text' placeholder='상품 도수' value={this.state.proof} onChange={this.changeProofHandler}/>
-              </Col>
-          </Form.Group>
-  
-          <Form.Group as={Row}>
-              <Col>
-                  <Form.Label>지역</Form.Label>
-                  <Form.Control type='text' placeholder='상품 지역' value={this.state.area} onChange={this.changeAreaHandler}/>
-              </Col>
-          </Form.Group>
-  
-          <Form.Group as={Row}>
-              <Col>
-                  <Form.Label>설명</Form.Label>
-                  <Form.Control type='text' placeholder='상품 설명' value={this.state.description} onChange={this.changeDescriptionHandler}/>
-              </Col>
-          </Form.Group>
-  
-          <div>
-              <Button variant="secondary" type="submit" onClick={this.createProduct}>
-                  상품 등록
-              </Button>
-
-              <Button variant="secondary" type="submit" onClick={this.cancel.bind(this)}>
-                  취소
-              </Button>
-          </div>
-      </Form>
-  </Container>
-      
-    )
-  }
+  console.log(product.name);
+  console.log("product => " + JSON.stringify(product));
+  ProductService.createProduct(product).then(res => {
+    props.history.push('/api/products');
+  })
+  navigate('/admin/product');
 }
+  
+  const cancel = () => {
+    props.history.push('/api/products');
+  }
+
+  const navigate = useNavigate();
+
+  const product = () => {
+    navigate('/admin/product')
+  }
+  return (
+ <Container>
+          <Form onSubmit={product}>
+              <div><h1>상품 등록</h1></div>
+      
+              <Form.Group as={Row}>
+                  <Col>
+                      <Form.Label>이름</Form.Label>
+                      <Form.Control type='text' placeholder='상품 이름' onChange={changeNameHandler}/>
+                  </Col>
+              </Form.Group>
+      
+              <Form.Group as={Row}>
+                  <Col>
+                      <Form.Label>이미지 URL</Form.Label>
+                      <Form.Control type='file' placeholder='상품 이미지' onChange={changeImageHandler}/>
+                  </Col>
+              </Form.Group>
+    
+              <Form.Group as={Row}>
+                  <Col>
+                      <Form.Label>가격</Form.Label>
+                      <Form.Control type='text' placeholder='상품 가격' onChange={changePriceHandler}/>
+                  </Col>
+              </Form.Group>
+      
+              <Form.Group as={Row}>
+                  <Col>
+                      <Form.Label>도수</Form.Label>
+                      <Form.Control type='text' placeholder='상품 도수' onChange={changeProofHandler}/>
+                  </Col>
+              </Form.Group>
+      
+              <Form.Group as={Row}>
+                  <Col>
+                      <Form.Label>지역</Form.Label>
+                      <Form.Control type='text' placeholder='상품 지역' onChange={changeAreaHandler}/>
+                  </Col>
+              </Form.Group>
+      
+              <Form.Group as={Row}>
+                  <Col>
+                      <Form.Label>설명</Form.Label>
+                      <Form.Control type='text' placeholder='상품 설명' onChange={changeDescriptionHandler}/>
+                  </Col>
+              </Form.Group>
+
+      
+              <div>
+                  <Button variant="secondary" type="submit" onClick={createProduct}>
+                      상품 등록
+                  </Button>
+    
+                  <Button variant="secondary" type="submit" onClick={cancel}>
+                      취소
+                  </Button>
+              </div>
+          </Form>
+      </Container>
+          
+  );
+}
+
+export default TestComponent;
