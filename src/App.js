@@ -8,7 +8,7 @@ import ProductDetail from './page/Proudct/ProductDetail';
 import { useState, useEffect } from 'react';
 import Login from './page/Login';
 import Search from './page/Search';
-import Join from './page/Join';
+import JoinComponent from './page/JoinComponent';
 import BottomNavbar from './component/BottomNavbar';
 import PrivateRoute from './route/PrivateRoute';
 import Product from './page/admin/product/Product';
@@ -64,7 +64,7 @@ function App() {
         <Route path='/' element={<Main product={product}/>} />
 
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
-        <Route path='/join' element={<Join />} />
+        <Route path='/join' element={<JoinComponent />} />
 
         <Route path='/category' element={<Category product={product}/>} />
         <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} />} />

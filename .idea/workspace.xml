@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40612ce1-2de6-4a35-903d-c576ea0e0fd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/page/JoinComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/JoinService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ETTUNz6UDciPKVNwYf1AMFdwqA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/82106/Desktop/sooljari_FE&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\82106\Desktop\sooljari_FE\src\page" />
+      <recent name="C:\Users\82106\Desktop\sooljari_FE\src\page\Proudct" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="sooljari_FE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="sooljari_FE" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40612ce1-2de6-4a35-903d-c576ea0e0fd3" name="Changes" comment="" />
+      <created>1662618589336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662618589336</updated>
+      <workItem from="1662618591400" duration="2559000" />
+      <workItem from="1662625190736" duration="4445000" />
+      <workItem from="1662733425548" duration="632000" />
+      <workItem from="1663200883152" duration="7737000" />
+      <workItem from="1663223287654" duration="159000" />
+      <workItem from="1663223510878" duration="9000" />
+      <workItem from="1663223572884" duration="19000" />
+      <workItem from="1663223647229" duration="6618000" />
+      <workItem from="1663230336865" duration="6065000" />
+      <workItem from="1663311626353" duration="1555000" />
+      <workItem from="1663315680632" duration="4855000" />
+      <workItem from="1663323274414" duration="251000" />
+      <workItem from="1663323535567" duration="22000" />
+      <workItem from="1663324253158" duration="573000" />
+      <workItem from="1663334693087" duration="20000" />
+      <workItem from="1663334780851" duration="329000" />
+      <workItem from="1663342098902" duration="63000" />
+      <workItem from="1663342289617" duration="663000" />
+      <workItem from="1663343028260" duration="481000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
