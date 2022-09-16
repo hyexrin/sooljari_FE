@@ -27,6 +27,7 @@ const Product = ({ product }) => {
 
             <Row>
                 <Col>상품 ID</Col>
+                <Col>상품 카테고리</Col>
                 <Col>상품 이름</Col>
                 <Col>상품 이미지</Col>
                 <Col>가격</Col>

@@ -457,7 +457,7 @@ nav {
   .social-icon:hover {
     color: var(--clr-primary-5);
   }
-  
+
 }
 
 /*
@@ -471,20 +471,20 @@ Bottom Nav
     display: none;
   }
 }
-  
-  .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    /* width: 100%; */
-    height: 56px;
-    background-color: var(--clr-white);
-    /* background-color: red; */
-    text-align: center;
-    border-top: thin solid rgb(247, 247, 247);
-  }
-  
 
-  /*
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  /* width: 100%; */
+  height: 56px;
+  background-color: var(--clr-white);
+  /* background-color: red; */
+  text-align: center;
+  border-top: thin solid rgb(247, 247, 247);
+}
+
+
+/*
 =============== 
 Bottom Nav Icon
 ===============
@@ -541,16 +541,17 @@ Product-All (main)
   z-index: 1;
 }
 
-.productImg:hover { 
+.productImg:hover {
   transform: scale(1.05);
-  transition: 0.4s ease;  
+  transition: 0.4s ease;
 }
 
 .wrapper {
   margin: 1.5rem 0;
 }
 
-.productCard-title, .productCard-price {
+.productCard-title,
+.productCard-price {
   font-size: large;
   font-weight: bold;
 }
@@ -769,7 +770,7 @@ Join
     font-weight: bold;
     /* background-color: red; */
   }
-  
+
   .join-input {
     width: 100%;
     height: 32px;
@@ -780,17 +781,193 @@ Join
     background-color: var(--clr-primary-9);
     margin-left: 0;
   }
-  
+
   .join-btn-box {
     /* background-color: red; */
     text-align: center;
   }
-  
+
   .join-btn {
     width: 30rem;
     height: 3rem;
     border-radius: 10px;
     background-color: var(--clr-primary-5);
   }
-  
+
+}
+
+/* 
+============
+Community
+============
+*/
+
+.Community-box {
+  margin-top: 0px;
+  /* background-color: red; */
+}
+
+.community-card-box {
+  margin: 0.5rem 0;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 15px;
+  box-shadow: var(--light-shadow);
+  /* display: inline-block; */
+}
+
+.writer-box {
+  display: flex;
+  /* border: 1px solid blue; */
+  align-items: center;
+  padding: 0.5rem;
+
+}
+
+.writer-box>p {
+  margin: 0 5px;
+  color: var(--clr-primary-5);
+  font-weight: bold;
+}
+
+.content-img-box {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  float: left;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.content-img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.title-box,
+.content-like-comment {
+  padding: 0.5rem;
+}
+
+.content-icon {
+  margin: 0 4px;
+  height: 20px;
+}
+
+.content-box {
+  padding: 0.5rem;
+  font-size: small;
+}
+
+@media screen and (min-width: 992px) {
+
+  .Community-box {
+    margin-top: 2rem;
+  }
+
+  .community-card-box {
+    margin: 0.5rem 0;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 10px;
+    box-shadow: var(--light-shadow);
+    /* display: inline-block; */
+  }
+
+  .community-card-box:hover {
+    transform: scale(1.01);
+    transition: 0.2s ease;
+    box-shadow: var(--dark-shadow);
+  }
+
+  .writer-box {
+    display: flex;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .writer-box>p {
+    margin: 0 5px;
+    color: var(--clr-primary-5);
+    font-weight: bold;
+  }
+
+  .content-img-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    float: left;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .content-img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  .title-box,
+  .content-like-comment {
+    padding: 0.5rem;
+  }
+
+  .content-icon {
+    margin: 0 3px;
+  }
+
+  .content-box {
+    padding: 0.5rem;
+    font-size: small;
+  }
+}
+
+/* 
+================
+mypage
+================
+*/
+
+.mypage-box {
+  background-color: rgb(235, 235, 235);
+}
+
+.mypage-title-box, .mypage-profile-box, .mypage-calender-box  {
+  background-color: white;
+  margin-bottom: 0.5rem;
+}
+
+.mypage-title-box {
+  padding-top: 1rem;
+}
+
+.mypage-profile-box {
+  padding: 1rem 0;
+}
+
+.mypage-profile-img-box {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 100%;
+  background-color: var(--clr-primary-5);
+}
+
+.mypage-calender-title {
+  display: flex;
+  align-items: center;
+}
+
+.mypage-calender-icon {
+  padding: 0.5rem;
+}
+
+.react-calendar-heatmap .color-scale-1 { fill: var(--clr-primary-9); }
+.react-calendar-heatmap .color-scale-2 { fill: var(--clr-primary-7); }
+.react-calendar-heatmap .color-scale-3 { fill: var(--clr-primary-5) }
+.react-calendar-heatmap .color-scale-4 { fill: var(--clr-primary-3) }
+
+.container {
+  white-space: pre-line;
 }
