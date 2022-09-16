@@ -66,59 +66,60 @@ function ProductInsert(props) {
     navigate('/admin/product')
   }
   return (
- <Container>
+ <Container className='admin-product-list-box'>
           <Form onSubmit={product}>
-              <div><h1>상품 등록</h1></div>
+              <div className='admin-product-list-title-box'><h1 className='admin-product-title'>상품 등록</h1></div>
       
               <Form.Group as={Row}>
-                  <Col>
+                  <Col className='admin-product-list-col'>
                       <Form.Label>이름</Form.Label>
-                      <Form.Control type='text' placeholder='상품 이름' onChange={changeNameHandler}/>
+                      <Form.Control className='admin-product-list-input' type='text' placeholder='상품 이름' onChange={changeNameHandler}/>
                   </Col>
               </Form.Group>
       
               <Form.Group as={Row}>
-                  <Col>
+                  <Col className='admin-product-list-col'>
                       <Form.Label>이미지 URL</Form.Label>
-                      <Form.Control type='file' placeholder='상품 이미지' onChange={changeImageHandler}/>
+                      {/* <Form.Control className='admin-product-list-input' type='file' placeholder='상품 이미지' onChange={changeImageHandler}/> */}
+                      <Form.Control className='admin-product-list-input' type='text' placeholder='상품 이미지' onChange={changeImageHandler}/>
                   </Col>
               </Form.Group>
     
               <Form.Group as={Row}>
-                  <Col>
+                  <Col className='admin-product-list-col'>
                       <Form.Label>가격</Form.Label>
-                      <Form.Control type='text' placeholder='상품 가격' onChange={changePriceHandler}/>
+                      <Form.Control className='admin-product-list-input' type='text' placeholder='상품 가격' onChange={changePriceHandler}/>
                   </Col>
               </Form.Group>
       
               <Form.Group as={Row}>
-                  <Col>
+                  <Col className='admin-product-list-col'>
                       <Form.Label>도수</Form.Label>
-                      <Form.Control type='text' placeholder='상품 도수' onChange={changeProofHandler}/>
+                      <Form.Control className='admin-product-list-input' type='text' placeholder='상품 도수' onChange={changeProofHandler}/>
                   </Col>
               </Form.Group>
       
               <Form.Group as={Row}>
-                  <Col>
+                  <Col className='admin-product-list-col'>
                       <Form.Label>지역</Form.Label>
-                      <Form.Control type='text' placeholder='상품 지역' onChange={changeAreaHandler}/>
+                      <Form.Control className='admin-product-list-input' type='text' placeholder='상품 지역' onChange={changeAreaHandler}/>
                   </Col>
               </Form.Group>
       
               <Form.Group as={Row}>
-                  <Col>
+                  <Col className='admin-product-list-col'>
                       <Form.Label>설명</Form.Label>
-                      <Form.Control type='text' placeholder='상품 설명' onChange={changeDescriptionHandler}/>
+                      <Form.Control className='admin-product-list-input' type='text' placeholder='상품 설명' onChange={changeDescriptionHandler}/>
                   </Col>
               </Form.Group>
 
       
-              <div>
-                  <Button variant="secondary" type="submit" onClick={createProduct}>
+              <div className='admin-product-list-button-box'>
+                  <Button variant="secondary" className='admin-product-list-button' type="submit" onClick={createProduct}>
                       상품 등록
                   </Button>
     
-                  <Button variant="secondary" type="submit" onClick={cancel}>
+                  <Button variant="secondary" className='admin-product-list-button' type="submit" onClick={cancel}>
                       취소
                   </Button>
               </div>

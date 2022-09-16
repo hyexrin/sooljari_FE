@@ -59,6 +59,15 @@ Admin ProductList
 ===============
 */
 
+.admin-product-list-box {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-product-list-title-box {
+    text-align: center;
+}
 .admin-product-img {
     width: 60%;
 }
@@ -74,4 +83,21 @@ Admin ProductList
     /* background-color: yellow; */
     display: flex;
     align-items: center;
+}
+
+.admin-product-list-button-box {
+    margin: 1rem;
+}
+
+.admin-product-list-col {
+    margin-bottom: 1rem;
+}
+
+.admin-product-list-input {
+    width: 40rem;
+}
+
+.admin-product-list-button {
+    margin: 0.5rem;
+    width: 100%;
 }
