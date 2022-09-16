@@ -18,6 +18,7 @@ import ProductInsert from './page/admin/product/ProductInsert';
 import TestCreate from './page/admin/product/TestCreate';
 import Community from './page/community/Community';
 import TestComponent from './page/TestComponent';
+import Category from './page/Category';
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
         <Route path='/join' element={<Join />} />
 
+        <Route path='/category' element={<Category product={product}/>} />
         <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} />} />
         <Route path='/community' element={<Community />}/>
         <Route path='/search' element={<Search />} />
