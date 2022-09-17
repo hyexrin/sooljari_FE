@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Test from './Test';
 import ProductDetail from './page/Proudct/ProductDetail';
 import { useState, useEffect } from 'react';
+import LoginComponent from './page/LoginComponent';
 import Login from './page/Login';
 import Search from './page/Search';
 import JoinComponent from './page/JoinComponent';
