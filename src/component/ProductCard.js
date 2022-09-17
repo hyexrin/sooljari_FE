@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const ProductCard = ({ product }) => {
 
@@ -18,8 +20,11 @@ const ProductCard = ({ product }) => {
       </div>
       
       <div className='wrapper'>
-        <div className='productCard-title'>{product?.name}</div>
-        <div className='productCard-price'>{product?.price}원</div>
+        <div className='productCard-title'>{product?.name}</div> <br/>
+        <div className='productCard-price'><FontAwesomeIcon icon={faStar} className='star-icon'/>{product?.price}원</div>
+        
+
+        <div className='productCard-description'>{product?.description}</div>
       </div>
 
     </div>

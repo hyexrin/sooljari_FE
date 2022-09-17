@@ -121,7 +121,7 @@ const Navbar = () => {
               <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' />
             </div>
             <button className='nav-toggle' onClick={toggleLinks} onBlur={test}>
-              <FaBars onClick={test}/>
+              <FaBars onClick={test} />
             </button>
           </div>
 
@@ -142,7 +142,7 @@ const Navbar = () => {
             <ul>
               {social.map((socialIcon) => (
                 <NavLi icon={socialIcon} />
-            ))}
+              ))}
             </ul>
           </div>
 

@@ -92,11 +92,9 @@ function ProductInsert(props) {
             <Form.Label>카테고리</Form.Label> <br/>
             {/* <Form.Control className='admin-product-list-input' type='text' placeholder='카테고리' onChange={changeCategoryHandler}/> */}
             <select onChange={changeCategoryHandler}>
-              <option>카테고리를 선택해주세요.</option>
-              <option>탁주</option>
-              <option>약·청주</option>
-              <option>과실주</option>
-              <option>증류주</option>
+              {PRODUCT_CATEGORY.map((category)=>(
+                <option>{category.value}</option>
+              ))}
             </select>
           </Col>
         </Form.Group>

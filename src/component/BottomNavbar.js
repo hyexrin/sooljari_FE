@@ -6,14 +6,14 @@ import GoToCard from './GoToCard';
 const BottomNavbar = () => {
 
     return (
-        <Container className='bottom-nav'>
+        <div className='bottom-nav'>
             
             <Row>
                 {botNav.map((icon)=> (
                     <Col><GoToCard icon={icon} /></Col>
                 ))}
             </Row>
-        </Container>
+        </div>
     )
 }
 
