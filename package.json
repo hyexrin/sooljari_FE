@@ -17,6 +17,7 @@
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-bootstrap-sweetalert": "^5.2.0",
     "react-calendar-heatmap": "^1.9.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -25,6 +26,7 @@
     "react-tooltip": "^4.2.21",
     "styled-components": "^5.3.5",
     "styled-media-query": "^2.1.2",
+    "sweetalert2": "^11.4.33",
     "web-vitals": "^2.1.4"
   },
   "proxy": "http://localhost:8080/",

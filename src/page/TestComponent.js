@@ -1,132 +1,97 @@
 import React, { useState } from 'react';
-import ProductService from './admin/service/ProductService';
-import { Button, Form } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
+import LoginService from '../service/LoginService';
 
-function TestComponent(props) {
-  const [name, setName] = useState('');
-  const [image, setImage] = useState('');
-  const [price, setPrice] = useState('');
-  const [proof, setProof] = useState('');
-  const [area, setArea] = useState('');
-  const [description, setDescription] = useState('');
-
-
-  const changeNameHandler = (event) => {
-    setName(event.target.value);
-  }
-
-  const changeImageHandler = (event) => {
-    setImage(event.target.value);
-  }
-
-  const changePriceHandler = (event) => {
-    setPrice(event.target.value);
-  }
-
-  const  changeProofHandler = (event) => {
-    setProof(event.target.value);
-  }
-
-  const changeAreaHandler = (event) => {
-    setArea(event.target.value);
-  }
-
-  const changeDescriptionHandler = (event) => {
-    setDescription(event.target.value);
-  }
-
-  const createProduct = (event) => {
-    console.log("createProduct")
-    event.preventDefault();
-
-    let product = {
-      name: name,
-      image: image,
-      price: price,
-      proof: proof,
-      area: area,
-      description: description
-  }
-  console.log(product.name);
-  console.log("product => " + JSON.stringify(product));
-  ProductService.createProduct(product).then(res => {
-    props.history.push('/api/products');
-  })
-  navigate('/admin/product');
-}
-  
-  const cancel = () => {
-    props.history.push('/api/products');
-  }
+export default function TestComponent(props, {setAuthenticate}) {
 
   const navigate = useNavigate();
 
-  const product = () => {
-    navigate('/admin/product')
+  const goToJoin = () => {
+    navigate("/join");
+  };
+
+  // const loginUser = (evnet) => {
+  //     evnet.preventDefault();
+  //     console.log("Click!!");
+  //     setAuthenticate(true);
+  //     navigate("/mypage");
+  // };
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const changeEmailHandler = (event) => {
+    setEmail(event.target.value)
   }
+
+  const changePasswordHandler = (event) => {
+    setPassword(event.target.value)
+  }
+
+  const login = (event) => {
+    event.preventDefault();
+    let login = {
+      email: email,
+      password: password
+    };
+    console.log("login => " + JSON.stringify(login));
+    LoginService.login(login).then(res => {
+      setAuthenticate(true);
+      props.history.push('/');
+    
+    });
+    console.log("Click!!");
+    navigate("/mypage");
+
+  }
+
+  const loginUser = (evnet) => {
+    evnet.preventDefault();
+    console.log("Click!!");
+    setAuthenticate(true);
+    navigate("/mypage");
+};
+
   return (
- <Container>
-          <Form onSubmit={product}>
-              <div><h1>상품 등록</h1></div>
-      
-              <Form.Group as={Row}>
-                  <Col>
-                      <Form.Label>이름</Form.Label>
-                      <Form.Control type='text' placeholder='상품 이름' onChange={changeNameHandler}/>
-                  </Col>
-              </Form.Group>
-      
-              <Form.Group as={Row}>
-                  <Col>
-                      <Form.Label>이미지 URL</Form.Label>
-                      <Form.Control type='file' placeholder='상품 이미지' onChange={changeImageHandler}/>
-                  </Col>
-              </Form.Group>
-    
-              <Form.Group as={Row}>
-                  <Col>
-                      <Form.Label>가격</Form.Label>
-                      <Form.Control type='text' placeholder='상품 가격' onChange={changePriceHandler}/>
-                  </Col>
-              </Form.Group>
-      
-              <Form.Group as={Row}>
-                  <Col>
-                      <Form.Label>도수</Form.Label>
-                      <Form.Control type='text' placeholder='상품 도수' onChange={changeProofHandler}/>
-                  </Col>
-              </Form.Group>
-      
-              <Form.Group as={Row}>
-                  <Col>
-                      <Form.Label>지역</Form.Label>
-                      <Form.Control type='text' placeholder='상품 지역' onChange={changeAreaHandler}/>
-                  </Col>
-              </Form.Group>
-      
-              <Form.Group as={Row}>
-                  <Col>
-                      <Form.Label>설명</Form.Label>
-                      <Form.Control type='text' placeholder='상품 설명' onChange={changeDescriptionHandler}/>
-                  </Col>
-              </Form.Group>
+    <div>
+      <Container id="panel"  onSubmit={(evnet)=>loginUser(evnet)}>
+        <Form className='login-form'>
+          <div className='login-title'><h1>술자리</h1></div>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+            <Col sm>
+              <Form.Control className="login-input" type="text" placeholder="이메일 혹은 아이디"
+                onChange={changeEmailHandler} />
+            </Col>
+          </Form.Group>
 
-      
-              <div>
-                  <Button variant="secondary" type="submit" onClick={createProduct}>
-                      상품 등록
-                  </Button>
-    
-                  <Button variant="secondary" type="submit" onClick={cancel}>
-                      취소
-                  </Button>
-              </div>
-          </Form>
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+            <Col sm>
+              <Form.Control className="login-input" type="password" placeholder="비밀번호"
+                onChange={changePasswordHandler} />
+            </Col>
+          </Form.Group>
+          <br />
+
+          <div className='login-btn-box'>
+            <Button variant="secondary" type="submit" className='login-btn' onClick={login}>
+              로그인하기
+            </Button>
+          </div>
+
+          <div className='login-etc'>
+            <ul>
+              <li onClick={goToJoin} style={{ cursor: 'pointer' }}>회원가입</li>
+              <li>|</li>
+              <li style={{ cursor: 'pointer' }}>아이디 찾기</li>
+              <li>|</li>
+              <li style={{ cursor: 'pointer' }}>비밀번호 찾기</li>
+            </ul>
+          </div>
+
+        </Form>
       </Container>
-          
-  );
+    </div>
+  )
 }
-
-export default TestComponent;

@@ -55,16 +55,16 @@ export const botNav = [
   },
   {
     id: 2,
-    title: '커뮤니티',
-    url: '/community',
-    icon: <FontAwesomeIcon icon={faCommentDots} className='botnav-icon'/>,
+    title: '카테고리',
+    url: '/category',
+    icon: <FontAwesomeIcon icon={faBars} className='botnav-icon'/>,
     choice_img: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png'
   },
   {
     id: 3,
-    title: '카테고리',
-    url: '/category',
-    icon: <FontAwesomeIcon icon={faBars} className='botnav-icon'/>,
+    title: '커뮤니티',
+    url: '/community',
+    icon: <FontAwesomeIcon icon={faCommentDots} className='botnav-icon'/>,
     choice_img: 'https://cdn-icons-png.flaticon.com/512/1946/1946436.png'
   },
   {

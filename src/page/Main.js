@@ -2,6 +2,7 @@ import React from 'react'
 import Recommend from '../component/Recommend'
 
 const main = ({product}) => {
+    
     return (
         <div className='main-box'>
             <div className='event-box'>

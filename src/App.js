@@ -6,9 +6,9 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Test from './Test';
 import ProductDetail from './page/Proudct/ProductDetail';
 import { useState, useEffect } from 'react';
-import LoginComponent from './page/LoginComponent';
 import Login from './page/Login';
 import Search from './page/Search';
+import LoginComponent from './page/LoginComponent';
 import JoinComponent from './page/JoinComponent';
 import BottomNavbar from './component/BottomNavbar';
 import PrivateRoute from './route/PrivateRoute';
@@ -20,6 +20,7 @@ import TestCreate from './page/admin/product/TestCreate';
 import Community from './page/community/Community';
 import TestComponent from './page/TestComponent';
 import Category from './page/Category';
+import Swal from 'sweetalert2';
 
 function App() {
 
@@ -58,12 +59,34 @@ function App() {
     console.log(product);
   }, []);
 
+  useEffect(() => {
+  Swal.fire({
+    icon: "warning",
+    title: "모바일 버전으로 확인해주세요!",
+    text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
+    showCancelButton: true,
+    confirmButtonText: "확인",
+    cancelButtonText: "취소",
+}).then((res) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (res.isConfirmed) {
+       //삭제 요청 처리
+    }
+    else{
+        //취소
+    }
+});}, [])
+
+
+  
+
   return (
     <div>
       <Navbar />
       <Routes>
         <Route path='/' element={<Main product={product}/>} />
 
+        {/* <Route path='/login' element={<LoginComponent setAuthenticate={setAuthenticate} />} /> */}
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
         <Route path='/join' element={<JoinComponent />} />
 
@@ -83,7 +106,7 @@ function App() {
 
         {/* Test 페이지 */}
         <Route path='/test' element={<Test />} />
-        <Route path='/testComponent' element={<TestComponent/>}/>
+        <Route path='/testComponent' element={<TestComponent setAuthenticate={setAuthenticate}/>}/>
 
       </Routes>
       <BottomNavbar />
