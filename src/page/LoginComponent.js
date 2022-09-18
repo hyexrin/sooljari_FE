@@ -35,24 +35,40 @@ class LoginComponent extends Component {
         });
     }
 
+    // const Login = ({setAuthenticate}) => {
+    //     const navigate = useNavigate();
+
+    //     const goToJoin = () => {
+    //         navigate("/join");
+    //     };
+
+    //     const loginUser = (evnet) => {
+    //         evnet.preventDefault();
+    //         console.log("Click!!");
+    //         setAuthenticate(true);
+    //         navigate("/mypage");
+    //     }
+    // }
+
     render() {
-        const Login = ({setAuthenticate}) => {
-            const navigate = useNavigate();
+        // const Login = ({setAuthenticate}) => {
+        //     const navigate = useNavigate();
 
-            const goToJoin = () => {
-                navigate("/join");
-            };
+        //     const goToJoin = () => {
+        //         navigate("/join");
+        //     };
 
-            const loginUser = (evnet) => {
-                evnet.preventDefault();
-                console.log("Click!!");
-                setAuthenticate(true);
-                navigate("/mypage");
-            };
+        //     const loginUser = (evnet) => {
+        //         evnet.preventDefault();
+        //         console.log("Click!!");
+        //         setAuthenticate(true);
+        //         navigate("/mypage");
+        //     };
+            
 
             return (
                 <div>
-                    <Container id="panel">
+                    {/* <Container id="panel">
                         <Form className='login-form' onSubmit={(evnet)=>loginUser(evnet)}>
                             <div className='login-title'><h1>술자리</h1></div>
                             <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
@@ -87,10 +103,10 @@ class LoginComponent extends Component {
                             </div>
 
                         </Form>
-                    </Container>
+                    </Container> */}
                 </div>
             )
-        }
+        
     }
 }
 export default LoginComponent;
