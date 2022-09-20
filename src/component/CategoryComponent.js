@@ -7,7 +7,7 @@ export default function CategoryComponent({ categoryList }) {
       <div className='category-top'>
       <ul className='category-ul'>
           {categoryList.map((list) => (
-            <li className='category-li' >{list.name}</li>
+            <li className='category-li' key={list.id}>{list.name}</li>
           ))}
         </ul>
       </div>
@@ -15,7 +15,7 @@ export default function CategoryComponent({ categoryList }) {
       <div className='category-list-box'>
         <ul className='category-ul'>
           {categoryList.map((list) => (
-            <li className='category-li'>{list.name}</li>
+            <li className='category-li' key={list.id}>{list.name}</li>
           ))}
         </ul>
       </div>

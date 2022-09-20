@@ -7,7 +7,7 @@ import CategoryComponent from '../component/CategoryComponent'
 const Category = ({ product }) => {
 
     const categoryList = [
-        { di: 0, name: "전체보기" },
+        { id: 0, name: "전체보기" },
         { id: 1, name: "탁주" },
         { id: 2, name: "약·청주" },
         { id: 3, name: "과실주" },

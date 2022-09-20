@@ -108,6 +108,16 @@ const Navbar = () => {
     navigate("/");
   };
 
+  // 검색
+  const search = (event) => {
+    if (event.key === "Enter"){
+      // console.log("Enter key press", event.key);
+      // 입력한 검색어를 읽어와 url 변경
+      let keyword = event.target.value
+      navigate(`/?q=${keyword}`)
+    }
+  }
+
   return (
     <nav>
 
@@ -118,7 +128,8 @@ const Navbar = () => {
             {/* search 기능 */}
             <div className='search-wrap'>
               <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
-              <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' />
+              <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' onKeyPress={search} />
+              {/* <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' /> */}
             </div>
             <button className='nav-toggle' onClick={toggleLinks} onBlur={test}>
               <FaBars onClick={test} />
@@ -129,7 +140,7 @@ const Navbar = () => {
           <div className='links-container' ref={linksContainerRef}>
 
             <ul className='links' ref={linksRef}>
-              <li><img src={logo} className='logo' alt='logo' onClick={goToHome} /></li>
+              <li><img src={logo} className='logo' alt='logo' onClick={(event) => goToHome(event)} /></li>
               {/* data에서 Nav목록 가져오기 */}
               {links.map((link) => (
                 <NavLi icon={link} />

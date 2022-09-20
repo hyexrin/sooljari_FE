@@ -21,6 +21,8 @@ import Community from './page/community/Community';
 import TestComponent from './page/TestComponent';
 import Category from './page/Category';
 import Swal from 'sweetalert2';
+import { useSearchParams } from 'react-router-dom';
+import ProductSearch from './page/Proudct/ProductSearch';
 
 function App() {
 
@@ -36,7 +38,7 @@ function App() {
       .then(res => res.text())
       .then(m => setMessage(m))
   }, [])
-  console.log(message);
+  // console.log(message);
 
   const [test, setTest] = useState("");
   useEffect(() => {
@@ -44,20 +46,36 @@ function App() {
       .then(res => res.text())
       .then(m => setTest(m))
   }, [])
-  console.log(test);
+  // console.log(test);
 
   const [product, setProduct] = useState();
+  const [productSearch, setProductSearch] = useState();
+  const [query, setQuery] = useSearchParams();
 
   const getProducts = () => {
-    fetch("/api/products")
+    fetch(`/api/products/`)
       .then(res => res.json())
       .then(m => setProduct(m))
   }
 
   useEffect(() => {
     getProducts();
-    console.log(product);
-  }, []);
+    console.log("product", product);
+  }, [query]);
+
+  // const getProductsSearch = () => {
+  //   let serchQuery = query.get("q") || "";
+  //   console.log("쿼리값은?", serchQuery)
+  //   fetch(`/api/products?q=${serchQuery}`)
+  //     .then(res => res.json())
+  //     .then(m => setProductSearch(m))
+  // }
+
+  // useEffect(() => {
+  //   getProductsSearch();
+  //   console.log("productSearch", productSearch);
+  // }, [query]);
+
 
   useEffect(() => {
   Swal.fire({
@@ -78,8 +96,6 @@ function App() {
 });}, [])
 
 
-  
-
   return (
     <div>
       <Navbar />
@@ -97,6 +113,7 @@ function App() {
 
         {/* 상품 관련 페이지 */}
         <Route path='/product/:id' element={<ProductDetail />} />
+        <Route path='/productSearch/:keyword' element={<ProductSearch />}/>
 
         {/* 관리자 페이지 */}
         <Route path='/admin' element={<Admin />} />

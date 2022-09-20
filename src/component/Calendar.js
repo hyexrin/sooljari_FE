@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
@@ -16,9 +16,13 @@ const App = () => {
 
   let today = year + "-" + todayMonth + "-" + todayDate;
   let todayPlusFourMonth = year + "-" + (todayMonth + 4) + "-" + todayDate;
-  console.log(now, year, todayMonth, todayDate);
-  console.log(today);
-  console.log(todayPlusFourMonth);
+
+  useEffect(()=>{
+    console.log(now, year, todayMonth, todayDate);
+    console.log(today);
+    console.log(todayPlusFourMonth);
+  }, [])
+ 
 
 
   return (
