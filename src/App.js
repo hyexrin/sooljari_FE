@@ -34,19 +34,19 @@ function App() {
 
   const [message, setMessage] = useState("")
   useEffect(() => {
-    fetch("/test")
+    fetch("/api/testConnection")
       .then(res => res.text())
       .then(m => setMessage(m))
   }, [])
-  // console.log(message);
+  console.log(message);
 
   const [test, setTest] = useState("");
   useEffect(() => {
-    fetch("/test/hello")
+    fetch("/api")
       .then(res => res.text())
       .then(m => setTest(m))
   }, [])
-  // console.log(test);
+  console.log(test);
 
   const [product, setProduct] = useState();
   const [productSearch, setProductSearch] = useState();
