@@ -23,6 +23,7 @@ import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
 import CommunityInsert from './page/community/CommunityInsert';
+import Recommandation from './page/Recommandation'
 
 function App() {
 
