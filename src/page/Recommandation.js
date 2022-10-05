@@ -1,9 +1,15 @@
+import axios from 'axios';
 import React from 'react'
+import { useEffect } from 'react';
 import RecommandService from '../service/RecommandService';
 
-const Recommandation = () => {
+export default function Recommandation() {
+        useEffect(()=>{
+                axios.get('http://localhost:5000/recommand')
+                .then(response => console.log(response.data))
+        }, [])
         RecommandService.getRecommandation();
+  return (
+    <div>Recommandation</div>
+  )
 }
-
-export default Recommandation;
-

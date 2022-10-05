@@ -22,7 +22,6 @@ import Category from './page/Category';
 import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
-import Recommandation from './page/Recommandation';
 import CommunityInsert from './page/community/CommunityInsert';
 
 function App() {
@@ -48,6 +47,15 @@ function App() {
       .then(m => setTest(m))
   }, [])
   console.log(test);
+  // flask test
+  const [recommend, setRecommend] = useState("")
+  useEffect(() => {
+    fetch("/recommand")
+      .then(res => res.text())
+      .then(m => setRecommend(m))
+  }, [])
+  console.log(recommend);
+
 
   // product DB 불러오기
   const [product, setProduct] = useState();
@@ -117,6 +125,7 @@ function App() {
 
   return (
     <div>
+
       <Navbar />
       <Routes>
         <Route path='/' element={<Main product={product} />} />
