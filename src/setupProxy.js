@@ -8,8 +8,8 @@ module.exports = function(app){
         })
     );
     app.use(
-        createProxyMiddleware('/recommand', {
-            target : 'http://locahost:5000',
+        createProxyMiddleware('/recommend', {
+            target : 'http://localhost:5000',
             changeOrigin: true
         })
     );

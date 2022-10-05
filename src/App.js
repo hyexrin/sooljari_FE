@@ -22,7 +22,7 @@ import Category from './page/Category';
 import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
-import Recommandation from './page/Recommandation';
+import Recommendation from './page/Recommendation';
 import CommunityInsert from './page/community/CommunityInsert';
 
 function App() {
@@ -147,7 +147,7 @@ function App() {
         {/* Test 페이지 */}
         <Route path='/test' element={<Test />} />
         <Route path='/testComponent' element={<TestComponent setAuthenticate={setAuthenticate}/>}/>
-        <Route path='/recommand' element={<Recommandation />} />
+        <Route path='/recommend' element={<Recommendation />} />
 
       </Routes>
       <BottomNavbar />
