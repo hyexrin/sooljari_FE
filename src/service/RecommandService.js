@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const RECOMMANDATION_API_BASE_URL = "http://localhost:5000/"
+const RECOMMANDATION_API_BASE_URL = "http://localhost:5000/recommand"
 
 class RecommandService {
     getRecommandation() {

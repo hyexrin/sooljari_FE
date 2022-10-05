@@ -22,11 +22,8 @@ import Category from './page/Category';
 import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
-<<<<<<< HEAD
 import Recommandation from './page/Recommandation';
-=======
 import CommunityInsert from './page/community/CommunityInsert';
->>>>>>> 703a3cc1edd902a071bc63c70ed8c548cba1112f
 
 function App() {
 
