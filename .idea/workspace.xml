@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="40612ce1-2de6-4a35-903d-c576ea0e0fd3" name="Changes" comment="">
 <<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Recommandation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Recommendation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/RecommandService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RecommendService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupProxy.js" afterDir="false" />
+=======
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/page/community/CommunityInsert.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/service/CommunityService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,6 +26,7 @@
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/RecommandService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RecommandService.js" afterDir="false" />
 >>>>>>> parent of 70d0081 (YJ 22-10-05)
+>>>>>>> ef1b962581a2f48d06ecf8e5255228fc88a03324
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,10 +121,14 @@
       <workItem from="1664854933113" duration="7651000" />
       <workItem from="1664876026423" duration="1258000" />
 <<<<<<< HEAD
+      <workItem from="1664946024421" duration="9036000" />
+=======
+<<<<<<< HEAD
       <workItem from="1664946024421" duration="96000" />
 =======
       <workItem from="1664946024421" duration="3896000" />
 >>>>>>> parent of 70d0081 (YJ 22-10-05)
+>>>>>>> ef1b962581a2f48d06ecf8e5255228fc88a03324
     </task>
     <servers />
   </component>
