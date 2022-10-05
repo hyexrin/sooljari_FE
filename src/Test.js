@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import Calendar from './component/Calendar'
 
 const HeaderArea = styled.div`
     position: relative;
@@ -54,7 +55,8 @@ const Header = () => {
 
     return (
         <HeaderArea>
-            <HeaderWrap className={hide && 'hide'}>Header Contents ...</HeaderWrap>
+            {/* <HeaderWrap className={hide && 'hide'}>Header Contents ...</HeaderWrap> */}
+            <Calendar />
             <div>
             친구는 세월의 도둑이다.
 

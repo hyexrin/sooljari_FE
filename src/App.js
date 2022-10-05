@@ -24,7 +24,6 @@ import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
 import Recommendation from './page/Recommendation';
 import CommunityInsert from './page/community/CommunityInsert';
-import Recommandation from './page/Recommandation'
 
 function App() {
 
@@ -34,13 +33,13 @@ function App() {
     console.log("로그인 상태 : ", authenticate);
   }, [authenticate]);
 
-  const [message, setMessage] = useState("")
-  useEffect(() => {
-    fetch("/api/testConnection")
-      .then(res => res.text())
-      .then(m => setMessage(m))
-  }, [])
-  console.log(message);
+  // const [message, setMessage] = useState("")
+  // useEffect(() => {
+  //   fetch("/api/testConnection")
+  //     .then(res => res.text())
+  //     .then(m => setMessage(m))
+  // }, [])
+  // console.log(message);
 
   const [test, setTest] = useState("");
   useEffect(() => {
@@ -48,7 +47,8 @@ function App() {
       .then(res => res.text())
       .then(m => setTest(m))
   }, [])
-  console.log(test);
+  console.log("spring boot 연결 성공 >> " + test);
+  
   // flask test
   const [recommend, setRecommend] = useState("")
   useEffect(() => {
@@ -56,7 +56,7 @@ function App() {
       .then(res => res.text())
       .then(m => setRecommend(m))
   }, [])
-  console.log(recommend);
+  console.log("flask 연결 성공 >> " + recommend);
 
 
   // product DB 불러오기
@@ -87,9 +87,6 @@ function App() {
     getCommunity();
   }, [setCommunity])
   console.log("community", community);
-
-
-  
   
   // const getProductsSearch = () => {
   //   let serchQuery = query.get("q") || "";
