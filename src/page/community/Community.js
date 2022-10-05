@@ -2,20 +2,27 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import CommunityCard from '../../component/CommunityCard'
 import { communitydata } from '../../data/community-data.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
-const Community = () => {
+const Community = ({community}) => {
+
+  const navigate = useNavigate();
+  const CreateCard = () => {
+    navigate('/commuInsert');
+  }
   return (
     <Container className='Community-box'>
+
       <Row>
-        {communitydata.map((data) => (
+        <Col><FontAwesomeIcon icon={faPlus} onClick={CreateCard}/></Col>
+      </Row>
+
+      <Row>
+        {community && community.map((data) => (
           <Col lg={4} md={6} xs={12}><CommunityCard data={data}/></Col>
         ))}
-        {/* <Col lg={4} md={6} xs={12}><CommunityCard /></Col>
-        <Col lg={4} md={6} xs={12}><CommunityCard /></Col>
-        <Col lg={4} md={6} xs={12}><CommunityCard /></Col>
-        <Col lg={4} md={6} xs={12}><CommunityCard /></Col>
-        <Col lg={4} md={6} xs={12}><CommunityCard /></Col>
-        <Col lg={4} md={6} xs={12}><CommunityCard /></Col> */}
       </Row>
     </Container>
   )

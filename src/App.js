@@ -22,7 +22,11 @@ import Category from './page/Category';
 import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
+<<<<<<< HEAD
 import Recommandation from './page/Recommandation';
+=======
+import CommunityInsert from './page/community/CommunityInsert';
+>>>>>>> 703a3cc1edd902a071bc63c70ed8c548cba1112f
 
 function App() {
 
@@ -48,6 +52,7 @@ function App() {
   }, [])
   console.log(test);
 
+  // product DB 불러오기
   const [product, setProduct] = useState();
   const [productSearch, setProductSearch] = useState();
   const [query, setQuery] = useSearchParams();
@@ -60,8 +65,22 @@ function App() {
 
   useEffect(() => {
     getProducts();
-    console.log("product", product);
-  }, [query]);
+  }, []);
+  console.log("product", product);
+
+  // community DB 불러오기
+  const [community, setCommunity] = useState();
+  const getCommunity = () => {
+    fetch(`/api/community`)
+      .then(res => res.json())
+      .then(m => setCommunity(m))
+  }
+
+  useEffect(() => {
+    getCommunity();
+  }, [setCommunity])
+  console.log("community", community);
+
 
   
   
@@ -80,42 +99,47 @@ function App() {
 
 
   useEffect(() => {
-  Swal.fire({
-    icon: "warning",
-    title: "모바일 버전으로 확인해주세요!",
-    text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
-    showCancelButton: true,
-    confirmButtonText: "확인",
-    cancelButtonText: "취소",
-}).then((res) => {
-    /* Read more about isConfirmed, isDenied below */
-    if (res.isConfirmed) {
-       //삭제 요청 처리
-    }
-    else{
+    Swal.fire({
+      icon: "warning",
+      title: "모바일 버전으로 확인해주세요!",
+      text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
+      showCancelButton: true,
+      confirmButtonText: "확인",
+      cancelButtonText: "취소",
+    }).then((res) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (res.isConfirmed) {
+        //삭제 요청 처리
+      }
+      else {
         //취소
-    }
-});}, [])
+      }
+    });
+  }, [])
 
 
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Main product={product}/>} />
+        <Route path='/' element={<Main product={product} />} />
 
         {/* <Route path='/login' element={<LoginComponent setAuthenticate={setAuthenticate} />} /> */}
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
         <Route path='/join' element={<JoinComponent />} />
 
-        <Route path='/category' element={<Category product={product}/>} />
+        <Route path='/category' element={<Category product={product} />} />
         <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} />} />
-        <Route path='/community' element={<Community />}/>
+
         <Route path='/search' element={<Search />} />
+
+        {/* 커뮤니티 페이지 */}
+        <Route path='/community' element={<Community community={community}/>} />
+        <Route path='/commuInsert' element={<CommunityInsert/>} />
 
         {/* 상품 관련 페이지 */}
         <Route path='/product/:id' element={<ProductDetail />} />
-        <Route path='/productSearch/:keyword' element={<ProductSearch />}/>
+        <Route path='/productSearch/:keyword' element={<ProductSearch />} />
 
         {/* 관리자 페이지 */}
         <Route path='/admin' element={<Admin />} />

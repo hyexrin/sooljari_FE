@@ -4,6 +4,7 @@ import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
 
 export default function CommunityCard({data}) {
+
   return (
     <div className='community-card-box'>
       <div className='writer-box'>
@@ -14,7 +15,8 @@ export default function CommunityCard({data}) {
       <div className='title-box'>{data?.title}</div>
 
       <div className='content-img-box'>
-        <img className='content-img' src={data?.image} />
+        {/* {data?.image} */}
+        <img className='content-img' src={require(`../img/${data?.image}`)} alt='image' />
       </div>
 
       <div className='content-like-comment'>
@@ -22,7 +24,7 @@ export default function CommunityCard({data}) {
         {/* <FontAwesomeIcon icon={faComment} className='content-icon'/> */}
       </div>
 
-      <div className='content-box'>{data?.text}</div>
+      <div className='content-box'>{data?.content}</div>
     </div>
   )
 }

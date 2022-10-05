@@ -5,36 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40612ce1-2de6-4a35-903d-c576ea0e0fd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/Recommandation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/RecommandService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/community/CommunityInsert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/CommunityService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/JoinComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/JoinComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/LoginComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/LoginComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Mypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Mypage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/LoginService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/LoginService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/CommunityCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/CommunityCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/community/Community.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/community/Community.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +105,7 @@
       <workItem from="1664697923580" duration="2075000" />
       <workItem from="1664854933113" duration="7651000" />
       <workItem from="1664876026423" duration="1258000" />
+      <workItem from="1664946024421" duration="96000" />
     </task>
     <servers />
   </component>
