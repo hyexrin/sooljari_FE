@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function JoinComponent(props) {
-    const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
   const [birth, setBirth] = useState('');
@@ -42,12 +42,14 @@ export default function JoinComponent(props) {
       birth: birth,
       phone: phone
     };
-    console.log("login => " + JSON.stringify(join));
+    console.log("join => " + JSON.stringify(join));
     JoinService.join(join).then(res => {
-      props.history.push('/login');
+      navigate('/login');
+    }).catch(err => {
+      alert('이미 가입된 아이디입니다.');
     });
-    navigate('/');
   }
+
 
   const cancel = () => {
     props.history.push('/login');

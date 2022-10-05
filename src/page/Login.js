@@ -10,8 +10,8 @@ const Login = ({setAuthenticate}) => {
       navigate("/join");
     };
 
-    const loginUser = (evnet) => {
-        evnet.preventDefault();
+    const loginUser = (event) => {
+        event.preventDefault();
         console.log("Click!!");
         setAuthenticate(true);
         navigate("/mypage");
@@ -20,7 +20,7 @@ const Login = ({setAuthenticate}) => {
     return (
         <div>
             <Container id="panel">
-                <Form className='login-form' onSubmit={(evnet)=>loginUser(evnet)}>
+                <Form className='login-form' onSubmit={(event)=>loginUser(event)}>
                     <div className='login-title'><h1>술자리</h1></div>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
                         <Col sm>

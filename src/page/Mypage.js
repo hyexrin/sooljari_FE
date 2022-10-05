@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlassWater } from '@fortawesome/free-solid-svg-icons'
@@ -13,6 +13,38 @@ const Mypage = () => {
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   let todayMonth = month[now.getMonth()];
   // let todayDate = now.getDate();
+  
+  // 로그인 후 사용자 이름 데이터 가져오기
+  
+  // const [userName, setUserName] = useState("");
+  //
+  // useEffect(() => {
+  //   fetch("/api/mypage")
+  //       .then(res => res.text())
+  //       .then(userName => {
+  //         setUserName(userName);
+  //       });
+  // }, [])
+
+  // // 마이페이지 정보 가져오기
+  //   const response = await fetch(
+  //       "http://ec2-3-35-91-109.ap-northeast-2.compute.amazonaws.com:8081/api/user/mypage",
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "content-type": "application/json",
+  //           Authorization: token,
+  //         },
+  //       }
+  //   );
+  //
+  //   if (!response.ok) {
+  //     throw new Error("마이페이지 정보를 불러오는데 실패했습니다");
+  //   }
+  //   const body = await response.json();
+  //   return body;
+  //   //
+
 
   return (
     <Container className='mypage-box'>

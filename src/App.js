@@ -6,9 +6,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Test from './Test';
 import ProductDetail from './page/Proudct/ProductDetail';
 import { useState, useEffect } from 'react';
-import Login from './page/Login';
+import Login from './page/LoginComponent';
 import Search from './page/Search';
-import LoginComponent from './page/LoginComponent';
 import JoinComponent from './page/JoinComponent';
 import BottomNavbar from './component/BottomNavbar';
 import PrivateRoute from './route/PrivateRoute';
@@ -23,6 +22,7 @@ import Category from './page/Category';
 import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
+import Recommandation from './page/Recommandation';
 
 function App() {
 
@@ -63,6 +63,8 @@ function App() {
     console.log("product", product);
   }, [query]);
 
+  
+  
   // const getProductsSearch = () => {
   //   let serchQuery = query.get("q") || "";
   //   console.log("쿼리값은?", serchQuery)
@@ -124,6 +126,7 @@ function App() {
         {/* Test 페이지 */}
         <Route path='/test' element={<Test />} />
         <Route path='/testComponent' element={<TestComponent setAuthenticate={setAuthenticate}/>}/>
+        <Route path='/recommand' element={<Recommandation />} />
 
       </Routes>
       <BottomNavbar />

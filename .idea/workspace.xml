@@ -5,10 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40612ce1-2de6-4a35-903d-c576ea0e0fd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/page/LoginComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/LoginService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/Recommandation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/RecommandService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/JoinComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/JoinComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/LoginComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/LoginComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Mypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Mypage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/LoginService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/LoginService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts-react-tutorial/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,16 +57,18 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/82106/Desktop/sooljari_FE&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/82106/Desktop/sooljari_BE&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.2.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\82106\Desktop\sooljari_FE\src\store" />
       <recent name="C:\Users\82106\Desktop\sooljari_FE\src\page" />
       <recent name="C:\Users\82106\Desktop\sooljari_FE\src\page\Proudct" />
     </key>
@@ -89,6 +117,17 @@
       <workItem from="1663343028260" duration="481000" />
       <workItem from="1663344197512" duration="1781000" />
       <workItem from="1663427440805" duration="3034000" />
+      <workItem from="1663565240340" duration="6044000" />
+      <workItem from="1664239336114" duration="346000" />
+      <workItem from="1664239740831" duration="6181000" />
+      <workItem from="1664247230566" duration="10547000" />
+      <workItem from="1664364333239" duration="2707000" />
+      <workItem from="1664411788016" duration="4743000" />
+      <workItem from="1664428960307" duration="438000" />
+      <workItem from="1664429456192" duration="5926000" />
+      <workItem from="1664697923580" duration="2075000" />
+      <workItem from="1664854933113" duration="7651000" />
+      <workItem from="1664876026423" duration="1258000" />
     </task>
     <servers />
   </component>

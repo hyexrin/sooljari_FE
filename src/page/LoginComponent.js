@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import LoginService from '../service/LoginService';
 
-export default function LoginComponent(props, { setAuthenticate }) {
+
+const LoginComponent = ({setAuthenticate}) => {
 
     const navigate = useNavigate();
 
-    // useEffect(()=> {
-    //     setAuthenticate(true);
-    // }, [])
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [userName, setUsername] = useState('');
 
     const changeEmailHandler = (event) => {
         setEmail(event.target.value)
@@ -28,14 +26,17 @@ export default function LoginComponent(props, { setAuthenticate }) {
         let login = {
             email: email,
             password: password
+            // grantType: string,
+            // accessToken: string,
+            // tokenExpiresIn: number
         };
         console.log("login => " + JSON.stringify(login));
-        
         LoginService.login(login).then(res => {
-            props.history.push('/');
             setAuthenticate(true);
+            navigate('/mypage');
+        }).catch(err => {
+           alert('아이디 또는 비밀번호가 틀렸습니다.')
         });
-        navigate("/mypage");
     }
 
     const goToJoin = () => {
@@ -44,7 +45,7 @@ export default function LoginComponent(props, { setAuthenticate }) {
 
     return (
         <div>
-            <Container id="panel">
+            <Container id="panel" onSubmit={(event)=>login(event)}>
                 <Form className='login-form'>
                     <div className='login-title'><h1>술자리</h1></div>
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
@@ -83,3 +84,5 @@ export default function LoginComponent(props, { setAuthenticate }) {
         </div>
     )
 }
+
+export default LoginComponent
