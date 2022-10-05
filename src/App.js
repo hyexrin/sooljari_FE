@@ -48,6 +48,15 @@ function App() {
       .then(m => setTest(m))
   }, [])
   console.log(test);
+  // flask test
+  const [recommend, setRecommend] = useState("")
+  useEffect(() => {
+    fetch("/recommend")
+      .then(res => res.text())
+      .then(m => setRecommend(m))
+  }, [])
+  console.log(recommend);
+
 
   // product DB 불러오기
   const [product, setProduct] = useState();
@@ -117,6 +126,7 @@ function App() {
 
   return (
     <div>
+
       <Navbar />
       <Routes>
         <Route path='/' element={<Main product={product} />} />
