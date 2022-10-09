@@ -19,7 +19,7 @@ export default function CommunityCard({data}) {
       <div className='content-img-box'>
         {/* {data?.image} */}
         {/* <img className='content-img' src={require(`../img/${data?.image}`)} alt='image' /> */}
-        <img className='content-img' src={`http://localhost/images/${data?.image}`} alt='img' />
+        <img className='content-img' src={`http://localhost:30/images/${data?.image}`} alt='img' />
       </div>
 
       <div className='content-like-comment'>
