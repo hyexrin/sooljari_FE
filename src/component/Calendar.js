@@ -14,16 +14,16 @@ const App = () => {
   let todayMonth = now.getMonth();
   let todayDate = now.getDate();
 
-  let today = year + "-" + todayMonth + "-" + todayDate;
-  let todayPlusFourMonth = year + "-" + (todayMonth + 4) + "-" + todayDate;
+  // let today = year + "-" + todayMonth + "-" + todayDate;
+  // let todayPlusFourMonth = year + "-" + (todayMonth + 4) + "-" + todayDate;
 
-  useEffect(()=>{
-    console.log("+++++++++++++++++++++++++");
-    console.log(now, year, todayMonth, todayDate);
-    console.log(today);
-    console.log(todayPlusFourMonth);
-    console.log("+++++++++++++++++++++++++");
-  }, [])
+  // useEffect(()=>{
+  //   console.log("+++++++++++++++++++++++++");
+  //   console.log(now, year, todayMonth, todayDate);
+  //   console.log(today);
+  //   console.log(todayPlusFourMonth);
+  //   console.log("+++++++++++++++++++++++++");
+  // }, [])
 
 
   return (
@@ -34,7 +34,7 @@ const App = () => {
         <CalendarHeatmap
           // 표시할 달
           startDate={new Date(now.setDate(now.getDate() - 30))}
-          endDate={new Date(now.setDate(now.getDate() + 90))}
+          endDate={new Date(now.setDate(now.getDate() + 120))}
 
           values={[
             { date: "2022-08-22", count: 2 },

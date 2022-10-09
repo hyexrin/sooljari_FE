@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Calendar from './component/Calendar'
+import { Col } from 'react-bootstrap';
+import CommunityCard from './component/CommunityCard';
 
 const HeaderArea = styled.div`
     position: relative;
@@ -33,7 +35,7 @@ const throttle = function (callback, waitTime) {
     };
 };
 
-const Header = () => {
+const Header = ({community}) => {
     const [hide, setHide] = useState(false);
     const [pageY, setPageY] = useState(0);
     const documentRef = useRef(document);
@@ -56,7 +58,18 @@ const Header = () => {
     return (
         <HeaderArea>
             {/* <HeaderWrap className={hide && 'hide'}>Header Contents ...</HeaderWrap> */}
-            <Calendar />
+            {/* <Calendar /> */}
+
+            {/* <div>
+            {community && community.map((data) => (
+          <Col lg={4} md={6} xs={12}><CommunityCard data={data}/></Col>
+        ))}
+            </div> */}
+
+    <div>
+    <img className='content-img' src='' alt='image' />
+    </div>
+    <br/><br/>
             <div>
             친구는 세월의 도둑이다.
 

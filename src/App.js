@@ -24,6 +24,7 @@ import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
 import Recommendation from './page/Recommendation';
 import CommunityInsert from './page/community/CommunityInsert';
+import ImageUploadBox from './test/ImageUploadBox';
 
 function App() {
 
@@ -73,7 +74,7 @@ function App() {
   useEffect(() => {
     getProducts();
   }, []);
-  console.log("product", product);
+  // console.log("product", product);
 
   // community DB 불러오기
   const [community, setCommunity] = useState();
@@ -86,7 +87,7 @@ function App() {
   useEffect(() => {
     getCommunity();
   }, [setCommunity])
-  console.log("community", community);
+  // console.log("community", community);
   
   // const getProductsSearch = () => {
   //   let serchQuery = query.get("q") || "";
@@ -153,9 +154,10 @@ function App() {
         <Route path='/admin/member' element={<Member />} />
 
         {/* Test 페이지 */}
-        <Route path='/test' element={<Test />} />
+        <Route path='/test' element={<Test community={community} />} />
         <Route path='/testComponent' element={<TestComponent setAuthenticate={setAuthenticate}/>}/>
         <Route path='/recommend' element={<Recommendation />} />
+        <Route path='testImage' element={<ImageUploadBox />} />
 
       </Routes>
       <BottomNavbar />

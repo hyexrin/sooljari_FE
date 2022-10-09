@@ -1140,7 +1140,7 @@ Category
 }
 
 .category-list-box {
-  /* background-color: blue; */
+  background-color: white;
   width: 100%;
   position: fixed;
   top: 0;
@@ -1158,6 +1158,7 @@ Category
   left: 0;
   color: rgb(136, 136, 136);
   margin: 0 1rem;
+  font-size: x-small;
 }
 
 @media screen and (min-width: 992px) {
@@ -1168,6 +1169,7 @@ Category
 
   .category-li {
     margin: 0 4rem;
+    font-size: small;
   }
 
   .category-list-box {

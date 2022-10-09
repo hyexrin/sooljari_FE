@@ -5,16 +5,28 @@ import { Container } from 'react-bootstrap'
 import { useState } from 'react'
 import CommunityService from '../../service/CommunityService'
 import { Navigate, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function CommunityInsert(props) {
 
     // 업로드 이미지 미리보기
     const [fileImage, setFileImage] = useState("");
+    const [serverImg, setServerImg] = useState(null);
 
     const saveFileImage = (e) => {
         setFileImage(URL.createObjectURL(e.target.files[0]));
-        setImage(e.target.value);
-        
+        setServerImg(e.target.files[0]);
+
+        const uploadFile = e.target.files[0];
+
+        changeImageHandler(uploadFile.name);
+        console.log("fileImage >> " + fileImage);
+        console.log(uploadFile);
+        console.log(uploadFile.name)
+
+        const formData = new FormData();
+        formData.append('files', uploadFile);
+
     };
     
     const deleteFileImage = () => {
@@ -37,9 +49,9 @@ export default function CommunityInsert(props) {
         setTitle(event.target.value);
     }
 
-    // const changeImageHandler = (event) => {
-    //     setImage(event.target.value);
-    // }
+    const changeImageHandler = (img) => {
+        setImage(img);
+    }
 
     const changeContentHandler = (event) => {
         setContent(event.target.value);
@@ -49,7 +61,10 @@ export default function CommunityInsert(props) {
     //     setlikes(event.target.value);
     // }
 
-    const createCommunity = (event) => {
+    // 이미지 서버에 저장
+    const [imgUrl, setImgUrl] = useState('');
+
+    const createCommunity = async (event) => {
         console.log("createCommunity");
         event.preventDefault();
 
@@ -67,6 +82,15 @@ export default function CommunityInsert(props) {
             props.history.push('api/community');
         })
         navigate('/community');
+
+        //
+        console.log("@@@img@@@" + image);
+        const formData = new FormData();
+        formData.append('file', serverImg);
+        // 서버의 upload API 호출
+        const res = await axios.post("/img/upload", formData);
+        console.log(res.data.url);
+        setImgUrl(res.data.url);
     }
 
     const navigate = useNavigate();
@@ -95,7 +119,7 @@ export default function CommunityInsert(props) {
                                 <img className='commu-insert-content-pic' alt="sample" src={fileImage} style={{ margin: "auto" }} />
                             )}
 
-                            <input className='commu-insert-content-picinput' type="file" accept="image/*" onChange={saveFileImage} />
+                            <input className='commu-insert-content-picinput' type="file" onChange={saveFileImage} />
                         </div>
                     </div>
                 </div>
