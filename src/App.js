@@ -86,7 +86,7 @@ function App() {
 
   useEffect(() => {
     getCommunity();
-  }, [setCommunity])
+  }, [community])
   // console.log("community", community);
   
   // const getProductsSearch = () => {
