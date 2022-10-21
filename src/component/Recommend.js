@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import { sool } from '../data/sool-data';
 import ProductCard from './ProductCard';
 
 const Recommend = ({product}) => {

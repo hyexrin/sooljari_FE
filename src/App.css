@@ -1177,3 +1177,48 @@ Category
     margin-bottom: 1rem;
   }
 }
+
+
+/* 
+================
+Data Recommend
+================
+*/
+
+.data-recommend-container {
+  margin-top: 28px;
+}
+
+.data-recommend-title {
+  font-family: GangwonEduPowerExtraBoldA;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 
+================
+Data Recommend Box
+================
+*/
+
+.data-recommendCard-box {
+  width: 100%;
+  height: 300px;
+  background-color: var(--clr-primary-8);
+  margin-bottom: 1rem;
+}
+
+.data-recommendCard-tasty-ul {
+  -webkit-padding-start: 0px;
+}
+
+/* 
+================
+Data Recommend Box
+================
+*/
+
+.about-logo-img {
+  width: 100%;
+}
