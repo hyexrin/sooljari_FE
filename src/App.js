@@ -28,6 +28,7 @@ import ImageUploadBox from './test/ImageUploadBox';
 import Recommend from './component/Recommend';
 import DataRecommend from './page/Recommend/DataRecommend';
 import About from './page/About';
+import Survey from './page/survey/Survey';
 
 function App() {
 
@@ -91,7 +92,7 @@ function App() {
 
   useEffect(() => {
     getProducts();
-  }, [product]);
+  }, []);
   console.log("product", product);
 
   // community DB 불러오기
@@ -104,7 +105,7 @@ function App() {
 
   useEffect(() => {
     getCommunity();
-  }, [community])
+  }, [])
   console.log("community", community);
 
   
@@ -122,24 +123,24 @@ function App() {
   // }, [query]);
 
 
-  useEffect(() => {
-    Swal.fire({
-      icon: "warning",
-      title: "모바일 버전으로 확인해주세요!",
-      text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
-      showCancelButton: true,
-      confirmButtonText: "확인",
-      cancelButtonText: "취소",
-    }).then((res) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (res.isConfirmed) {
-        //삭제 요청 처리
-      }
-      else {
-        //취소
-      }
-    });
-  }, [])
+  // useEffect(() => {
+  //   Swal.fire({
+  //     icon: "warning",
+  //     title: "모바일 버전으로 확인해주세요!",
+  //     text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
+  //     showCancelButton: true,
+  //     confirmButtonText: "확인",
+  //     cancelButtonText: "취소",
+  //   }).then((res) => {
+  //     /* Read more about isConfirmed, isDenied below */
+  //     if (res.isConfirmed) {
+  //       //삭제 요청 처리
+  //     }
+  //     else {
+  //       //취소
+  //     }
+  //   });
+  // }, [])
 
 
   return (
@@ -170,6 +171,9 @@ function App() {
 
         {/* 추천 데이터 관련 페이지 :: 취향자리*/}
         <Route path='/datarecommend' element={<DataRecommend recommend={recommendArray}/> } />
+
+        {/* 취향 설문 관련 페이지 */}
+        <Route path='/survey' element={<Survey />} />
 
         {/* 관리자 페이지 */}
         <Route path='/admin' element={<Admin />} />

@@ -1215,6 +1215,52 @@ Data Recommend Box
 
 /* 
 ================
+Survey
+================
+*/
+
+.survey-box {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.survey-title {
+    
+    font-family: GangwonEduPowerExtraBoldA;
+    /* margin-bottom: 2rem; */
+    font-weight: bold;
+    /* background-color: red; */
+}
+
+.survey-form-box {
+  height: 250px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.survey-arrow-box {
+  display: flex;
+  justify-content: center;
+}
+
+.survey-answer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  background-color: var(--clr-primary-7);
+  border-radius: 10px;
+}
+
+.survey-arrow-icon {
+  color: #fff;
+}
+
+/* 
+================
 Data Recommend Box
 ================
 */
