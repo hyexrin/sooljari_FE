@@ -36,7 +36,7 @@ export default function Survey() {
                 <Col>
                     {surveyQuestions.map((surveyQuestions) => (
                         surveyQuestions.id === cnt &&
-                        <SlideSurveyForm surveyQuestions={surveyQuestions} />
+                        <SlideSurveyForm surveyQuestions={surveyQuestions} cnt={cnt} setCnt={setCnt}/>
                     ))}
                 </Col>
             </Row>
