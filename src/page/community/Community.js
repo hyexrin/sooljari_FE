@@ -21,7 +21,7 @@ const Community = ({community}) => {
 
       <Row>
         {community && community.map((data) => (
-          <Col lg={4} md={6} xs={12}><CommunityCard data={data}/></Col>
+          <Col key={data.id} lg={4} md={6} xs={12}><CommunityCard data={data}/></Col>
         ))}
       </Row>
     </Container>

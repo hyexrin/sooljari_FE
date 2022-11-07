@@ -143,7 +143,7 @@ const Navbar = () => {
               <li><img src={logo} className='logo' alt='logo' onClick={(event) => goToHome(event)} /></li>
               {/* data에서 Nav목록 가져오기 */}
               {links.map((link) => (
-                <NavLi icon={link} />
+                <NavLi key={link.id} icon={link} />
               ))}
             </ul>
           </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
           <div className='social-icons'>
             <ul>
               {social.map((socialIcon) => (
-                <NavLi icon={socialIcon} />
+                <NavLi key={socialIcon.id} icon={socialIcon} />
               ))}
             </ul>
           </div>

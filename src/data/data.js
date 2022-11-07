@@ -15,7 +15,7 @@ export const links = [
   },
   {
     id: 3,
-    url: '/recommend',
+    url: '/datarecommend',
     text: '취향자리',
   },
   {

@@ -1177,3 +1177,120 @@ Category
     margin-bottom: 1rem;
   }
 }
+
+
+/* 
+================
+Data Recommend
+================
+*/
+
+.data-recommend-container {
+  margin-top: 28px;
+}
+
+.data-recommend-title {
+  font-family: GangwonEduPowerExtraBoldA;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 
+================
+Data Recommend Box
+================
+*/
+
+.data-recommendCard-box {
+  width: 100%;
+  height: 300px;
+  background-color: var(--clr-primary-8);
+  margin-bottom: 1rem;
+}
+
+.data-recommendCard-tasty-ul {
+  -webkit-padding-start: 0px;
+}
+
+/* 
+================
+Survey
+================
+*/
+
+.survey-box {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.survey-title {
+    
+    font-family: GangwonEduPowerExtraBoldA;
+    /* margin-bottom: 2rem; */
+    font-weight: bold;
+    /* background-color: red; */
+}
+
+.survey-arrow-box {
+  display: flex;
+  justify-content: center;
+}
+
+.survey-answer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  background-color: var(--clr-primary-7);
+  border-radius: 10px;
+}
+
+.survey-arrow-icon {
+  color: #fff;
+}
+
+/* 
+================
+Slide Survey Form
+================
+*/
+
+.survey-form-box {
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.survey-form-answer-box {
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 0;
+  color: #fff;
+  background-color: var(--clr-primary-3);
+}
+
+.survey-form-answer-box:hover {
+  background-color: var(--clr-primary-6);
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
+/* 
+================
+Data Recommend Box
+================
+*/
+
+.about-logo-img {
+  width: 100%;
+}

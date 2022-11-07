@@ -22,9 +22,13 @@ import Category from './page/Category';
 import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
 import ProductSearch from './page/Proudct/ProductSearch';
-import Recommendation from './page/Recommendation';
+import Recommendation from './page/Recommend/Recommendation';
 import CommunityInsert from './page/community/CommunityInsert';
 import ImageUploadBox from './test/ImageUploadBox';
+import Recommend from './component/Recommend';
+import DataRecommend from './page/Recommend/DataRecommend';
+import About from './page/About';
+import Survey from './page/survey/Survey';
 
 function App() {
 
@@ -50,14 +54,29 @@ function App() {
   }, [])
   console.log("spring boot 연결 성공 >> " + test);
   
-  // flask test
+  // flask data 불러오기
   const [recommend, setRecommend] = useState("")
-  useEffect(() => {
+
+  const getRecommend = () => {
     fetch("/recommend")
-      .then(res => res.text())
+      .then(res => res.json())
       .then(m => setRecommend(m))
-  }, [])
-  console.log("flask 연결 성공 >> " + recommend);
+  }
+
+  // recommend -> object to array
+  var recommendArray = [];
+  const count = Object.keys(recommend).length;
+    for(var i = 0; i < count; i++) {
+      var data = recommend[i];
+      recommendArray.push(data);
+      // console.log("recommend [i] -> ",data)
+    }
+
+  useEffect(()=>{
+    getRecommend();
+  }, [setRecommend]);
+  console.log("recommend", recommend);
+  console.log("recommendArray", recommendArray)
 
 
   // product DB 불러오기
@@ -74,7 +93,7 @@ function App() {
   useEffect(() => {
     getProducts();
   }, []);
-  // console.log("product", product);
+  console.log("product", product);
 
  //  mypage userName 불러오기
  //  const [userName, setUserName] = useState();
@@ -99,8 +118,9 @@ function App() {
 
   useEffect(() => {
     getCommunity();
-  }, [setCommunity])
-  // console.log("community", community);
+  }, [])
+  console.log("community", community);
+
   
   // const getProductsSearch = () => {
   //   let serchQuery = query.get("q") || "";
@@ -116,24 +136,24 @@ function App() {
   // }, [query]);
 
 
-  useEffect(() => {
-    Swal.fire({
-      icon: "warning",
-      title: "모바일 버전으로 확인해주세요!",
-      text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
-      showCancelButton: true,
-      confirmButtonText: "확인",
-      cancelButtonText: "취소",
-    }).then((res) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (res.isConfirmed) {
-        //삭제 요청 처리
-      }
-      else {
-        //취소
-      }
-    });
-  }, [])
+  // useEffect(() => {
+  //   Swal.fire({
+  //     icon: "warning",
+  //     title: "모바일 버전으로 확인해주세요!",
+  //     text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
+  //     showCancelButton: true,
+  //     confirmButtonText: "확인",
+  //     cancelButtonText: "취소",
+  //   }).then((res) => {
+  //     /* Read more about isConfirmed, isDenied below */
+  //     if (res.isConfirmed) {
+  //       //삭제 요청 처리
+  //     }
+  //     else {
+  //       //취소
+  //     }
+  //   });
+  // }, [])
 
 
   return (
@@ -152,6 +172,8 @@ function App() {
 
         <Route path='/search' element={<Search />} />
 
+        <Route path='/about' element={<About />} />
+
         {/* 커뮤니티 페이지 */}
         <Route path='/community' element={<Community community={community}/>} />
         <Route path='/commuInsert' element={<CommunityInsert/>} />
@@ -159,6 +181,12 @@ function App() {
         {/* 상품 관련 페이지 */}
         <Route path='/product/:id' element={<ProductDetail />} />
         <Route path='/productSearch/:keyword' element={<ProductSearch />} />
+
+        {/* 추천 데이터 관련 페이지 :: 취향자리*/}
+        <Route path='/datarecommend' element={<DataRecommend recommend={recommendArray}/> } />
+
+        {/* 취향 설문 관련 페이지 */}
+        <Route path='/survey' element={<Survey />} />
 
         {/* 관리자 페이지 */}
         <Route path='/admin' element={<Admin />} />

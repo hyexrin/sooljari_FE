@@ -10,7 +10,7 @@ const BottomNavbar = () => {
             
             <Row>
                 {botNav.map((icon)=> (
-                    <Col><GoToCard icon={icon} /></Col>
+                    <Col key={icon.id}><GoToCard icon={icon} /></Col>
                 ))}
             </Row>
         </div>
