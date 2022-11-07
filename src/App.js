@@ -168,7 +168,7 @@ function App() {
         <Route path='/join' element={<JoinComponent />} />
 
         <Route path='/category' element={<Category product={product} />} />
-        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} />} />
+        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} />} />
 
         <Route path='/search' element={<Search />} />
 

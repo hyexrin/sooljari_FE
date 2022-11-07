@@ -2,9 +2,9 @@ import React from 'react'
 import { Navigate } from 'react-router-dom';
 import Mypage from '../page/Mypage'
 
-const PrivateRoute = ({authenticate}) => {
+const PrivateRoute = ({authenticate, setAuthenticate}) => {
   return (
-    authenticate == true? <Mypage />:<Navigate to="/login"/>
+    authenticate == true? <Mypage authenticate={authenticate} setAuthenticate={setAuthenticate} />:<Navigate to="/login" />
   )
 }
 

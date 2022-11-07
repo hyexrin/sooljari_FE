@@ -41,7 +41,6 @@ const LoginComponent = ({setAuthenticate}) => {
         
         LoginService.login(login).then(res => {
             setCookies('X-AUTH-TOKEN', res.data);
-            console.log(res.data);
             axios.defaults.headers.common['X-AUTH-TOKEN'] = `${res.data}`
             setAuthenticate(true);
             navigate('/mypage');
