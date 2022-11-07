@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlassWater } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import Calendar from '../component/Calendar'
-
+import axios from 'axios';
+import { useCookies } from 'react-cookie'
+    
 const Mypage = () => {
 
   let now = new Date();
@@ -45,6 +47,19 @@ const Mypage = () => {
   //   return body;
   //   //
 
+  const [userName, setUserName] = useState("");
+  // const [cookies, setCookie] = useCookies(['X-AUTH-TOKEN']);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true}, {header : "X-AUTH-TOKEN"})
+        .then( res => {
+          console.log(res);
+          setUserName(res.data);
+        })
+        // .then( userName => {
+        //   setUserName(userName);
+        // });
+  },[])
 
   return (
     <Container className='mypage-box'>
@@ -62,7 +77,7 @@ const Mypage = () => {
             <h2>Level <FontAwesomeIcon icon={faGlassWater} /></h2>
           </Row>
           <Row>
-            <h3><b>홍길동</b>님 반가워요 :{')'}</h3>
+            <h3><b>{userName}</b>님 반가워요 :{')'}</h3>
           </Row>
           <Row>
             <h4>술 취향 설문 결과 다시보기 {'>'}</h4>

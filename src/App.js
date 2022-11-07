@@ -76,6 +76,19 @@ function App() {
   }, []);
   // console.log("product", product);
 
+ //  mypage userName 불러오기
+ //  const [userName, setUserName] = useState();
+ //  const getUserName = () => {
+ //    fetch(`/api/checkJWT`)
+ //        .then(res => res.text())
+ //        .then(userName => setUserName(userName))
+ //  }
+ //
+ //  useEffect(() => {
+ //    getUserName();
+ //  }, [setUserName])
+
+
   // community DB 불러오기
   const [community, setCommunity] = useState();
   const getCommunity = () => {
