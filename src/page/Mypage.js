@@ -33,6 +33,10 @@ const Mypage = ({authenticate, setAuthenticate}) => {
         })
   },[])
 
+  const goToSurvey = () => {
+    navigate('/survey');
+  }
+
 
   return (
     <Container className='mypage-box'>
@@ -53,7 +57,7 @@ const Mypage = ({authenticate, setAuthenticate}) => {
             <h3><b>{userName}</b>님 반가워요 :{')'}</h3>
           </Row>
           <Row>
-            <h4>술 취향 설문 결과 다시보기 {'>'}</h4>
+            <h4 onClick={goToSurvey}>술 취향 설문 결과 다시보기 {'>'}</h4>
           </Row>
 
         </Col>

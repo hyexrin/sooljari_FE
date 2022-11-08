@@ -5,27 +5,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export default function Survey() {
 
     const [cnt, setCnt] = useState(1);
+    
+    const [ mbtiType, setMbtiType ] = useState([]);
 
     var firstNum = 1
     var lastNum = Object.keys(surveyQuestions).length - 1
 
-    const ClickArrowRight = () => {
-        console.log('arrow right click!')
-        setCnt(cnt + 1)
-        console.log(cnt)
-    }
+    // const ClickArrowRight = () => {
+    //     console.log('arrow right click!')
+    //     setCnt(cnt + 1)
+    //     console.log(cnt)
+    // }
 
-    const ClickArrowLeft = () => {
-        console.log('arrow left click!')
-        setCnt(cnt - 1)
-        console.log(cnt)
-    }
+    // const ClickArrowLeft = () => {
+    //     console.log('arrow left click!')
+    //     setCnt(cnt - 1)
+    //     console.log(cnt)
+    // }
 
-    cnt === 0 ? console.log('first') : console.log('not')
+    // cnt === 0 ? console.log('first') : console.log('not')
+
+
 
     return (
         <Container className='survey-box'>
@@ -36,12 +41,13 @@ export default function Survey() {
                 <Col>
                     {surveyQuestions.map((surveyQuestions) => (
                         surveyQuestions.id === cnt &&
-                        <SlideSurveyForm surveyQuestions={surveyQuestions} cnt={cnt} setCnt={setCnt}/>
+                        <SlideSurveyForm surveyQuestions={surveyQuestions} cnt={cnt} setCnt={setCnt} lastNum={lastNum}
+                         mbtiType={mbtiType} setMbtiType={setMbtiType}/>
                     ))}
                 </Col>
             </Row>
 
-            <Row className='survey-arrow-box'>
+            {/* <Row className='survey-arrow-box'>
                 <Col>
                     {cnt === firstNum ?
                         '' :
@@ -60,7 +66,9 @@ export default function Survey() {
                     }
 
                 </Col>
-            </Row>
+            </Row> */}
+
+            
         </Container >
     )
 }
