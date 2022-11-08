@@ -29,6 +29,7 @@ import Recommend from './component/Recommend';
 import DataRecommend from './page/Recommend/DataRecommend';
 import About from './page/About';
 import Survey from './page/survey/Survey';
+import SurveyResult from './page/survey/SurveyResult';
 
 function App() {
 
@@ -187,6 +188,7 @@ function App() {
 
         {/* 취향 설문 관련 페이지 */}
         <Route path='/survey' element={<Survey />} />
+        <Route path='/result' element={<SurveyResult product={product}/>} />
 
         {/* 관리자 페이지 */}
         <Route path='/admin' element={<Admin />} />
