@@ -1099,6 +1099,21 @@ mypage
   padding: 0.5rem;
 }
 
+.mypage-logout-box {
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+.mypage-logout-btn {
+  width: 5rem;
+  height: 2rem;
+  /* border-radius: 10px; */
+  border: none;
+  color: gray;
+  background-color: white;
+}
+
 .react-calendar-heatmap .color-scale-1 {
   fill: var(--clr-primary-9);
 }

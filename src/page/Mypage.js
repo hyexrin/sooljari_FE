@@ -38,7 +38,6 @@ const Mypage = ({authenticate, setAuthenticate}) => {
     <Container className='mypage-box'>
       <Row className='mypage-title-box'>
         <Col><h2>마이페이지</h2></Col>
-          <Col><button onClick={logOut}>LOGOUT</button></Col>
       </Row>
 
       <Row className='mypage-profile-box'>
@@ -67,9 +66,13 @@ const Mypage = ({authenticate, setAuthenticate}) => {
           </Col>
         </Row>
 
-        <Row>
+        <Row className='mypage-calender-box'>
           <Calendar />
         </Row>
+      </Row>
+
+      <Row className='mypage-logout-box'>
+        <Col><button onClick={logOut} className='mypage-logout-btn'>LOGOUT</button></Col>
       </Row>
 
     </Container>
