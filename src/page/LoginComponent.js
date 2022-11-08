@@ -31,13 +31,6 @@ const LoginComponent = ({setAuthenticate}) => {
             password: password
         };
         console.log("login => " + JSON.stringify(login));
-
-        // var loginArray = [];
-        // loginArray.push({"name" : "email", "value" : email});
-        // loginArray.push({"name" : "password", "value" : password});
-        // console.log(loginArray);
-        //
-        // var datas = JSON.stringify(loginArray);
         
         LoginService.login(login).then(res => {
             setCookies('X-AUTH-TOKEN', res.data);
@@ -47,23 +40,6 @@ const LoginComponent = ({setAuthenticate}) => {
        }).catch(err => {
            alert('아이디 또는 비밀번호가 틀렸습니다.')
         });
-
-        // axios.post({
-        //     url : 'http://localhost:8080/api/login',
-        //     data : JSON.stringify(datas),
-        //     dataType : 'text',  //위와 같이 dataType:json 일 경우 json 형태로 맞춰서 데이터를 받지 못해 오류 발생
-        //     contentType : "application/json",
-        //     error: function(xhr, status, error){
-        //         alert(error);
-        //     },
-        //     success : function(token){
-        //         console.log(token);
-        //         var expireDay = 24 * 60 * 60 * 1000; //1일
-        //         document.cookie = "X-AUTH-TOKEN=" + token + expireDay +"; path=/";
-        //     }
-        // });
-
-
     }
 
     const goToJoin = () => {

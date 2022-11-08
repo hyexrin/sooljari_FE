@@ -3,10 +3,31 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import axios from 'axios';
 
 const ProductDetail = () => {
     let { id } = useParams();
     console.log("id? ", id);
+
+    // 좋아요 기능 구현해보겠다는 발악
+
+    const [like, setLike] = useState(false);
+
+    // useEffect(async () => {
+    //     const fetchData = async () => {
+    //         const res = await axios.get(...)
+    //         if (res.data.type === 'liked') setLike(true)
+    //     }
+    //     fetchData()
+    // }, []);
+
+    const toggleLike = async (e) => {
+        const res = await axios.post("http://localhost:8080/api/liked", id)
+        setLike(!like)
+    }
+
+    // 발악 끝
 
     const [product, setProduct] = useState(null);
 
@@ -35,7 +56,7 @@ const ProductDetail = () => {
                     <Col lg={6}>
                         <div className='Detail-name-box'>
                             <div>상품ID : 00{id}</div> <hr />
-                            <h2>{product?.name}</h2>
+                            <h2><FontAwesomeIcon like={like} onClick={toggleLike} icon={faHeart} className={like?'content-icon2':'content-icon'}/>{product?.name}</h2>
                             <h3><FontAwesomeIcon icon={faStar} className='star-icon'/>{product?.price}원</h3>
                             <h3>도수: {product?.proof}%</h3> <hr />
                             <div>{product?.description}</div>

@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
 
 const Mypage = ({authenticate, setAuthenticate}) => {
-  const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN']);
+  const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'], ['userEmail']);
   const navigate = useNavigate();
 
   let now = new Date();
@@ -21,6 +21,7 @@ const Mypage = ({authenticate, setAuthenticate}) => {
 
   const logOut = ({authenticate}) => {
       removeCookie('X-AUTH-TOKEN');
+      removeCookie('userEmail');
       setAuthenticate(false);
       navigate('/login');
   }

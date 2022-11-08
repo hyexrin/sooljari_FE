@@ -881,6 +881,13 @@ Community
   height: 20px;
 }
 
+/** 좋아요 기능 -> 빨간 하트 **/
+.content-icon2 {
+  margin: 0 4px;
+  height: 20px;
+  color: rgb(255, 0, 0);
+}
+
 .content-box {
   padding: 0.5rem;
   font-size: small;
