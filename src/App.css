@@ -888,6 +888,53 @@ Community
   color: rgb(255, 0, 0);
 }
 
+.fullHeart {
+  position: absolute;
+  top: 33rem;
+  left: 21rem;
+  /* color: var(--clr-primary-5); */
+  color: pink;
+  height: 2rem;
+  /* transform: rotate(-45deg); */
+	animation: beat 1s;
+}
+
+@keyframes beat {
+	0% {transform: scale(1) ;}
+	50% {transform: scale(0.6) ;}
+}
+.fullHeart::after {
+	background-color: pink;
+	content: '';
+	border-radius: 50%;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 0;
+	left: 25px;
+}
+
+.fullHeart::before {
+	background-color: pink;
+	content: '';
+	border-radius: 50%;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: -25px;
+	right: 0px;
+}
+
+.blankHeart {
+  position: absolute;
+  top: 33rem;
+  left: 21rem;
+  color: rgb(87, 87, 87);
+  height: 2rem;
+}
+
+
+
 .content-box {
   padding: 0.5rem;
   font-size: small;

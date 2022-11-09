@@ -3,7 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as blankHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 const ProductDetail = () => {
@@ -11,7 +12,7 @@ const ProductDetail = () => {
     console.log("id? ", id);
 
     // 좋아요 기능 구현해보겠다는 발악
-
+    // 혜린: 아낰ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 난 널 믿어 ^0^ ❤️
     const [like, setLike] = useState(false);
 
     // useEffect(async () => {
@@ -28,6 +29,7 @@ const ProductDetail = () => {
     }
 
     // 발악 끝
+    // 혜린: 머야 바로 끝난거여써?ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 
     const [product, setProduct] = useState(null);
 
@@ -49,15 +51,24 @@ const ProductDetail = () => {
                     <Col lg={6} xs={12}>
                         <div className='Detail-img-box'>
                             <img className='Detail-img' src={product?.image} />
+                            {like ?
+                                    <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' /> :
+                                    <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />}
                             {/* <div className='imgTest'>hello</div> */}
                         </div>
                     </Col>
 
                     <Col lg={6}>
                         <div className='Detail-name-box'>
-                            <div>상품ID : 00{id}</div> <hr />
-                            <h2><FontAwesomeIcon like={like} onClick={toggleLike} icon={faHeart} className={like?'content-icon2':'content-icon'}/>{product?.name}</h2>
-                            <h3><FontAwesomeIcon icon={faStar} className='star-icon'/>{product?.price}원</h3>
+                            <div>상품ID : 00{id}
+                                
+
+                            </div> <hr />
+
+                            {/* <h2><FontAwesomeIcon like={like} onClick={toggleLike} icon={blankHeart} className={like?'content-icon2':'content-icon'}/>{product?.name}</h2> */}
+                            <h2>{product?.name}</h2>
+
+                            <h3><FontAwesomeIcon icon={faStar} className='star-icon' />{product?.price}원</h3>
                             <h3>도수: {product?.proof}%</h3> <hr />
                             <div>{product?.description}</div>
                         </div>
