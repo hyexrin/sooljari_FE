@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
+import ProductCard from '../../component/ProductCard'
 import RecommendData from '../../component/RecommendData'
 
 const DataRecommend = ({ recommend }) => {
@@ -10,7 +11,8 @@ const DataRecommend = ({ recommend }) => {
             <h1 className='data-recommend-title'>추천 데이터</h1>
             <Row>
                 {recommend && recommend.map((product) => (
-                    <Col key={product?.id} lg={3} md={4} xs={6}><RecommendData data={product} /></Col>
+                    <Col key={product?.id} lg={3} md={4} xs={6}>
+                        <ProductCard product={product} /></Col>
                 ))}
             </Row>
             
