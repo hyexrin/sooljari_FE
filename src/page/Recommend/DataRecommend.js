@@ -12,7 +12,7 @@ const DataRecommend = ({ recommend, product, userName }) => {
 
             <Row>
                 <Row>
-                    <Col className='data-recommend-sub'>{userName}님이 선택한 전통주!</Col>
+                    <Col className='data-recommend-sub'>🍶<b className='data-recommend-sub-user'>{userName}</b>님이 선택한 전통주🍶</Col>
                 </Row>
 
                 <Row>
@@ -20,7 +20,7 @@ const DataRecommend = ({ recommend, product, userName }) => {
                 </Row>
             </Row>
 
-            <h1 className='data-recommend-title'>취향저격 추천 전통주!</h1>
+            <h1 className='data-recommend-title'>취향저격 추천 전통주</h1>
 
             <Row>
                 {recommend && recommend.map((product) => (

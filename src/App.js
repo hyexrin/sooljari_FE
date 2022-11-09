@@ -105,7 +105,8 @@ function App() {
         .then(res => {
           setUserName(res.data);
         })
-  },[])
+  },[userName])
+  console.log('userName', userName)
 
  //  mypage userName 불러오기
  //  const [userName, setUserName] = useState();

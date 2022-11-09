@@ -1226,6 +1226,10 @@ Data Recommend
   margin-bottom: 1rem;
 }
 
+.data-recommend-sub-user {
+  color: var(--clr-primary-5);
+}
+
 /* 
 ================
 Data Recommend Box
