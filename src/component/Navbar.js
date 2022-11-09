@@ -54,7 +54,7 @@ const throttle = function (callback, waitTime) {
   };
 };
 
-const Navbar = () => {
+const Navbar = ({ authenticate }) => {
   // 메뉴버튼 
   const [showLinks, setShowLinks] = useState(false);
   const linksContainerRef = useRef(null);
@@ -143,7 +143,7 @@ const Navbar = () => {
               <li><img src={logo} className='logo' alt='logo' onClick={(event) => goToHome(event)} /></li>
               {/* data에서 Nav목록 가져오기 */}
               {links.map((link) => (
-                <NavLi key={link.id} icon={link} />
+                <NavLi key={link.id} icon={link} authenticate={authenticate}/>
               ))}
             </ul>
           </div>

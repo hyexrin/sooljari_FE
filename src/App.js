@@ -100,12 +100,23 @@ function App() {
   
   const [userName, setUserName] = useState("");
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
+  //       .then(res => {
+  //         setUserName(res.data);
+  //       })
+  // },[setUserName])
+  console.log('userName', userName)
+
+  const getUserInfo = () => {
     axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
-        .then(res => {
-          setUserName(res.data);
-        })
-  },[userName])
+    .then(res => {
+      setUserName(res.data);
+    })
+  }
+  useEffect(() => {
+    getUserInfo();
+  },[authenticate])
   console.log('userName', userName)
 
  //  mypage userName 불러오기
@@ -172,7 +183,7 @@ function App() {
   return (
     <div>
 
-      <Navbar />
+      <Navbar authenticate={authenticate} />
       <Routes>
         <Route path='/' element={<Main product={product} />} />
 
