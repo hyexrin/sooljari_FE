@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
 
-const Mypage = ({authenticate, setAuthenticate}) => {
+const Mypage = ({authenticate, setAuthenticate, userName, setUserName}) => {
   const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'], ['userEmail']);
   const navigate = useNavigate();
 
@@ -25,14 +25,14 @@ const Mypage = ({authenticate, setAuthenticate}) => {
       setAuthenticate(false);
       navigate('/login');
   }
-  const [userName, setUserName] = useState("");
+  // const [userName, setUserName] = useState("");
 
-  useEffect(() => {
-    axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
-        .then(res => {
-          setUserName(res.data);
-        })
-  },[])
+  // useEffect(() => {
+  //   axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
+  //       .then(res => {
+  //         setUserName(res.data);
+  //       })
+  // },[])
 
   const goToSurvey = () => {
     navigate('/survey');

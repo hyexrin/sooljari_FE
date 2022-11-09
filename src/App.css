@@ -1214,8 +1214,16 @@ Data Recommend
 .data-recommend-title {
   font-family: GangwonEduPowerExtraBoldA;
   margin-bottom: 1rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
+}
+
+.data-recommend-sub {
+  font-family: GangwonEduPowerExtraBoldA;
+  font-size: x-large;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* 
@@ -1234,6 +1242,62 @@ Data Recommend Box
 .data-recommendCard-tasty-ul {
   -webkit-padding-start: 0px;
 }
+
+
+
+/* 
+================
+Recommend Product Card
+================
+*/
+
+.recommend-ProductCard {
+  width: 80%;
+  transition: all 0.2s linear;
+  margin-bottom: 3rem;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommend-productCard-img-box {
+  border-radius: 5%;
+  overflow: hidden;
+  filter: drop-shadow(5px 5px 5px rgb(139, 139, 139));
+}
+
+.recommend-productImg {
+  width: 100%;
+  border-radius: 5%;
+  z-index: 1;
+  
+}
+
+.recommend-productImg:hover {
+  transform: scale(1.05);
+  transition: 0.4s ease;
+}
+
+.recommend-productCard-title,
+.recommend-productCard-price {
+  font-size: large;
+  font-weight: bold;
+}
+
+.recommend-productCard-price {
+  border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.recommend-productCard-description {
+  color: rgb(124, 124, 124);
+  font-size: small;
+  /* margin-top: 3px; */
+}
+
+
 
 /* 
 ================
@@ -1392,9 +1456,11 @@ Survey Result
   border-radius: 10px;
   font-size: medium;
 }
+
+
 /* 
 ================
-Data Recommend Box
+About
 ================
 */
 

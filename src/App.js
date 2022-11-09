@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Test from './Test';
 import ProductDetail from './page/Proudct/ProductDetail';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Login from './page/LoginComponent';
 import Search from './page/Search';
 import JoinComponent from './page/JoinComponent';
@@ -96,6 +97,16 @@ function App() {
   }, []);
   console.log("product", product);
 
+  
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
+        .then(res => {
+          setUserName(res.data);
+        })
+  },[])
+
  //  mypage userName 불러오기
  //  const [userName, setUserName] = useState();
  //  const getUserName = () => {
@@ -169,7 +180,7 @@ function App() {
         <Route path='/join' element={<JoinComponent />} />
 
         <Route path='/category' element={<Category product={product} />} />
-        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} />} />
+        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName}/>} />
 
         <Route path='/search' element={<Search />} />
 
@@ -184,7 +195,7 @@ function App() {
         <Route path='/productSearch/:keyword' element={<ProductSearch />} />
 
         {/* 추천 데이터 관련 페이지 :: 취향자리*/}
-        <Route path='/datarecommend' element={<DataRecommend recommend={recommendArray}/> } />
+        <Route path='/datarecommend' element={<DataRecommend recommend={recommendArray} product={product} userName={userName}/> } />
 
         {/* 취향 설문 관련 페이지 */}
         <Route path='/survey' element={<Survey />} />
