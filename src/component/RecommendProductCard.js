@@ -8,14 +8,14 @@ export default function RecommendProductCard({ product }) {
 
     const navigate = useNavigate();
 
-    const showDetail = () => {
-      navigate(`/product/${product.id}`);
-    };
+    // const showDetail = () => {
+    //   navigate(`/product/${product.id}`);
+    // };
 
-    console.log(product)
+    // console.log(product)
     
   return (
-    <Container className='recommend-ProductCard' onClick={showDetail} ket={product?.id}>
+    <Container className='recommend-ProductCard' key={product?.id}>
 
       <div className='recommend-productCard-img-box'>
         <img src={product?.image} className='recommend-productImg' />

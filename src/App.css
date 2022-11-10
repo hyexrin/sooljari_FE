@@ -889,15 +889,13 @@ Community
   color: rgb(255, 0, 0);
 }
 
-.fullHeart {
-  position: absolute;
-  top: 33rem;
-  left: 21rem;
-  /* color: var(--clr-primary-5); */
-  color: pink;
-  height: 2rem;
-  /* transform: rotate(-45deg); */
-  animation: beat 1s;
+.Dtail-like-box {
+  /* text-align: right; */
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+/* justify-content: space-between; */
+padding-top: 10px;
 }
 
 @keyframes beat {
@@ -908,6 +906,17 @@ Community
   50% {
     transform: scale(0.6);
   }
+}
+
+.fullHeart {
+  /* position: absolute;
+  top: 33rem;
+  left: 21rem; */
+  /* color: var(--clr-primary-5); */
+  color: pink;
+  height: 2rem;
+  /* transform: rotate(-45deg); */
+  animation: beat 0.7s;
 }
 
 .fullHeart::after {
@@ -933,9 +942,9 @@ Community
 }
 
 .blankHeart {
-  position: absolute;
+  /* position: absolute;
   top: 33rem;
-  left: 21rem;
+  left: 21rem; */
   color: rgb(87, 87, 87);
   height: 2rem;
 }
@@ -1131,9 +1140,23 @@ mypage
 
 .mypage-title-box,
 .mypage-profile-box,
-.mypage-calender-box {
+.mypage-calendar-box {
   background-color: white;
   margin-bottom: 0.5rem;
+}
+
+.mypage-calendar-box {
+  display: flex;
+  justify-content: center;
+}
+
+.mypage-calendar-box-sub {
+  margin-bottom: 0.5rem;
+}
+
+.calendar-heatmap {
+  text-align: center;
+  background-color: red;
 }
 
 .mypage-title-box {
@@ -1151,13 +1174,26 @@ mypage
   background-color: var(--clr-primary-5);
 }
 
-.mypage-calender-title {
+.mypage-calendar-title {
   display: flex;
   align-items: center;
 }
 
-.mypage-calender-icon {
+.mypage-calendar-icon {
   padding: 0.5rem;
+}
+
+.mypage-calendar-plus-box {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.mypage-calendar-title-row {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: space-between;
 }
 
 .mypage-logout-box {
@@ -1174,6 +1210,7 @@ mypage
   color: gray;
   background-color: white;
 }
+
 
 .react-calendar-heatmap .color-scale-1 {
   fill: var(--clr-primary-9);
@@ -1194,6 +1231,42 @@ mypage
 .container {
   white-space: pre-line;
 }
+
+
+/* 
+==================
+Write Calendar
+==================
+*/
+
+.write-calendar-box {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.write-calendar-date-box {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 2rem 0;
+}
+
+.date-picker {
+  background-color: #ddd;
+  width: 15rem;
+}
+
+.calendar-date {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.react-datepicker__day-name {
+  color: red;
+}
+
 
 /* 
 ==================

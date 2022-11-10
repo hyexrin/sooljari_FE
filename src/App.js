@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/custum-react-datepicker.css'
 import './App.css';
 import Navbar from './component/Navbar';
 import Main from './page/Main'
@@ -31,6 +32,7 @@ import DataRecommend from './page/Recommend/DataRecommend';
 import About from './page/About';
 import Survey from './page/survey/Survey';
 import SurveyResult from './page/survey/SurveyResult';
+import WriteCalendar from './page/Calendar/WriteCalendar';
 
 function App() {
 
@@ -187,16 +189,21 @@ function App() {
       <Routes>
         <Route path='/' element={<Main product={product} />} />
 
+        {/* 로그인 / 회원가입 페이지 */}
         {/* <Route path='/login' element={<LoginComponent setAuthenticate={setAuthenticate} />} /> */}
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
         <Route path='/join' element={<JoinComponent />} />
 
+        {/* */}
         <Route path='/category' element={<Category product={product} />} />
+        <Route path='/search' element={<Search />} />
+        <Route path='/about' element={<About />} />
+
+        {/* 마이페이지 */}
         <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName}/>} />
 
-        <Route path='/search' element={<Search />} />
-
-        <Route path='/about' element={<About />} />
+        {/* 주류기록달력 페이지 */}
+        <Route path='/writeCalendar' element={<WriteCalendar product={product} />} />
 
         {/* 커뮤니티 페이지 */}
         <Route path='/community' element={<Community community={community}/>} />

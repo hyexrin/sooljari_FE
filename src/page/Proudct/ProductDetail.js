@@ -51,19 +51,21 @@ const ProductDetail = () => {
                     <Col lg={6} xs={12}>
                         <div className='Detail-img-box'>
                             <img className='Detail-img' src={product?.image} />
-                            {like ?
-                                    <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' /> :
-                                    <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />}
-                            {/* <div className='imgTest'>hello</div> */}
+
                         </div>
                     </Col>
 
                     <Col lg={6}>
                         <div className='Detail-name-box'>
-                            <div>상품ID : 00{id}
-                                
 
-                            </div> <hr />
+                            <div className='Dtail-like-box'>
+                                상품ID : 00{id}
+                                {like ?
+                                    <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' /> :
+                                    <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />}
+                                {/* <div className='imgTest'>hello</div> */}
+                            </div>
+                            <hr />
 
                             {/* <h2><FontAwesomeIcon like={like} onClick={toggleLike} icon={blankHeart} className={like?'content-icon2':'content-icon'}/>{product?.name}</h2> */}
                             <h2>{product?.name}</h2>
