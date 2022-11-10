@@ -544,6 +544,7 @@ Product-All (main)
 .productImg:hover {
   transform: scale(1.05);
   transition: 0.4s ease;
+
 }
 
 .wrapper {
@@ -896,33 +897,39 @@ Community
   color: pink;
   height: 2rem;
   /* transform: rotate(-45deg); */
-	animation: beat 1s;
+  animation: beat 1s;
 }
 
 @keyframes beat {
-	0% {transform: scale(1) ;}
-	50% {transform: scale(0.6) ;}
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.6);
+  }
 }
+
 .fullHeart::after {
-	background-color: pink;
-	content: '';
-	border-radius: 50%;
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	top: 0;
-	left: 25px;
+  background-color: pink;
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 25px;
 }
 
 .fullHeart::before {
-	background-color: pink;
-	content: '';
-	border-radius: 50%;
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	top: -25px;
-	right: 0px;
+  background-color: pink;
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  right: 0px;
 }
 
 .blankHeart {
@@ -1048,7 +1055,7 @@ Community insert box
     background-color: var(--clr-primary-9);
     width: 350px;
     height: 350px;
-    
+
   }
 
   .commu-wrapper {
@@ -1097,7 +1104,7 @@ Community insert box
 
 .commu-insert-content-picinput {
   background-color: transparent;
-  
+
 }
 
 .commu-insert-content-textarea {
@@ -1324,7 +1331,7 @@ Recommend Product Card
   width: 100%;
   border-radius: 5%;
   z-index: 1;
-  
+
 }
 
 .recommend-productImg:hover {
@@ -1356,17 +1363,33 @@ Survey
 ================
 */
 
+@media screen and (min-width: 992px) {
+  
+  .survey-result-product-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .survey-result-product-box {
+    /* background-color: blue; */
+    width: 35%;
+    /* text-align: center; */
+  }
+}
+
 .survey-box {
   margin-top: 2rem;
   text-align: center;
 }
 
 .survey-title {
-    
-    font-family: GangwonEduPowerExtraBoldA;
-    /* margin-bottom: 2rem; */
-    font-weight: bold;
-    /* background-color: red; */
+
+  font-family: GangwonEduPowerExtraBoldA;
+  /* margin-bottom: 2rem; */
+  font-weight: bold;
+  /* background-color: red; */
 }
 
 .survey-arrow-box {
@@ -1407,6 +1430,9 @@ Slide Survey Form
 
 .survey-form-question-box {
   text-align: left;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
   width: 80%;
   margin-top: 8rem;
 }
@@ -1461,7 +1487,7 @@ Survey Result
 
 .survey-result-box {
   text-align: center;
-  padding-top: 3rem;
+  padding: 3rem 0;
 }
 
 .survey-result-title {

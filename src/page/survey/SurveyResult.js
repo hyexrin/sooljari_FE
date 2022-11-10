@@ -76,7 +76,7 @@ export default function SurveyResult({ product }) {
                 <Col xs={12}>어울리는 전통주 구경하러 Go</Col>
             </Row>
 
-            <Row>
+            <Row className='survey-result-product-row'>
                 <div className='survey-result-product-box'>
                     <div className='survey-result-product-card'>
                         {/* {productArr[0].data.name}

@@ -60,13 +60,15 @@ export default function SlideSurveyForm({ surveyQuestions, cnt, setCnt, lastNum,
         <div className='survey-form-box'>
 
             {num === lastNum &&
-                <div className='survey-form-question-box'>
-                    <div className='survey-form-questioin-num'>
-                        Q{surveyQuestions.id}
-                    </div>
+                <div>
+                    <div className='survey-form-question-box'>
+                        <div className='survey-form-questioin-num'>
+                            Q{surveyQuestions.id}
+                        </div>
 
-                    <div className='survey-form-question'>
-                        {surveyQuestions.question}
+                        <div className='survey-form-question'>
+                            {surveyQuestions.question}
+                        </div>
                     </div>
 
                     <div>
