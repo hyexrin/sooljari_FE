@@ -78,9 +78,8 @@ const ProductDetail = () => {
 
                             <div className='Dtail-like-box'>
                                 상품ID : 00{id}
-                                {like ?
-                                    <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' /> :
-                                    <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />}
+                                {like ? <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />
+                                     : <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' />}
                                 {/* <div className='imgTest'>hello</div> */}
                             </div>
                             <hr />

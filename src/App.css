@@ -891,11 +891,11 @@ Community
 
 .Dtail-like-box {
   /* text-align: right; */
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-/* justify-content: space-between; */
-padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* justify-content: space-between; */
+  padding-top: 10px;
 }
 
 @keyframes beat {
@@ -1263,8 +1263,24 @@ Write Calendar
   font-size: medium;
 }
 
-.react-datepicker__day-name {
-  color: red;
+.write-calendar-category-btn {
+  width: 100%;
+  background-color: lightgray;
+  color: black;
+  border: none;
+  margin: 1rem 0;
+}
+
+.write-calendar-category-btn:hover,
+.write-calendar-category-btn:focus {
+  background-color: var(--clr-primary-6);
+  color: white;
+  border: none;
+  box-shadow: none;
+}
+
+.write-calendar-category-btn:active {
+  box-shadow: none !important;
 }
 
 
@@ -1279,6 +1295,7 @@ Category
   height: auto;
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .category-top {
@@ -1293,13 +1310,18 @@ Category
   width: 100%;
   position: fixed;
   top: 0;
-  padding-top: 5px;
-  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  padding-top: 16px;
 }
 
 .category-ul {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: flex-end;
   padding-left: 0;
 }
 
@@ -1307,7 +1329,12 @@ Category
   left: 0;
   color: rgb(136, 136, 136);
   margin: 0 1rem;
-  font-size: x-small;
+  font-size: 11px;
+}
+
+.category-li:hover {
+  color: var(--clr-primary-5);
+  font-weight: bold;
 }
 
 @media screen and (min-width: 992px) {
@@ -1437,7 +1464,7 @@ Survey
 */
 
 @media screen and (min-width: 992px) {
-  
+
   .survey-result-product-row {
     display: flex;
     flex-direction: column;
@@ -1616,4 +1643,28 @@ About
 
 .about-logo-img {
   width: 100%;
+}
+
+
+.write-calendar-daily-note {
+  resize: none !important;
+  overflow: auto !important;
+  outline: none;
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+  width: 99%;
+  height: 20em;
+  line-height: 31px;
+  background-image: -webkit-linear-gradient(left, white 0, transparent 0), -webkit-linear-gradient(right, white 0, transparent 0), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+  background-repeat: repeat-y;
+  background-size: 100% 100%, 100% 100%, 100% 31px;
+  background-attachment: local;
+}
+
+.write-calendar-daily-note:hover {
+  resize: none !important;
+  overflow: auto !important;
+  outline: none;
+  box-shadow: none !important;
+  border-color: #ced4da !important;
 }

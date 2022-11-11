@@ -439,12 +439,12 @@
 }
 
 .react-datepicker__day-name {
-    color: var(--clr-primary-6);
+    color: var(--clr-primary-5);
     font-weight: bold;
 }
 
 .react-datepicker__day--weekend {
-    color: skyblue;
+    color: rgb(255, 174, 0);
 }
 
 .react-datepicker__month--selected, .react-datepicker__month--in-selecting-range, .react-datepicker__month--in-range,
