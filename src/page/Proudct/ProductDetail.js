@@ -24,8 +24,15 @@ const ProductDetail = () => {
     // }, []);
 
     const toggleLike = async (e) => {
-        const res = await axios.post("http://localhost:8080/api/liked", id)
-        setLike(!like)
+
+        setLike(!like);
+
+        if(like == true) {
+            const res = await axios.post("http://localhost:8080/api/liked", id, true);
+            console.log(res);
+        } else if(like == false) {
+            const res = await axios.post("http://localhost:8080/api/liked", id, false);
+        }
     }
 
     // 발악 끝
