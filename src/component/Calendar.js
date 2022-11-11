@@ -32,6 +32,7 @@ const App = () => {
       <div> {todayMonthEng} </div>
       <div>
         <CalendarHeatmap
+          
           // 표시할 달
           startDate={new Date(now.setDate(now.getDate() - 30))}
           endDate={new Date(now.setDate(now.getDate() + 120))}

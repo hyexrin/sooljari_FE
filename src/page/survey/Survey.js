@@ -37,7 +37,7 @@ export default function Survey() {
             <Row>
                 <h1 className='survey-title'>취향설문</h1>
             </Row>
-            <Row>
+            <Row className='survey-card-box'>
                 <Col>
                     {surveyQuestions.map((surveyQuestions) => (
                         surveyQuestions.id === cnt &&

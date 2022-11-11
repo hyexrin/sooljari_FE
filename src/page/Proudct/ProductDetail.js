@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as blankHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
+import { useCookies } from 'react-cookie'
 import axios from 'axios';
 
 const ProductDetail = () => {
@@ -14,6 +15,16 @@ const ProductDetail = () => {
     // 좋아요 기능 구현해보겠다는 발악
     // 혜린: 아낰ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 난 널 믿어 ^0^ ❤️
     const [like, setLike] = useState(false);
+    const [userId, setUserId] = useState("");
+    const [cookies, setCookie] = useCookies(["userEmail"]);
+
+    useEffect(() =>{
+        if(cookies.userEmail !== undefined) {
+            setUserId(cookies.userEmail);
+        } else {
+            alert("로그인이 필요합니다.");
+        }
+    })
 
     // useEffect(async () => {
     //     const fetchData = async () => {
@@ -24,15 +35,15 @@ const ProductDetail = () => {
     // }, []);
 
     const toggleLike = async (e) => {
-
         setLike(!like);
 
-        if(like == true) {
-            const res = await axios.post("http://localhost:8080/api/liked", id, true);
-            console.log(res);
-        } else if(like == false) {
-            const res = await axios.post("http://localhost:8080/api/liked", id, false);
-        }
+        console.log(like);
+
+        const res = await axios.post("http://localhost:8080/api/liked", {
+            userId : userId,
+            productId : id,
+            liked : like? "true" : "false"
+        });
     }
 
     // 발악 끝
@@ -58,19 +69,21 @@ const ProductDetail = () => {
                     <Col lg={6} xs={12}>
                         <div className='Detail-img-box'>
                             <img className='Detail-img' src={product?.image} />
-                            {like ?
-                                    <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' /> :
-                                    <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />}
-                            {/* <div className='imgTest'>hello</div> */}
+
                         </div>
                     </Col>
 
                     <Col lg={6}>
                         <div className='Detail-name-box'>
-                            <div>상품ID : 00{id}
-                                
 
-                            </div> <hr />
+                            <div className='Dtail-like-box'>
+                                상품ID : 00{id}
+                                {like ?
+                                    <FontAwesomeIcon icon={blankHeart} like={like} onClick={toggleLike} className='blankHeart' /> :
+                                    <FontAwesomeIcon icon={fullHeart} like={like} onClick={toggleLike} className='fullHeart' />}
+                                {/* <div className='imgTest'>hello</div> */}
+                            </div>
+                            <hr />
 
                             {/* <h2><FontAwesomeIcon like={like} onClick={toggleLike} icon={blankHeart} className={like?'content-icon2':'content-icon'}/>{product?.name}</h2> */}
                             <h2>{product?.name}</h2>

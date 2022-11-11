@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlassWater } from '@fortawesome/free-solid-svg-icons'
+import { faGlassWater, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import Calendar from '../component/Calendar'
 import axios from 'axios';
@@ -38,6 +38,9 @@ const Mypage = ({authenticate, setAuthenticate, userName, setUserName}) => {
     navigate('/survey');
   }
 
+  const writeCalendar = () => {
+    navigate('/writeCalendar')
+  }
 
   return (
     <Container className='mypage-box'>
@@ -64,14 +67,17 @@ const Mypage = ({authenticate, setAuthenticate, userName, setUserName}) => {
         </Col>
       </Row>
 
-      <Row className='mypage-calender-box'>
-        <Row>
-          <Col className='mypage-calender-title'>
-            <FontAwesomeIcon icon={faCalendar} className='mypage-calender-icon' />주류달력
+      <Row className='mypage-calendar-box'>
+        <Row className='mypage-calendar-title-row'>
+          <Col className='mypage-calendar-title'>
+            <FontAwesomeIcon icon={faCalendar} className='mypage-calendar-icon' />주류달력
+          </Col>
+          <Col className='mypage-calendar-plus-box'>
+            <FontAwesomeIcon icon={faPlus} onClick={writeCalendar} />
           </Col>
         </Row>
 
-        <Row className='mypage-calender-box'>
+        <Row className='mypage-calendar-box-sub'>
           <Calendar />
         </Row>
       </Row>
