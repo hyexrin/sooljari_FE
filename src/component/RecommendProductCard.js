@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Container } from 'react-bootstrap';
 
-export default function RecommendProductCard({ product }) {
+export default function RecommendProductCard({ product, productId, setProductId }) {
 
     const navigate = useNavigate();
 

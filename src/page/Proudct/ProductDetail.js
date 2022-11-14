@@ -21,9 +21,10 @@ const ProductDetail = () => {
     useEffect(() =>{
         if(cookies.userEmail !== undefined) {
             setUserId(cookies.userEmail);
-        } else {
-            alert("로그인이 필요합니다.");
-        }
+        } 
+        // else {
+        //     alert("로그인이 필요합니다.");
+        // }
     })
 
     // useEffect(async () => {
