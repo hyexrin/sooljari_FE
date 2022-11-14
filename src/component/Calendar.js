@@ -38,13 +38,13 @@ const App = () => {
           endDate={new Date(now.setDate(now.getDate() + 120))}
 
           values={[
-            { date: "2022-08-22", count: 2 },
-            { date: '2022-10-01', count: 1 },
-            { date: '2022-10-03', count: 2 },
-            { date: '2022-10-06', count: 3 },
-            { date: '2022-10-10', count: 4 },
-            { date: '2022-10-07', count: 1 },
-            { date: '2022-09-15', count: 3 },
+            { date: "2022-10-22", count: 2 },
+            { date: '2022-11-01', count: 1 },
+            { date: '2022-11-03', count: 2 },
+            { date: '2022-11-06', count: 3 },
+            { date: '2022-11-10', count: 4 },
+            { date: '2022-11-07', count: 1 },
+            { date: '2022-11-14', count: 3 },
             // ...and so on
           ]}
 
