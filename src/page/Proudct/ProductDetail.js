@@ -21,8 +21,8 @@ const ProductDetail = () => {
     useEffect(() =>{
         if(cookies.userEmail !== undefined) {
             setUserId(cookies.userEmail);
-        } 
-        // else {
+        }
+        //  else {
         //     alert("로그인이 필요합니다.");
         // }
     })
@@ -36,15 +36,16 @@ const ProductDetail = () => {
     // }, []);
 
     const toggleLike = async (e) => {
-        setLike(!like);
 
+        setLike(!like);
         console.log(like);
 
-        const res = await axios.post("http://localhost:8080/api/liked", {
+        axios.post("http://localhost:8080/api/liked", {
             userId : userId,
             productId : id,
-            liked : like? "true" : "false"
+            liked : like? true : false
         });
+
     }
 
     // 발악 끝
