@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as blankHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
+import { useCookies } from 'react-cookie'
 import axios from 'axios';
 
 const ProductDetail = () => {
@@ -14,6 +15,16 @@ const ProductDetail = () => {
     // 좋아요 기능 구현해보겠다는 발악
     // 혜린: 아낰ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 난 널 믿어 ^0^ ❤️
     const [like, setLike] = useState(false);
+    const [userId, setUserId] = useState("");
+    const [cookies, setCookie] = useCookies(["userEmail"]);
+
+    useEffect(() =>{
+        if(cookies.userEmail !== undefined) {
+            setUserId(cookies.userEmail);
+        } else {
+            alert("로그인이 필요합니다.");
+        }
+    })
 
     // useEffect(async () => {
     //     const fetchData = async () => {
@@ -24,8 +35,15 @@ const ProductDetail = () => {
     // }, []);
 
     const toggleLike = async (e) => {
-        const res = await axios.post("http://localhost:8080/api/liked", id)
-        setLike(!like)
+        setLike(!like);
+
+        console.log(like);
+
+        const res = await axios.post("http://localhost:8080/api/liked", {
+            userId : userId,
+            productId : id,
+            liked : like? "true" : "false"
+        });
     }
 
     // 발악 끝
