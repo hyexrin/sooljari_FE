@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
 
-const Mypage = ({authenticate, setAuthenticate, userName, setUserName}) => {
+const Mypage = ({authenticate, setAuthenticate, userName, setUserName, calendar}) => {
   const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'], ['userEmail']);
   const navigate = useNavigate();
 
@@ -78,7 +78,7 @@ const Mypage = ({authenticate, setAuthenticate, userName, setUserName}) => {
         </Row>
 
         <Row className='mypage-calendar-box-sub'>
-          <Calendar />
+          <Calendar userName={userName} calendar={calendar}/>
         </Row>
       </Row>
 

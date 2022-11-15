@@ -98,6 +98,7 @@ function App() {
     getProducts();
   }, []);
   console.log("product", product);
+  
 
   // calendar DB 불러오기
   const [calendar, setCalendar] = useState();
@@ -112,6 +113,7 @@ function App() {
     getCalendar();
   }, [])
   console.log("calendar", calendar);
+
   
   const [userName, setUserName] = useState("");
 
@@ -179,7 +181,7 @@ function App() {
         <Route path='/about' element={<About />} />
 
         {/* 마이페이지 */}
-        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName}/>} />
+        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName} calendar={calendar} />} />
 
         {/* 주류기록달력 페이지 */}
         <Route path='/writeCalendar' element={<WriteCalendar product={product} />} />
