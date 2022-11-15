@@ -187,7 +187,7 @@ function App() {
 
       <Navbar authenticate={authenticate} />
       <Routes>
-        <Route path='/' element={<Main product={product} />} />
+        <Route path='/' element={<Main recommend={recommendArray} product={product} />} />
 
         {/* 로그인 / 회원가입 페이지 */}
         {/* <Route path='/login' element={<LoginComponent setAuthenticate={setAuthenticate} />} /> */}
