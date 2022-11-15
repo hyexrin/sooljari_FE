@@ -39,7 +39,7 @@ const Mypage = ({authenticate, setAuthenticate, userName, setUserName}) => {
   }
 
   const writeCalendar = () => {
-    navigate('/writeCalendar')
+    navigate('/writeCalendar', { state: { userName: userName}})
   }
 
   return (

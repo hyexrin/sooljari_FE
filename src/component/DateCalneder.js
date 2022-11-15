@@ -8,7 +8,7 @@ import { Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-export default function DateCalneder() {
+export default function DateCalneder({setSelectedDate}) {
 
     const [date, setDate] = useState(new Date());
     const formatDate = (d) => {
@@ -25,6 +25,7 @@ export default function DateCalneder() {
         let Date = getDate(date);
 
         const selectedDate = Year + "-" + Month + "-" + Date;
+        setSelectedDate(selectedDate)
         console.log('selected date: ', selectedDate);
     }, [date]);
 
