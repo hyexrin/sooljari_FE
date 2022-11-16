@@ -1140,7 +1140,8 @@ mypage
 
 .mypage-title-box,
 .mypage-profile-box,
-.mypage-calendar-box {
+.mypage-calendar-box,
+.mypage-diary-box {
   background-color: white;
   margin-bottom: 0.5rem;
 }
@@ -1283,6 +1284,14 @@ Write Calendar
 .write-calendar-category-btn:active {
   box-shadow: none !important;
 }
+
+
+/* 
+==================
+New Calendar
+==================
+*/
+
 
 
 /* 
