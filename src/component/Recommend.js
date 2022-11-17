@@ -4,6 +4,8 @@ import ProductCard from './ProductCard';
 
 const Recommend = ({recommend, product}) => {
 
+    console.log(recommend);
+
     return (
         <div className='recommend-box'>
 

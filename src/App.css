@@ -1272,7 +1272,8 @@ Write Calendar
 }
 
 .write-calendar-category-btn:hover,
-.write-calendar-category-btn:focus {
+.write-calendar-category-btn:focus,
+.write-calendar-category-btn::after {
   background-color: var(--clr-primary-6);
   color: white;
   border: none;
@@ -1382,6 +1383,20 @@ Data Recommend
 
 .data-recommend-sub-user {
   color: var(--clr-primary-5);
+}
+
+.data-recommend-1st-box {
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+}
+
+.data-recommend-selected-box > .Col {
+  width: 100%;
+}
+
+.data-recommend-selected-col {
+  /* width: 100%; */
 }
 
 /* 
@@ -1642,9 +1657,43 @@ About
 */
 
 .about-logo-img {
-  width: 100%;
+  width: 80%;
 }
 
+.about-prj {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-prj-boxs {
+  color: white;
+  margin: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-prj-box {
+  display: flex;
+  flex-direction: column;
+  height: 14rem;
+  align-items: center;
+  justify-content: start;
+  /* background-color: var(--clr-primary-10); */
+}
+
+.about-prj-category {
+  font-size: large;
+  margin-top: 7px;
+}
+
+.about-prj-icon {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  height: 1.2rem;
+  padding: 0;
+  color: white;
+}
 
 .write-calendar-daily-note {
   resize: none !important;
