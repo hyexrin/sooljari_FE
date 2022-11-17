@@ -3,8 +3,9 @@ import "../App.css";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import ReactTooltip from "react-tooltip";
+import { useNavigate } from "react-router-dom";
 
-const App = () => {
+const App = ({userName, calendar}) => {
 
   let now = new Date();
   let year = now.getFullYear();
@@ -25,7 +26,48 @@ const App = () => {
   //   console.log("+++++++++++++++++++++++++");
   // }, [])
 
+  var resultArr = [];
 
+ // 날짜 구하기
+ var num = 0;
+ calendar?.map((calendar)=>(
+    userName === calendar.userName &&
+    resultArr.push({ date: calendar.date, count: 4})
+  ))
+
+  // cnt 구하기
+  var length = resultArr.length;
+  console.log('length', length);
+
+  for(var i = 0; i < length; i++) {
+    var num = 0;
+    var a = resultArr[i].date;
+    for(var j = i; j < length; j++) {
+      a === resultArr[j].date
+      && (num = num + 1);
+    }
+    resultArr[i].count = num;
+    console.log(resultArr[i].date, resultArr[i].count);
+  }
+
+  console.log('resultArr', resultArr)
+  const result = resultArr;
+  console.log('result >> ', result)
+
+  var test = [
+    { date: '2022-11-1', count: 3},
+    { date: '2022-11-5', count: 1},
+    { date: '2022-11-11', count: 1},
+    { date: '2022-11-14', count: 5}
+  ]
+
+  useEffect(() => {
+    console.log('result >> ', result)
+  }, [result])
+
+  const navigate = useNavigate('/')
+
+  console.log('test', test)
   return (
     <div className="container">
       <div> {year} </div>
@@ -37,16 +79,7 @@ const App = () => {
           startDate={new Date(now.setDate(now.getDate() - 30))}
           endDate={new Date(now.setDate(now.getDate() + 120))}
 
-          values={[
-            { date: "2022-10-22", count: 2 },
-            { date: '2022-11-01', count: 1 },
-            { date: '2022-11-03', count: 2 },
-            { date: '2022-11-06', count: 3 },
-            { date: '2022-11-10', count: 4 },
-            { date: '2022-11-07', count: 1 },
-            { date: '2022-11-14', count: 3 },
-            // ...and so on
-          ]}
+          values={result}
 
           // color
           classForValue={(value) => {
@@ -62,7 +95,7 @@ const App = () => {
             // react-tooltip의 구성
             return {
               "data-tip": `${value.date}\n전통주 ${value.count
-                }병 Clear!`,
+                }병 Clear!`, 
             };
           }}
         />

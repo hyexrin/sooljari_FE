@@ -23,7 +23,7 @@ const NavLi = ({icon, authenticate}) => {
               //취소
             }
           })
-      : navigate(`${icon.url}`)
+      : navigate(`${icon.url}`); console.log(icon);
     }
 
   return (

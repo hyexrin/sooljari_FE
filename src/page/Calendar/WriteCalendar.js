@@ -12,12 +12,50 @@ import { getDate, getDay, getMonth, getYear } from 'date-fns';
 import { useEffect } from 'react';
 import DateCalneder from '../../component/DateCalneder';
 import RecommendProductCard from '../../component/RecommendProductCard';
+import CalendarService from '../../service/CalendarService';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
-export default function WriteCalendar({ product }) {
+export default function WriteCalendar(props) {
 
+    const product = props.product;
+
+    const location = useLocation();
+    const user = location.state.userName
+    console.log('state', user);
+
+    const navigate = useNavigate('');
+
+    // calendar CRUD 연결
+    const [diary, setDiary] = useState('');
+
+    const chnageDiaryHandler = (e) => {
+        setDiary(e.target.value);
+    }
+
+    const createCalendar = (e) => {
+        console.log("createCalnedar");
+        e.preventDefault();
+
+        let calendar = {
+            userName : user,
+            date: selectedDate,
+            productId: Number(selectedItems.product?.id),
+            diary: diary
+        }
+        console.log(calendar.date + calendar.userName);
+        console.log("calendar => " + JSON.stringify(calendar));
+        CalendarService.createCalendar(calendar).then(res => {
+            props.history.push('/api/calendars')
+        })
+        navigate('/mypage')
+    }
+
+    ///
     const [selectedCategory, setSelectedCategory] = useState('');
     const [click, setClick] = useState(true);
+    const [selectedDate, setSelectedDate] = useState('');
+    console.log('writeCalendar >> ', selectedDate);
 
     const selected = (e) => {
         setSelectedCategory(e.target.value);
@@ -27,7 +65,7 @@ export default function WriteCalendar({ product }) {
         setClick(!click);
     }
 
-    const [selectedItems, setSelectedItems] = useState(['1']);
+    const [selectedItems, setSelectedItems] = useState([]);
     // var selectedItems = [];
 
     useEffect(() => {
@@ -38,11 +76,12 @@ export default function WriteCalendar({ product }) {
 
     return (
         <Container className='write-calendar-box'>
-
+                
+                {user}
             <Row className='write-calendar-date-box' style={{ width: '100%' }}>
                 <Col xs={1}><FontAwesomeIcon icon={faArrowLeft} /></Col>
-                <Col><DateCalneder /></Col>
-                <Col xs={1}><FontAwesomeIcon icon={faPlus} /></Col>
+                <Col><DateCalneder setSelectedDate={setSelectedDate}/></Col>
+                <Col xs={1}><FontAwesomeIcon icon={faPlus} onClick={createCalendar}/></Col>
             </Row>
 
             <Row onClick={onClickTitle} style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
@@ -55,14 +94,14 @@ export default function WriteCalendar({ product }) {
 
             <Row style={{width: '100%'}}>
             {product?.map((product) => (
-                            product === selectedItems.product &&
+                            product?.id === selectedItems.product?.id &&
                             <Row key={product?.id} style={{ margin: '5px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <Col><img src={product?.image} style={{ width: '5rem', borderRadius: '15px', justifyContent: 'flex-end', alignItems: 'flex-end' }} /></Col>
+                                <Col onClick={()=>{setSelectedItems([])}}><img src={product?.image} style={{ width: '5rem', borderRadius: '15px', justifyContent: 'flex-end', alignItems: 'flex-end' }} /></Col>
                                 <Col>{product?.name}</Col>
                             </Row>
                         ))}
             </Row>
-
+            
             {click &&
                 <>
                     <Row style={{ width: '100%' }}>
@@ -77,7 +116,7 @@ export default function WriteCalendar({ product }) {
                             product?.category === selectedCategory
                             &&
                             <Row key={product?.id} style={{ margin: '5px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <Col><img onClick={() => {console.log('product @@@', product); setSelectedItems({...selectedItems, product}); setClick(false); }} src={product?.image} style={{ width: '5rem', borderRadius: '15px', justifyContent: 'flex-end', alignItems: 'flex-end' }} /></Col>
+                                <Col><img onClick={() => {console.log('product @@@', product); setSelectedItems({product}); setClick(false); console.log('selectedItems.id >> ', selectedItems.product?.id)}} src={product?.image} style={{ width: '5rem', borderRadius: '15px', justifyContent: 'flex-end', alignItems: 'flex-end' }} /></Col>
                                 <Col>{product?.name}</Col>
                             </Row>
                         ))}
@@ -85,11 +124,11 @@ export default function WriteCalendar({ product }) {
                 </>
             }
 
-            <Row style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'space-between', marginTop: '1rem' }}>
+            <Row style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'space-between', marginTop: '3rem' }}>
                 {/* <Col xs={1}><FontAwesomeIcon icon={faChevronRight} /></Col> */}
-                <Col><h5>하루 기록📒</h5></Col>
+                <Col><h5>나의 주류 기록📒</h5></Col>
                 {/* <Col xs={1}></Col> */}
-                <textarea style={{ resize: 'none' }} class='write-calendar-daily-note' />
+                <textarea style={{ resize: 'none' }} onChange={chnageDiaryHandler} class='write-calendar-daily-note' placeholder='ex) 달달한 맛과 향에 오늘 먹은 안주와 넘나 찰떡!'/>
             </Row>
 
         </Container>

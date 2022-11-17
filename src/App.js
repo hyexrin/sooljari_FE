@@ -99,6 +99,21 @@ function App() {
     getProducts();
   }, []);
   console.log("product", product);
+  
+
+  // calendar DB 불러오기
+  const [calendar, setCalendar] = useState();
+
+  const getCalendar = () => {
+    fetch(`/api/calendars/`)
+      .then(res => res.json())
+      .then(m => setCalendar(m))
+  }
+
+  useEffect(() => {
+    getCalendar();
+  }, [])
+  console.log("calendar", calendar);
 
   
   const [userName, setUserName] = useState("");
@@ -109,8 +124,9 @@ function App() {
   //         setUserName(res.data);
   //       })
   // },[setUserName])
-  console.log('userName', userName)
+  // console.log('userName', userName)
 
+  // userName 정보 불러오기
   const getUserInfo = () => {
     axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
     .then(res => {
@@ -148,41 +164,6 @@ function App() {
   }, [])
   console.log("community", community);
 
-  
-  // const getProductsSearch = () => {
-  //   let serchQuery = query.get("q") || "";
-  //   console.log("쿼리값은?", serchQuery)
-  //   fetch(`/api/products?q=${serchQuery}`)
-  //     .then(res => res.json())
-  //     .then(m => setProductSearch(m))
-  // }
-
-  // useEffect(() => {
-  //   getProductsSearch();
-  //   console.log("productSearch", productSearch);
-  // }, [query]);
-
-
-  // useEffect(() => {
-  //   Swal.fire({
-  //     icon: "warning",
-  //     title: "모바일 버전으로 확인해주세요!",
-  //     text: '회원의 경우 모바일 버전으로, 관리자의 경우 데스크탑 버전으로 이용해주세요. 관리자 모드는 /admin 으로 진입 가능합니다.',
-  //     showCancelButton: true,
-  //     confirmButtonText: "확인",
-  //     cancelButtonText: "취소",
-  //   }).then((res) => {
-  //     /* Read more about isConfirmed, isDenied below */
-  //     if (res.isConfirmed) {
-  //       //삭제 요청 처리
-  //     }
-  //     else {
-  //       //취소
-  //     }
-  //   });
-  // }, [])
-
-
   return (
     <div>
 
@@ -201,7 +182,7 @@ function App() {
         <Route path='/about' element={<About />} />
 
         {/* 마이페이지 */}
-        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName}/>} />
+        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName} calendar={calendar} />} />
 
         {/* 주류기록달력 페이지 */}
         <Route path='/writeCalendar' element={<WriteCalendar product={product} />} />
