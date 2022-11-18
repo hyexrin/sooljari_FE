@@ -71,6 +71,7 @@ function App() {
   // recommend -> object to array
   var recommendArray = [];
   const count = Object.keys(recommend).length;
+  recommendArray.splice(0, count);
     for(var i = 0; i < count; i++) {
       var data = recommend[i];
       recommendArray.push(data);
@@ -169,7 +170,7 @@ function App() {
 
       <Navbar authenticate={authenticate} />
       <Routes>
-        <Route path='/' element={<Main product={product} />} />
+        <Route path='/' element={<Main recommend={recommendArray} product={product} />} />
 
         {/* 로그인 / 회원가입 페이지 */}
         {/* <Route path='/login' element={<LoginComponent setAuthenticate={setAuthenticate} />} /> */}
@@ -197,7 +198,7 @@ function App() {
         <Route path='/productSearch/:keyword' element={<ProductSearch />} />
 
         {/* 추천 데이터 관련 페이지 :: 취향자리*/}
-        <Route path='/datarecommend' element={<DataRecommend recommend={recommendArray} product={product} userName={userName}/> } />
+        <Route path='/datarecommend' element={<DataRecommend product={product} userName={userName}/> } />
 
         {/* 취향 설문 관련 페이지 */}
         <Route path='/survey' element={<Survey />} />

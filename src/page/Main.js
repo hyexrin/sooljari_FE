@@ -1,8 +1,8 @@
 import React from 'react'
 import Recommend from '../component/Recommend'
 
-
-const main = ({product}) => {
+const main = ({recommend, product}) => {
+    
     return (
         <div className='main-box'>
             <div className='event-box'>
@@ -10,7 +10,7 @@ const main = ({product}) => {
             </div>
 
             <div className='recommend'>
-                <Recommend product={product}/>
+                <Recommend recommend={recommend} product={product}/>
             </div>
 
         </div>
