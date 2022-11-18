@@ -183,7 +183,7 @@ function App() {
         <Route path='/about' element={<About />} />
 
         {/* 마이페이지 */}
-        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName} calendar={calendar} />} />
+        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName} calendar={calendar} product={product}/>} />
 
         {/* 주류기록달력 페이지 */}
         <Route path='/writeCalendar' element={<WriteCalendar product={product} />} />

@@ -69,6 +69,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(238, 26%, 23%);
@@ -1292,7 +1299,70 @@ New Calendar
 ==================
 */
 
+.new-calendar-diarylist-box {
+  /* margin-top: 1rem; */
+  /* background-color: red; */
+  margin: 0;
+}
 
+.new-calendar-diarylist-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* 
+==================
+Diary List
+==================
+*/
+
+.diary-list-box {
+  font-family: GangwonEduSaeeum_OTFMediumA;
+  font-size: 1.5rem;
+  /* border: 1px solid lightgray; */
+  border-radius: 15px;
+  box-shadow: var(--dark-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.diary-list-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diary-list-pin-icon {
+  width: 1.5rem;
+  margin: 0.5rem;
+}
+
+.diary-list-content-box {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  /* border: 1px solid lightgray; */
+  border-radius: 15px;
+  background-color: white;
+
+}
+
+.diary-list-text {
+ padding-left: 1.5rem; 
+}
+
+.diary-list-comment-icon {
+  /* background-color: pink; */
+  /* height: 3rem; */
+  /* display: flex;
+  justify-content: start;
+  align-items: start; */
+}
 
 /* 
 ==================

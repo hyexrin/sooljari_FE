@@ -11,10 +11,10 @@ import NewCalendar from './Calendar/NewCalendar'
 import DiaryList from '../component/DiaryList'
 import DateCalneder from '../component/DateCalneder'
 
-const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar }) => {
+const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar, product }) => {
   const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'], ['userEmail']);
   const navigate = useNavigate();
-
+  console.log('my page product >>>>>>>>>>>>>>>>>>>>>', product)
   let now = new Date();
   let year = now.getFullYear();
 
@@ -99,18 +99,10 @@ const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar
         </Row>
 
         <Row className='mypage-calendar-box-sub'>
-        <NewCalendar userName={userName} calendar={calendar} />
+        <NewCalendar userName={userName} calendar={calendar} product={product}/>
           {/* <DateCalneder setSelectedDate={setSelectedDate} userName={userName} calendar={calendar} /> */}
         </Row>
 
-        <Row>
-          {calendar?.map((calendar) => (
-            userName === calendar.userName &&
-            <>
-              <DiaryList key={calendar.id}calendar={calendar} /> 
-            </>
-          ))}
-        </Row>
       </Row>
 
 

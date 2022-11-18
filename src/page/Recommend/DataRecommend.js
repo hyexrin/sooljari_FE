@@ -107,61 +107,37 @@ const DataRecommend = ({ product, userName }) => {
                     {
                         animation && selected === 'sweet' && product.map((product) => (
                             product?.sweet
-<<<<<<< HEAD
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
-=======
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
->>>>>>> 421db6968c1cbb2a9d544abcb2d705f3c6eff224
+                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
                                 : ''
                         )) ||
 
                         animation && selected === 'light' && product.map((product) => (
                             product?.light
-<<<<<<< HEAD
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
-=======
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
->>>>>>> 421db6968c1cbb2a9d544abcb2d705f3c6eff224
+                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
                                 : ''
                         )) ||
 
                         animation && selected === 'soft' && product.map((product) => (
                             product?.soft
-<<<<<<< HEAD
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
-=======
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
->>>>>>> 421db6968c1cbb2a9d544abcb2d705f3c6eff224
+                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
                                 : ''
                         )) ||
 
                         animation && selected === 'bitter' && product.map((product) => (
                             product?.bitter
-<<<<<<< HEAD
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
-=======
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
->>>>>>> 421db6968c1cbb2a9d544abcb2d705f3c6eff224
+                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
                                 : ''
                         )) ||
 
                         animation && selected === 'clean' && product.map((product) => (
                             product?.clean
-<<<<<<< HEAD
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
-=======
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
->>>>>>> 421db6968c1cbb2a9d544abcb2d705f3c6eff224
+                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
                                 : ''
                         )) ||
 
                         animation && selected === 'smell' && product.map((product) => (
                             product?.smell
-<<<<<<< HEAD
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
-=======
-                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
->>>>>>> 421db6968c1cbb2a9d544abcb2d705f3c6eff224
+                                ? <Col xs={6} className='data-recommend-selected-col' onClick={() => {setProductId(product?.id - 1); viewRecommendById(recommendById); setAnimation(false)}} key={product?.id}><RecommendProductCard product={product} productId={productId} setProductId={setProductId} /></Col>
                                 : ''
                         ))
                     }

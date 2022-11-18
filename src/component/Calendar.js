@@ -54,12 +54,14 @@ const App = ({userName, calendar}) => {
   const result = resultArr;
   console.log('result >> ', result)
 
-  var test = [
-    { date: '2022-11-1', count: 3},
-    { date: '2022-11-5', count: 1},
-    { date: '2022-11-11', count: 1},
-    { date: '2022-11-14', count: 5}
-  ]
+  // calendar value test 데이터
+  // var test = [
+  //   { date: '2022-11-1', count: 3},
+  //   { date: '2022-11-5', count: 1},
+  //   { date: '2022-11-11', count: 1},
+  //   { date: '2022-11-14', count: 5}
+  // ]
+  // console.log('test', test)
 
   useEffect(() => {
     console.log('result >> ', result)
@@ -67,7 +69,6 @@ const App = ({userName, calendar}) => {
 
   const navigate = useNavigate('/')
 
-  console.log('test', test)
   return (
     <div className="container">
       <div> {year} </div>
