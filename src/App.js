@@ -34,6 +34,7 @@ import Survey from './page/survey/Survey';
 import SurveyResult from './page/survey/SurveyResult';
 import WriteCalendar from './page/Calendar/WriteCalendar';
 import { useCookies } from 'react-cookie'
+import Diary from './component/Diary';
 
 function App() {
 
@@ -187,10 +188,11 @@ function App() {
         <Route path='/about' element={<About />} />
 
         {/* 마이페이지 */}
-        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName} calendar={calendar} />} />
+        <Route path='/mypage' element={<PrivateRoute authenticate={authenticate} setAuthenticate={setAuthenticate} userName={userName} setUserName={setUserName} calendar={calendar} product={product}/>} />
 
         {/* 주류기록달력 페이지 */}
         <Route path='/writeCalendar' element={<WriteCalendar product={product} />} />
+        <Route path='/diary' element={<Diary />} />
 
         {/* 커뮤니티 페이지 */}
         <Route path='/community' element={<Community community={community}/>} />

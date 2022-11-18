@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlassWater, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faGlassWater, faPlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import Calendar from '../component/Calendar'
 import axios from 'axios';
@@ -11,10 +11,10 @@ import NewCalendar from './Calendar/NewCalendar'
 import DiaryList from '../component/DiaryList'
 import DateCalneder from '../component/DateCalneder'
 
-const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar }) => {
-  const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'],['userEmail']);
+const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar, product }) => {
+  const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'], ['userEmail']);
   const navigate = useNavigate();
-
+  console.log('my page product >>>>>>>>>>>>>>>>>>>>>', product)
   let now = new Date();
   let year = now.getFullYear();
 
@@ -75,6 +75,22 @@ const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar
       <Row className='mypage-calendar-box'>
         <Row className='mypage-calendar-title-row'>
           <Col className='mypage-calendar-title'>
+            <FontAwesomeIcon icon={faPenToSquare} className='mypage-calendar-icon' />전통주 기록
+          </Col>
+          {/* <Col className='mypage-calendar-plus-box'>
+            <FontAwesomeIcon icon={faPlus} onClick={writeCalendar} />
+          </Col> */}
+        </Row>
+
+        <Row className='mypage-calendar-box-sub'>
+          <Calendar userName={userName} calendar={calendar} />
+          {/* <DateCalneder setSelectedDate={setSelectedDate} userName={userName} calendar={calendar} /> */}
+        </Row>
+      </Row>
+
+      <Row className='mypage-calendar-box'>
+        <Row className='mypage-calendar-title-row'>
+          <Col className='mypage-calendar-title'>
             <FontAwesomeIcon icon={faCalendar} className='mypage-calendar-icon' />주류달력
           </Col>
           <Col className='mypage-calendar-plus-box'>
@@ -83,24 +99,12 @@ const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar
         </Row>
 
         <Row className='mypage-calendar-box-sub'>
-          <Calendar userName={userName} calendar={calendar} />
+        <NewCalendar userName={userName} calendar={calendar} product={product}/>
           {/* <DateCalneder setSelectedDate={setSelectedDate} userName={userName} calendar={calendar} /> */}
-          <NewCalendar userName={userName} calendar={calendar} />
         </Row>
+
       </Row>
 
-      <Row className='mypage-diary-box'>
-        <Row>일기 모아보기</Row>
-        
-        <Row>
-          {calendar?.map((calendar) => (
-            userName === calendar.userName &&
-            <>
-              <DiaryList calendar={calendar} /> 
-            </>
-          ))}
-        </Row>
-      </Row>
 
       <Row className='mypage-logout-box'>
         <Col><button onClick={logOut} className='mypage-logout-btn'>LOGOUT</button></Col>

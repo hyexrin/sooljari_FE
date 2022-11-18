@@ -1,4 +1,5 @@
 import React from 'react'
+import BestProduct from '../component/BestProduct'
 import Recommend from '../component/Recommend'
 
 const main = ({recommend, product}) => {
@@ -11,6 +12,7 @@ const main = ({recommend, product}) => {
 
             <div className='recommend'>
                 <Recommend recommend={recommend} product={product}/>
+                <BestProduct recommend={recommend} product={product}/>
             </div>
 
         </div>

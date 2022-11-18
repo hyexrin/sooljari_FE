@@ -6,26 +6,58 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import DiaryList from '../../component/DiaryList'
 
-const NewCalendar = () => {
+const NewCalendar = ({userName, calendar, product}) => {
     const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
   //day
-  const dayjs = require('dayjs');
+  // const dayjs = require('dayjs');
   const weekday = require('dayjs/plugin/weekday');
   const isoWeek = require('dayjs/plugin/isoWeek');
   const weekOfYear = require('dayjs/plugin/weekOfYear');
+  const customParseFormat = require('dayjs/plugin/customParseFormat');
 
   // day extend
   dayjs.extend(weekday);
   dayjs.extend(isoWeek);
   dayjs.extend(weekOfYear);
+  dayjs.extend(customParseFormat)
 
   const today = dayjs();
   const [viewDate, setViewDate] = useState(dayjs());
   const [selectDate, setSelectDate] = useState(dayjs());
+  
+  const navigate = useNavigate('');
+  const goToDiary = () => {
+    navigate('/diary')
+  }
+  
+  // userName data 구하기
+  var resultArr = [];
+  calendar?.map((calendar)=>(
+     userName === calendar.userName &&
+     resultArr.push(calendar)
+   ))
 
-  const createCalendar = () => {
+  // console.log('new Calendar Result Arr >> ', dayjs(resultArr[0].date));
+
+  // 날짜만 배열에 넣기
+  var dateArr = []
+  resultArr?.map((calendar) => (
+    dateArr.push(dayjs(calendar?.date))
+  ))
+  console.log('date Arr >> ', dateArr);
+
+  {resultArr?.map((calendar) => (
+    <DiaryList key={calendar.id} calendar={calendar} /> 
+))}
+
+  const [diary, setDiary] = useState(dayjs());
+
+const createCalendar = () => {
     const startWeek = viewDate.startOf('month').week();
     const endWeek = viewDate.endOf('month').week() === 1 ? 53 : viewDate.endOf('month').week();
     let calender = [];
@@ -39,17 +71,19 @@ const NewCalendar = () => {
             if (viewDate.format('MM') === '12') {
               current = viewDate.startOf('week').week(week - 52).add(n + i, 'day');
             }
+
             // 현재 날짜 (기준)
             let isSelected = selectDate.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'selected' : '';
             let isToday = today.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'today' : '';
             let isNone = current.format('MM') === viewDate.format('MM') ? '' : 'none';
+
             return (
               <>
                 <div className={`box`} key={`${week}_${i}`} >
                   <div className={`text ${isSelected} ${isToday} ${isNone}`} onClick={() => { setSelectDate(current) }}>
-                    <span className={`day`}>{current.format('D')}</span>
+                    <span className={`day`} onClick={() => { setDiary(current.format('YYYY-M-D')); console.log(current.format('YYYY-M-D'))} }>{current.format('D')}</span>
                     {isToday ? (<span className="isToday">today</span>)
-                      : isSelected ? (<span className="isSelected"></span>) : null}
+                      : dateArr ? (<span className="isSelected"></span>) : null}
                   </div>
                 </div >
               </>
@@ -61,6 +95,8 @@ const NewCalendar = () => {
     }
     return calender;
   }
+
+
 
   const changegeMonth = (date, changeString) => {
     switch (changeString) {
@@ -75,7 +111,7 @@ const NewCalendar = () => {
 
 
   return (
-    <Container>
+    <Container className='new-calendar-box'>
       <StyledHeader>
         <Col xs={4} className='col'><FontAwesomeIcon icon={faChevronLeft} onClick={() => changegeMonth(viewDate, 'subtract')}/></Col>
         <Col xs={4} className="thisMonth">{viewDate.format("MM")}월</Col>
@@ -91,6 +127,13 @@ const NewCalendar = () => {
 
         <Row>
           {createCalendar()}
+        </Row>
+
+        <Row className='new-calendar-diarylist-box'>
+        {resultArr?.map((calendar) => (
+          calendar?.date === diary &&
+          <Col xs={12} md={6} lg={3} className='new-calendar-diarylist-col'><DiaryList key={calendar.id} calendar={calendar} product={product} /></Col>
+          ))}
         </Row>
       </StyledBody>
     </Container>
@@ -182,7 +225,7 @@ const StyledBody = styled.div`
     border-radius: 50%;
     font-weight: 500;
     /* color: pink; */
-    background : pink;
+    background : rgb(255, 174, 0);
   }
   .isSelected{
     position: relative;
@@ -261,16 +304,16 @@ const StyledBody = styled.div`
 //     <Container>
 
 //       {/* 년, 월 */}
-//       <Row className='new-Calc-yymm-box'>
-//         <Col className='new-Calc-yymm-Col' xs={4}><FontAwesomeIcon icon={faChevronLeft} onClick={onClickLeft}/></Col>
-//         <Col className='new-Calc-yymm-Col' xs={4}>{selectedDay.format('YY년 MM월')}</Col>
-//         <Col className='new-Calc-yymm-Col' xs={4}><FontAwesomeIcon icon={faChevronRight} onClick={onClickRight}/></Col>
+//       <Row className='new-calendar-yymm-box'>
+//         <Col className='new-calendar-yymm-Col' xs={4}><FontAwesomeIcon icon={faChevronLeft} onClick={onClickLeft}/></Col>
+//         <Col className='new-calendar-yymm-Col' xs={4}>{selectedDay.format('YY년 MM월')}</Col>
+//         <Col className='new-calendar-yymm-Col' xs={4}><FontAwesomeIcon icon={faChevronRight} onClick={onClickRight}/></Col>
 //       </Row>
 
 //       {/* 요일 */}
 //       <Row>
 //         {days.map((day) => (
-//           <Col className='new-Calc-day-Col' key={day}>{day}</Col>
+//           <Col className='new-calendar-day-Col' key={day}>{day}</Col>
 //         ))}
 //       </Row>
       
