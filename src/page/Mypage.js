@@ -12,7 +12,7 @@ import DiaryList from '../component/DiaryList'
 import DateCalneder from '../component/DateCalneder'
 
 const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar }) => {
-  const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'], ['userEmail']);
+  const [cookies, setCookie, removeCookie] = useCookies(['X-AUTH-TOKEN'],['userEmail']);
   const navigate = useNavigate();
 
   let now = new Date();

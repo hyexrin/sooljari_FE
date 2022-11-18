@@ -33,13 +33,16 @@ import About from './page/About';
 import Survey from './page/survey/Survey';
 import SurveyResult from './page/survey/SurveyResult';
 import WriteCalendar from './page/Calendar/WriteCalendar';
+import { useCookies } from 'react-cookie'
 
 function App() {
 
+  const [cookies, setCookies] = useCookies(["X-AUTH-TOKEN"]);
   const [authenticate, setAuthenticate] = useState(false); // true: 로그인 성공, false: 로그인 실패
 
   useEffect(() => {
-    console.log("로그인 상태 : ", authenticate);
+    cookies["X-AUTH-TOKEN"] != undefined ? setAuthenticate(true) : setAuthenticate(false);
+    // console.log("로그인 상태 : ", authenticate);
   }, [authenticate]);
 
   // const [message, setMessage] = useState("")
@@ -128,15 +131,17 @@ function App() {
 
   // userName 정보 불러오기
   const getUserInfo = () => {
+    axios.defaults.headers.common['X-AUTH-TOKEN'] = cookies["X-AUTH-TOKEN"];
     axios.get("http://localhost:8080/api/checkJWT", {withCredentials : true})
     .then(res => {
+      console.log("getUserInfo" + res);
       setUserName(res.data);
     })
   }
   useEffect(() => {
     getUserInfo();
   },[authenticate])
-  console.log('userName', userName)
+  // console.log('userName', userName)
 
  //  mypage userName 불러오기
  //  const [userName, setUserName] = useState();
