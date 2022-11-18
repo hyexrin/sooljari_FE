@@ -6,8 +6,10 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
-const NewCalendar = () => {
+const NewCalendar = ({userName, calendar}) => {
     const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
   //day
@@ -15,15 +17,32 @@ const NewCalendar = () => {
   const weekday = require('dayjs/plugin/weekday');
   const isoWeek = require('dayjs/plugin/isoWeek');
   const weekOfYear = require('dayjs/plugin/weekOfYear');
+  const customParseFormat = require('dayjs/plugin/customParseFormat');
 
   // day extend
   dayjs.extend(weekday);
   dayjs.extend(isoWeek);
   dayjs.extend(weekOfYear);
+  dayjs.extend(customParseFormat)
 
   const today = dayjs();
   const [viewDate, setViewDate] = useState(dayjs());
   const [selectDate, setSelectDate] = useState(dayjs());
+  
+  const navigate = useNavigate('');
+  const goToDiary = () => {
+    navigate('/diary')
+  }
+
+  const [ test, setTest ] = useState([]);
+
+  useEffect(() => {
+    calendar?.map((calendar) => (
+      setTest([...test, calendar?.date])
+    ))
+  }, [])
+  console.log('test >>> ', test)
+  
 
   const createCalendar = () => {
     const startWeek = viewDate.startOf('month').week();
@@ -39,6 +58,7 @@ const NewCalendar = () => {
             if (viewDate.format('MM') === '12') {
               current = viewDate.startOf('week').week(week - 52).add(n + i, 'day');
             }
+
             // 현재 날짜 (기준)
             let isSelected = selectDate.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'selected' : '';
             let isToday = today.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'today' : '';
@@ -47,6 +67,7 @@ const NewCalendar = () => {
               <>
                 <div className={`box`} key={`${week}_${i}`} >
                   <div className={`text ${isSelected} ${isToday} ${isNone}`} onClick={() => { setSelectDate(current) }}>
+                  {/* <div className={`text ${isSelected} ${isToday} ${isNone}`} onClick={() => { setSelectDate(dayjs('2022-11-13', 'YYYY-MM-DD')) }}> */}
                     <span className={`day`}>{current.format('D')}</span>
                     {isToday ? (<span className="isToday">today</span>)
                       : isSelected ? (<span className="isSelected"></span>) : null}
@@ -61,6 +82,8 @@ const NewCalendar = () => {
     }
     return calender;
   }
+
+
 
   const changegeMonth = (date, changeString) => {
     switch (changeString) {
@@ -182,7 +205,7 @@ const StyledBody = styled.div`
     border-radius: 50%;
     font-weight: 500;
     /* color: pink; */
-    background : pink;
+    background : rgb(255, 174, 0);
   }
   .isSelected{
     position: relative;

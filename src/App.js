@@ -33,6 +33,7 @@ import About from './page/About';
 import Survey from './page/survey/Survey';
 import SurveyResult from './page/survey/SurveyResult';
 import WriteCalendar from './page/Calendar/WriteCalendar';
+import Diary from './component/Diary';
 
 function App() {
 
@@ -185,6 +186,7 @@ function App() {
 
         {/* 주류기록달력 페이지 */}
         <Route path='/writeCalendar' element={<WriteCalendar product={product} />} />
+        <Route path='/diary' element={<Diary />} />
 
         {/* 커뮤니티 페이지 */}
         <Route path='/community' element={<Community community={community}/>} />
