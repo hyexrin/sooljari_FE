@@ -27,13 +27,21 @@ const ProductDetail = () => {
         // }
     })
 
-    // useEffect(async () => {
-    //     const fetchData = async () => {
-    //         const res = await axios.get(...)
-    //         if (res.data.type === 'liked') setLike(true)
+    //좋아요 데이터 받아오기 잠시만 안녕
+
+    // useEffect( () => {
+    //     const fetchData = () => {
+    //         const res = axios.get("http://localhost:8080/api/checkliked", {
+    //             userId : userId,
+    //             product : id,
+    //             liked : null
+    //         });
+    //         res ? setLike(true) : setLike(false);
     //     }
     //     fetchData()
-    // }, []);
+    // },[]);
+
+    // 다시 해보자 이따가
 
     const toggleLike = async (e) => {
 

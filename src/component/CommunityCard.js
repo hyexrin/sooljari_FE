@@ -1,11 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as blankHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
+import { useCookies } from 'react-cookie'
+import axios from 'axios';
 
-export default function CommunityCard({data}) {
-console.log(data?.id)
+export default function CommunityCard({ data }) {
+  console.log(data?.id)
   console.log(data?.image)
+
+
+  // 좋아요 기능 구현
+
+  const [communityLike, setCommunityLike] = useState(false);
+  const [userId, setUserId] = useState("");
+  const [cookies, setCookie] = useCookies(["userEmail"]);
+
+  const communityId = data?.id;
+
+  useEffect(() => {
+    if (cookies.userEmail !== undefined) {
+      setUserId(cookies.userEmail);
+    }
+    //  else {
+    //     alert("로그인이 필요합니다.");
+    // }
+  })
+
+  //좋아요 데이터 받아오기 잠시만 안녕
+
+  // useEffect( () => {
+  //     const fetchData = () => {
+  //         const res = axios.get("http://localhost:8080/api/checkliked", {
+  //             userId : userId,
+  //             product : id,
+  //             liked : null
+  //         });
+  //         res ? setLike(true) : setLike(false);
+  //     }
+  //     fetchData()
+  // },[]);
+
+  // 다시 해보자 이따가
+
+  const toggleLike = async (e) => {
+
+    setCommunityLike(!communityLike);
+
+    axios.post("http://localhost:8080/api/communityLiked", {
+      userId: userId,
+      communityId: communityId,
+      liked: communityLike ? true : false
+    });
+  }
+
+  //
+
+  console.log(`${data?.image}`)
 
   return (
     <div className='community-card-box'>
@@ -23,7 +75,9 @@ console.log(data?.id)
       </div>
 
       <div className='content-like-comment'>
-        <FontAwesomeIcon icon={faHeart} className='content-icon'/>
+        {communityLike ? <FontAwesomeIcon icon={fullHeart} like={communityLike} onClick={toggleLike} className='fullHeart' />
+          : <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />}
+        {/* <div className='imgTest'>hello</div> */}
         {/* <FontAwesomeIcon icon={faComment} className='content-icon'/> */}
       </div>
 
