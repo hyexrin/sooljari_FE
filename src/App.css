@@ -597,6 +597,29 @@ Recommend
   padding: 0.7rem;
 }
 
+
+/*
+=============== 
+Login Only Card
+===============
+*/
+
+.login-only-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  background-color: var(--clr-grey-10);
+  border-radius: 20px;
+}
+
+.login-only-card-title {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
 /*
 =============== 
 Product Detail

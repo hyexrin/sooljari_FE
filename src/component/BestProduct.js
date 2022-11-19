@@ -10,7 +10,7 @@ export default function BestProduct({recommend, product}) {
             <Container className='recommend-box-container'>
 
                 <Row>
-                    <Col><h3 className='recommend-title'><b>BEST</b></h3> </Col>
+                    <Col><h3 className='recommend-title'><b>술자리 MD Pick!</b></h3> </Col>
                 </Row>
 
                 <Row>
