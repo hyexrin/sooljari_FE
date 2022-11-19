@@ -109,14 +109,20 @@ const Navbar = ({ authenticate }) => {
   };
 
   // 검색
+
+  const [searchData, setSearchData] = useState('');
   const search = (event) => {
     if (event.key === "Enter"){
-      // console.log("Enter key press", event.key);
+      console.log("Enter key press", event.key);
       // 입력한 검색어를 읽어와 url 변경
       let keyword = event.target.value
-      navigate(`/?q=${keyword}`)
+      // keyword === '' ? navigate('/') : navigate(`/?q=${keyword}`)
+      keyword === '' ? navigate('/') : navigate(`productSearch/${keyword}`)
+      
+      
     }
   }
+
 
   return (
     <nav>
@@ -128,7 +134,7 @@ const Navbar = ({ authenticate }) => {
             {/* search 기능 */}
             <div className='search-wrap'>
               <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
-              <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' onKeyPress={search} />
+              <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' onKeyPress={search}/>
               {/* <input className='search' type='text' placeholder='술자리에서 전통주 취향 찾기!' /> */}
             </div>
             <button className='nav-toggle' onClick={toggleLinks} onBlur={test}>

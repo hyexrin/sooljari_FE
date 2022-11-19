@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
 
 
   return (
-    <div className='ProductCard' onClick={showDetail} ket={product?.id}>
+    <div className='ProductCard' onClick={showDetail} ket={product?.id} style={{zIndex: '-99'}}>
       
       <div className='productCard-img-box'>
         <img src={product?.image} className='productImg' />
