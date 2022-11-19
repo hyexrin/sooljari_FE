@@ -118,8 +118,6 @@ const Navbar = ({ authenticate }) => {
       let keyword = event.target.value
       // keyword === '' ? navigate('/') : navigate(`/?q=${keyword}`)
       keyword === '' ? navigate('/') : navigate(`productSearch/${keyword}`)
-      
-      
     }
   }
 

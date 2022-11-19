@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams, useSearchParams } from 'react-router-dom'
 import ProductCard from '../../component/ProductCard';
-import SearchResult from '../../component/SearchResult';
 import Category from '../Category';
 
 
