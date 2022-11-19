@@ -200,7 +200,7 @@ function App() {
 
         {/* 상품 관련 페이지 */}
         <Route path='/product/:id' element={<ProductDetail />} />
-        <Route path='/productSearch/:keyword' element={<ProductSearch />} />
+        <Route path='/productSearch/:keyword' element={<ProductSearch product={product}/>} />
 
         {/* 추천 데이터 관련 페이지 :: 취향자리*/}
         <Route path='/datarecommend' element={<DataRecommend product={product} userName={userName}/> } />

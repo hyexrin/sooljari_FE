@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faPlus, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faPlus, faChevronDown, faChevronRight, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import DatePicker from 'react-datepicker'
 // import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
@@ -77,7 +77,8 @@ export default function WriteCalendar(props) {
     return (
         <Container className='write-calendar-box'>
                 
-                {user}
+            <Row><FontAwesomeIcon icon={faPenToSquare} style={{height: '1.5rem', color: 'hsl(239, 29%, 60%)'}}/></Row>
+
             <Row className='write-calendar-date-box' style={{ width: '100%' }}>
                 <Col xs={1}><FontAwesomeIcon icon={faArrowLeft} /></Col>
                 <Col><DateCalneder setSelectedDate={setSelectedDate}/></Col>

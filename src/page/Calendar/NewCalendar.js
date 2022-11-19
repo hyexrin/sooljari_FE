@@ -4,7 +4,7 @@ import moment from 'moment/moment'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight, faStar, faBottleDroplet } from '@fortawesome/free-solid-svg-icons'
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -29,7 +29,7 @@ const NewCalendar = ({userName, calendar, product}) => {
   const today = dayjs();
   const [viewDate, setViewDate] = useState(dayjs());
   const [selectDate, setSelectDate] = useState(dayjs());
-  
+  const test = dayjs('2022-11-2');
   const navigate = useNavigate('');
   const goToDiary = () => {
     navigate('/diary')
@@ -56,11 +56,11 @@ const NewCalendar = ({userName, calendar, product}) => {
 ))}
 
   const [diary, setDiary] = useState(dayjs());
-
 const createCalendar = () => {
     const startWeek = viewDate.startOf('month').week();
     const endWeek = viewDate.endOf('month').week() === 1 ? 53 : viewDate.endOf('month').week();
     let calender = [];
+
 
 
     for (let week = startWeek; week <= endWeek; week++) {
@@ -72,18 +72,29 @@ const createCalendar = () => {
               current = viewDate.startOf('week').week(week - 52).add(n + i, 'day');
             }
 
+            console.log(viewDate.format('MM'))
+            console.log(diary)
             // 현재 날짜 (기준)
             let isSelected = selectDate.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'selected' : '';
             let isToday = today.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'today' : '';
             let isNone = current.format('MM') === viewDate.format('MM') ? '' : 'none';
+            // let isTest = dateArr[1].format('YYYYMMDD') === current.format('YYYYMMDD') ? 'test' : '';
+            // let isTest;
+            // dateArr?.map((data) => (
+            //   isTest = data.format('YYYYMMDD') === current.format('YYYYMMDD') ? 'test' : ''
+            // ))
 
             return (
               <>
+              
                 <div className={`box`} key={`${week}_${i}`} >
                   <div className={`text ${isSelected} ${isToday} ${isNone}`} onClick={() => { setSelectDate(current) }}>
-                    <span className={`day`} onClick={() => { setDiary(current.format('YYYY-M-D')); console.log(current.format('YYYY-M-D'))} }>{current.format('D')}</span>
+              {dateArr?.map((data) => (
+              data.format('YYYYMMDD') === current.format('YYYYMMDD') ? <FontAwesomeIcon style={{position: 'absolute', marginLeft: '5px', color: 'rgb(255, 174, 0)', transform: 'rotate(20deg)', height: '1rem'}} icon={faStar} /> : ''
+            ))}
+                    <span className={`day`} onClick={() => { setDiary(current.format('YYYY-M-D')); console.log(current.format('YYYY-M-D')) }}>{ current === dayjs('2022-11-9') ? '' : current.format('D')}</span>
                     {isToday ? (<span className="isToday">today</span>)
-                      : dateArr ? (<span className="isSelected"></span>) : null}
+                      : isSelected ? (<span className="isSelected"></span>) : null}
                   </div>
                 </div >
               </>
@@ -92,11 +103,10 @@ const createCalendar = () => {
           }
         </div >
       )
+      
     }
     return calender;
   }
-
-
 
   const changegeMonth = (date, changeString) => {
     switch (changeString) {
@@ -227,6 +237,12 @@ const StyledBody = styled.div`
     /* color: pink; */
     background : rgb(255, 174, 0);
   }
+  .test{
+    border-radius: 50%;
+    font-weight: 500;
+    /* color: pink; */
+    background : red;
+  }
   .isSelected{
     position: relative;
     color: pink;
@@ -236,6 +252,12 @@ const StyledBody = styled.div`
   .isToday{
     position: relative;
     color: #292929;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .isTest{
+    position: relative;
+    color: red;
     font-size: 10px;
     font-weight: 400;
   }

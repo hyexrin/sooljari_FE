@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as blankHeart } from '@fortawesome/free-regular-svg-icons'
@@ -6,17 +6,19 @@ import { faHeart as fullHeart } from '@fortawesome/free-solid-svg-icons';
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
 
-export default function CommunityCard({data}) {
+export default function CommunityCard({ data }) {
+  console.log(data?.id)
+  console.log(data?.image)
 
 
-    // 좋아요 기능 구현
+  // 좋아요 기능 구현
 
     const [communityLike, setCommunityLike] = useState(false);
     const [userId, setUserId] = useState("");
     const [cookies, setCookie] = useCookies(["userEmail"]);
     const [countLiked, setCountLiked] = useState();
 
-    const communityId = data?.id;
+  const communityId = data?.id;
 
     useEffect(() =>{
 
@@ -67,17 +69,40 @@ export default function CommunityCard({data}) {
         });
 
     }
+    //  else {
+    //     alert("로그인이 필요합니다.");
+    // }
+  })
 
+  //좋아요 데이터 받아오기 잠시만 안녕
 
+  // useEffect( () => {
+  //     const fetchData = () => {
+  //         const res = axios.get("http://localhost:8080/api/checkliked", {
+  //             userId : userId,
+  //             product : id,
+  //             liked : null
+  //         });
+  //         res ? setLike(true) : setLike(false);
+  //     }
+  //     fetchData()
+  // },[]);
 
+  // 다시 해보자 이따가
 
+  const toggleLike = async (e) => {
 
-    //
+    setCommunityLike(!communityLike);
 
-    //좋아요 개수 받아오기
+    axios.post("http://localhost:8080/api/communityLiked", {
+      userId: userId,
+      communityId: communityId,
+      liked: communityLike ? true : false
+    });
+  }
 
+  //
 
-    
   console.log(`${data?.image}`)
 
   return (

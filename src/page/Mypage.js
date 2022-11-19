@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlassWater, faPlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { faGlassWater, faPlus, faPenToSquare, faIdCardClip } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import Calendar from '../component/Calendar'
 import axios from 'axios';
@@ -49,11 +49,13 @@ const Mypage = ({ authenticate, setAuthenticate, userName, setUserName, calendar
   
   return (
     <Container className='mypage-box'>
-      <Row className='mypage-title-box'>
-        <Col><h2>마이페이지</h2></Col>
-      </Row>
+      {/* <Row className='mypage-title-box'>
+      <FontAwesomeIcon icon={faIdCardClip} style={{height: '4rem'}} />
+      </Row> */}
 
       <Row className='mypage-profile-box'>
+      
+      
         <Col xs={4}>
           <div className='mypage-profile-img-box'></div>
         </Col>
