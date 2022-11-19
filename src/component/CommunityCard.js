@@ -4,8 +4,8 @@ import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
 
 export default function CommunityCard({data}) {
-
-  console.log(`${data?.image}`)
+console.log(data?.id)
+  console.log(data?.image)
 
   return (
     <div className='community-card-box'>

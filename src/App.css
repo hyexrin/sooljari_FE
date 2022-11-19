@@ -1153,6 +1153,10 @@ mypage
   margin-bottom: 0.5rem;
 }
 
+.mypage-title-box {
+  padding: 1rem
+}
+
 .mypage-calendar-box {
   display: flex;
   justify-content: center;
@@ -1775,13 +1779,16 @@ About
 }
 
 .write-calendar-daily-note {
+  font-family: GangwonEduSaeeum_OTFMediumA;
+  font-size: large;
   resize: none !important;
   overflow: auto !important;
   outline: none;
   box-shadow: none !important;
   border-color: #ced4da !important;
+  border-radius: 20px;
   width: 99%;
-  height: 20em;
+  height: 13.8em;
   line-height: 31px;
   background-image: -webkit-linear-gradient(left, white 0, transparent 0), -webkit-linear-gradient(right, white 0, transparent 0), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
   background-repeat: repeat-y;

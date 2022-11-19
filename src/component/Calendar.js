@@ -77,7 +77,7 @@ const App = ({userName, calendar}) => {
         <CalendarHeatmap
           
           // 표시할 달
-          startDate={new Date(now.setDate(now.getDate() - 30))}
+          startDate={new Date(now.setDate(now.getDate() - 60))}
           endDate={new Date(now.setDate(now.getDate() + 120))}
 
           values={result}
