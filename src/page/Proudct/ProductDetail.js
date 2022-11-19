@@ -29,17 +29,17 @@ const ProductDetail = () => {
 
     //좋아요 데이터 받아오기 잠시만 안녕
 
-    // useEffect( () => {
-    //     const fetchData = () => {
-    //         const res = axios.get("http://localhost:8080/api/checkliked", {
-    //             userId : userId,
-    //             product : id,
-    //             liked : null
-    //         });
-    //         res ? setLike(true) : setLike(false);
-    //     }
-    //     fetchData()
-    // },[]);
+    useEffect( () => {
+        const fetchData = () => {
+            const res = axios.get("http://localhost:8080/api/checkliked", {
+                userId : userId,
+                product : id,
+                liked : null
+            });
+            res ? setLike(true) : setLike(false);
+        }
+        fetchData()
+    },[]);
 
     // 다시 해보자 이따가
 

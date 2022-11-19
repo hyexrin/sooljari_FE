@@ -14,10 +14,24 @@ export default function CommunityCard({data}) {
     const [communityLike, setCommunityLike] = useState(false);
     const [userId, setUserId] = useState("");
     const [cookies, setCookie] = useCookies(["userEmail"]);
+    const [countLiked, setCountLiked] = useState();
 
     const communityId = data?.id;
 
     useEffect(() =>{
+
+        const countLiked = async(e) => {
+            await axios.post("http://localhost:8080/api/countCommunityLiked", {
+                userId : null,
+                communityId :  communityId,
+                liked : null }).then(res => {
+                    console.log("좋아요 개수",res);
+                    setCountLiked(Number(res.data));
+            });
+        }
+
+        countLiked();
+
         if(cookies.userEmail !== undefined) {
             setUserId(cookies.userEmail);
         }
@@ -51,9 +65,18 @@ export default function CommunityCard({data}) {
             communityId : communityId,
             liked : communityLike? true : false
         });
+
     }
 
+
+
+
+
     //
+
+    //좋아요 개수 받아오기
+
+
     
   console.log(`${data?.image}`)
 
@@ -74,7 +97,7 @@ export default function CommunityCard({data}) {
 
       <div className='content-like-comment'>
           {communityLike ? <FontAwesomeIcon icon={fullHeart} like={communityLike} onClick={toggleLike} className='fullHeart' />
-              : <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />}
+              : <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />} {countLiked}
           {/* <div className='imgTest'>hello</div> */}
         {/* <FontAwesomeIcon icon={faComment} className='content-icon'/> */}
       </div>
