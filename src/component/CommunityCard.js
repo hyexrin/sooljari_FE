@@ -20,26 +20,24 @@ export default function CommunityCard({ data }) {
 
   const communityId = data?.id;
 
-    useEffect(() =>{
+    useEffect(() => {
 
-        const countLiked = async(e) => {
+        const countLiked = async (e) => {
             await axios.post("http://localhost:8080/api/countCommunityLiked", {
-                userId : null,
-                communityId :  communityId,
-                liked : null }).then(res => {
-                    console.log("좋아요 개수",res);
-                    setCountLiked(Number(res.data));
+                userId: null,
+                communityId: communityId,
+                liked: null
+            }).then(res => {
+                console.log("좋아요 개수", res);
+                communityLike? setCountLiked(Number(res.data) + 1) : setCountLiked(Number(res.data));
             });
         }
 
         countLiked();
 
-        if(cookies.userEmail !== undefined) {
+        if (cookies.userEmail !== undefined) {
             setUserId(cookies.userEmail);
         }
-        //  else {
-        //     alert("로그인이 필요합니다.");
-        // }
     })
 
     //좋아요 데이터 받아오기 잠시만 안녕
@@ -68,7 +66,7 @@ export default function CommunityCard({ data }) {
     //         liked : communityLike? true : false
     //     });
 
-    // }
+    }
     //  else {
     //     alert("로그인이 필요합니다.");
     // }
@@ -89,16 +87,16 @@ export default function CommunityCard({ data }) {
 
   // 다시 해보자 이따가
 
-  const toggleLike = async (e) => {
-
-    setCommunityLike(!communityLike);
-
-    axios.post("http://localhost:8080/api/communityLiked", {
-      userId: userId,
-      communityId: communityId,
-      liked: communityLike ? true : false
-    });
-  }
+  // const toggleLike = async (e) => {
+  //
+  //   setCommunityLike(!communityLike);
+  //
+  //   axios.post("http://localhost:8080/api/communityLiked", {
+  //     userId: userId,
+  //     communityId: communityId,
+  //     liked: communityLike ? true : false
+  //   });
+  // }
 
   //
 
