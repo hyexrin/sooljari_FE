@@ -58,21 +58,20 @@ export default function CommunityCard({ data }) {
 
     // 다시 해보자 이따가
 
-    const toggleLike = async (e) => {
+    // const toggleLike = async (e) => {
 
-        setCommunityLike(!communityLike);
+    //     setCommunityLike(!communityLike);
 
-        axios.post("http://localhost:8080/api/communityLiked", {
-            userId : userId,
-            communityId : communityId,
-            liked : communityLike? true : false
-        });
+    //     axios.post("http://localhost:8080/api/communityLiked", {
+    //         userId : userId,
+    //         communityId : communityId,
+    //         liked : communityLike? true : false
+    //     });
 
-    }
+    // }
     //  else {
     //     alert("로그인이 필요합니다.");
     // }
-  })
 
   //좋아요 데이터 받아오기 잠시만 안녕
 
@@ -121,8 +120,8 @@ export default function CommunityCard({ data }) {
       </div>
 
       <div className='content-like-comment'>
-          {communityLike ? <FontAwesomeIcon icon={fullHeart} like={communityLike} onClick={toggleLike} className='fullHeart' />
-              : <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />} {countLiked}
+          {communityLike ? <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />
+              : <FontAwesomeIcon icon={fullHeart} like={communityLike} onClick={toggleLike} className='fullHeart' />} {countLiked}
           {/* <div className='imgTest'>hello</div> */}
         {/* <FontAwesomeIcon icon={faComment} className='content-icon'/> */}
       </div>
