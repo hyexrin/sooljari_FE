@@ -35,6 +35,7 @@ import SurveyResult from './page/survey/SurveyResult';
 import WriteCalendar from './page/Calendar/WriteCalendar';
 import { useCookies } from 'react-cookie'
 import Diary from './component/Diary';
+import ProductSurvey from './page/survey/ProductSurvey';
 
 function App() {
 
@@ -208,6 +209,7 @@ function App() {
         {/* 취향 설문 관련 페이지 */}
         <Route path='/survey' element={<Survey />} />
         <Route path='/result' element={<SurveyResult product={product}/>} />
+        <Route path='/productSurvey' element={<ProductSurvey />} />
 
         {/* 관리자 페이지 */}
         <Route path='/admin' element={<Admin />} />
