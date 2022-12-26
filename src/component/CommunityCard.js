@@ -29,7 +29,7 @@ export default function CommunityCard({ data }) {
                 liked: null
             }).then(res => {
                 console.log("좋아요 개수", res);
-                communityLike? setCountLiked(Number(res.data) + 1) : setCountLiked(Number(res.data));
+                communityLike? setCountLiked(Number(res.data)) : setCountLiked(Number(res.data) + 1);
             });
         }
 
@@ -87,18 +87,18 @@ export default function CommunityCard({ data }) {
 
   // 다시 해보자 이따가
 
-  // const toggleLike = async (e) => {
-  //
-  //   setCommunityLike(!communityLike);
-  //
-  //   axios.post("http://localhost:8080/api/communityLiked", {
-  //     userId: userId,
-  //     communityId: communityId,
-  //     liked: communityLike ? true : false
-  //   });
-  // }
+  const toggleLike = async (e) => {
+  
+    setCommunityLike(!communityLike);
+  
+    axios.post("http://localhost:8080/api/communityLiked", {
+      userId: userId,
+      communityId: communityId,
+      liked: communityLike ? true : false
+    });
+  }
 
-  //
+  
 
   console.log(`${data?.image}`)
 
@@ -118,8 +118,8 @@ export default function CommunityCard({ data }) {
       </div>
 
       <div className='content-like-comment'>
-          {communityLike ? <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />
-              : <FontAwesomeIcon icon={fullHeart} like={communityLike} onClick={toggleLike} className='fullHeart' />} {countLiked}
+          {communityLike ? <FontAwesomeIcon icon={fullHeart} like={communityLike} onClick={toggleLike} className='fullHeart' />
+              : <FontAwesomeIcon icon={blankHeart} like={communityLike} onClick={toggleLike} className='blankHeart' />} {countLiked}
           {/* <div className='imgTest'>hello</div> */}
         {/* <FontAwesomeIcon icon={faComment} className='content-icon'/> */}
       </div>

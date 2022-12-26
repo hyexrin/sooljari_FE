@@ -8,10 +8,6 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Community = ({community}) => {
-    
-
-    
-    
 
   const navigate = useNavigate();
   const CreateCard = () => {
