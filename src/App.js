@@ -89,13 +89,14 @@ function App() {
   console.log("recommendArray", recommendArray)
 
 
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   // product DB 불러오기
   const [product, setProduct] = useState();
   const [productSearch, setProductSearch] = useState();
   const [query, setQuery] = useSearchParams();
 
   const getProducts = () => {
-    fetch(`/api/products/`)
+    fetch(`${PROXY}/api/products/`)
       .then(res => res.json())
       .then(m => setProduct(m))
   }
